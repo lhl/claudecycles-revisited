@@ -1,7 +1,22 @@
 # Claude’s Cycles (pdftotext extraction)
 
 Source PDF: `claude-cycles.pdf`
-Extraction: `pdftotext -layout` (page-by-page)
+Extraction: `pdftotext -layout` (page-by-page, with known extraction errors corrected inline)
+
+### Known pdftotext extraction issues
+
+The following errors are inherent to `pdftotext` processing of this PDF and have been corrected inline
+where possible (marked with `[CORRECTED]` comments):
+
+- **Minus as plus (p.5):** In the Appendix for cycle 1, `pdftotext` rendered `0 < s < m − 1` as
+  `0 < s < m + 1`. Corrected inline.
+- **π rendered as `?` (p.1):** The quotient map `π(i, j, k)` was rendered as `?(i, j, k)`. Corrected inline.
+- **Flattened subscripts/superscripts:** Throughout the document, `Z_m^3` appears as `Zm3`, `S_3` as `S3`,
+  `m^3` as `m3`, `f_c` as `fc`, etc. These are left as-is since the meaning is clear from context.
+- **Lost overline notation (p.4):** The s̄-mapping uses overline notation (`Ī`, `J̄`, `S̄`) to denote
+  coordinate collapsing; `pdftotext` strips these marks, so `i = Ī` appears as `i = I` with extra spacing.
+- **Garbled exponent sequences (pp.1–2):** Superscripted serpentine/Gray-code notation like `[0^{m-1} 1]^{m-1}`
+  appears with exponents separated from their bases.
 
 ## Page 1
 
@@ -59,7 +74,7 @@ they didn’t work out.
      Back to the drawing board. Several other approaches were tried, for example looking at the choices
 to be made at vertices that lie on the hyperplane where i + j + k is congruent to −1. Nothing promising
 showed up until exploration number 15, which introduced what Claude called a ﬁber decomposition : “The
-quotient map ?(i, j, k) = i + j + k mod m maps all arcs from ﬁber Fs to Fs+1 . The digraph is layered. In ﬁber
+quotient map π(i, j, k) = i + j + k mod m maps all arcs from ﬁber Fs to Fs+1 . The digraph is layered. In ﬁber
 coordinates (i, j ) with k = (s − i − j ) mod m.”
      Using those ﬁber coordinates, the problem could now be reformulated as choosing, for each (i, j, s), a
 permutation of the three operators that shift (i, j ) by either (1, 0) or (0, 1) or (0, 0). “Tried sigma depending
@@ -247,7 +262,7 @@ programs correctly anymore, very weird. So I stopped the search.”
     All in all, however, this was deﬁnitely an impressive success story. I think Claude Shannon’s spirit is
 probably proud to know that his name is now being associated with such advances. Hats oﬀ to Claude!
 Appendix. Claude’s second cycle (c = 1) is governed by the following rules: “If s = 0, bump j . If
-0 < s < m +1, bump i. If s = m − 1 and i > 0, bump k. If s = m − 1 and i = 0, bump j .”
+0 < s < m − 1, bump i.  [CORRECTED: pdftotext rendered "m − 1" as "m + 1"] If s = m − 1 and i > 0, bump k. If s = m − 1 and i = 0, bump j .”
         We can show that the vertices with s = 0 are seen in the following order, for k = 0, 1, . . . , m − 1:
 0k(−k), (−2)(1+ k)(1 − k), (−4)(2+ k)(2 − k), . . . 2(−1+ k)(−1 − k). And that will establish the order in
 which vertices with s = 1, 2, . . . , m − 1 are seen.
