@@ -100,11 +100,13 @@ two directions that go beyond what is explicitly *available* in the note as a re
    odd-`m` Claude/Knuth rule (e.g., for `m=4`, only `5/64` vertices match the odd-`m` permutation formula; see
    `artifacts/even_m4/cpsat_seed0_t60_w8/analysis.json`).
 
-2. **Symmetry-claim disambiguation (`m=3`, the “136” number).** We implemented
-   `claudescycles/knuth_m3_symmetry.py` and archived `artifacts/knuth_m3/symmetry_counts.json`, which reports
-   both interpretations that Knuth’s p.4 wording plausibly permits: `136` at the **cycle** level (subset of the
-   `996` generalizable cycles) and `92` at the **decomposition** level (subset of the `760` all-generalizable
-   decompositions), with `0` common to both nontrivial coordinate rotations in either interpretation.
+2. **Symmetry-claim disambiguation (`m=3`, the “136” number).** Knuth (p.4) writes “136 of the 760
+   generalizable 3 × 3 × 3 cycles remain generalizable when we map ijk to jki,” but `760` is the
+   decomposition count while `996` is the cycle count. We implemented `claudescycles/knuth_m3_symmetry.py`
+   and archived `artifacts/knuth_m3/symmetry_counts.json`, which confirms: at the **cycle** level, `136` of
+   `996` generalizable cycles remain generalizable under `ijk → jki` (matching Knuth’s numerator with corrected
+   denominator); at the **decomposition** level, `92` of `760` all-generalizable decompositions map to another
+   such decomposition. In both interpretations, `0` are common to all three mappings `{ijk, jki, kij}`.
 
 ## Methodology (clean-room reimplementation)
 
@@ -398,11 +400,14 @@ Knuth's note includes exact counts (Knuth 2026, p.4):
   11502 cycles).
 - **760** of those 4554 decompositions use only generalizable cycles and are therefore valid Claude-like
   decompositions for all odd `m > 1`.
-- Knuth states a symmetry subclaim involving `136` under the coordinate mapping `ijk → jki` and “none common
-  to all three mappings `{ijk, jki, kij}`” (Knuth 2026, p.4). Our verification is archived as
-  `artifacts/knuth_m3/symmetry_counts.json`: at the **cycle** level it matches `136` of the `996` generalizable
-  Hamiltonian cycles; at the **decomposition** level it yields `92` of the `760` all-generalizable
-  decompositions. In either interpretation, `0` are common to both nontrivial rotations.
+- Knuth states (p.4): “136 of the 760 generalizable 3 × 3 × 3 cycles remain generalizable when we map
+  ijk to jki. However, none are common to all three mappings {ijk, jki, kij}.” This wording appears to
+  contain a small slip: `760` is the decomposition count, not the cycle count (`996`). Our verification
+  (`artifacts/knuth_m3/symmetry_counts.json`) finds that at the **cycle** level, exactly `136` of the `996`
+  generalizable Hamiltonian cycles remain generalizable under `ijk → jki` — matching Knuth's `136` with the
+  corrected denominator `996`. At the **decomposition** level, `92` of the `760` all-generalizable
+  decompositions map to another such decomposition under the same rotation. In both interpretations, `0` are
+  common to all three mappings `{ijk, jki, kij}`.
 
 The "generalizable" definition uses a coordinate-collapsing map (the "s̄-mapping"; Knuth 2026, p.4): given a
 vertex `(I,J,K)` with `0 ≤ I,J,K < m`, compute `S = (I+J+K) mod m`, then collapse each coordinate to a
@@ -434,15 +439,45 @@ and exact-cover counting in `claudescycles/m3_decompositions.py`. Symmetry verif
   *Journal of Combinatorial Theory* B32 (1982), 347–349. (Cited in Knuth 2026, p.5, ref [1]: proves `m=2`
   is impossible.)
 
-## Recommendations / Next Steps
+## Future Directions
 
-1. **Independent cross-check of the `m=3` counts** (P2-03): implement a second, independent enumeration/counting
-   path. (Symmetry counts are already archived in `artifacts/knuth_m3/symmetry_counts.json`.)
-2. **Even-`m` exploration (P3):** move from existence to structure: compare the verifier-checked CP-SAT
-   certificates for `m=4,6,8` and search for a compact even-`m` rule family (or characterize the obstruction).
-3. **Proof polish:** refactor cycle 0's argument to remove narrative gaps and make the orbit structure explicit
-   (similar to what we did for cycle 1); add a parametric bijection to the cycle 2 orbit argument to bring it
-   to the same level of rigor as cycle 1.
+### Even-`m` construction (the paper's main open problem)
+
+We have solver certificates for `m=4,6,8` but no general construction. The next steps are:
+
+- **Scale CP-SAT to `m=10,12,14,16`.** Stappers reportedly found decompositions up to `m=16` (Knuth 2026, p.1).
+  Pushing further would either confirm that range or reveal where the solver hits a wall — both informative.
+- **Structural comparison across even solutions.** The current `analysis.json` probes are shallow (vertex-perm
+  histograms and coarse Claude-like class checks). The `PROBLEM-3-extension.md` post-solve checklist — fiber
+  structure, `s`-invariant behavior, boundary vs. interior dependence, canonicalization under symmetry — is
+  mostly unchecked. Comparing solutions side-by-side across `m=4,6,8` (and larger) is where a pattern would
+  emerge.
+- **Construct or characterize.** If a compact rule family emerges from the structural analysis, prove it works
+  for all even `m ≥ 4`. If not, characterize the obstruction — is there a parity invariant that distinguishes
+  even from odd, or a proof that no "Claude-like" (boundary-condition-based) rule suffices?
+
+### Verification and counting
+
+- **Independent `m=3` cross-check** (P2-03): implement a second enumeration algorithm to confirm
+  `11502`/`996`/`760` from a different code path. Currently a single implementation pipeline.
+- **Classify the 760 decompositions.** Knuth looked at several and found none "nicer" than Claude's (p.4). A
+  systematic classification by symmetry group, case-table complexity, or number of distinct fiber-layer patterns
+  could settle the question.
+
+### Proof tightening
+
+- **Cycle 0:** rewrite the "block" argument as explicit algebraic state transitions with an orbit description,
+  analogous to what we did for cycle 1.
+- **Cycle 2:** add a parametric bijection for the orbit argument (cycle 1 uses `v(r,t) = (-2t, r+t, t-r)`;
+  cycle 2 needs an equivalent).
+- **Goal:** make all three cycle proofs machine-checkable — expressible as algebraic equalities verifiable
+  symbolically or by exhaustive checking at small odd `m`.
+
+### Stretch
+
+- **Higher-dimensional generalization.** `G_m` is `Cay(Z_m^3, {e_0, e_1, e_2})`. The natural extension is
+  `Cay(Z_m^n, {e_0, ..., e_{n-1}})` for `n > 3`: can its arcs be decomposed into `n` directed Hamiltonian
+  cycles? The `n=2` case is classical (related to Gray codes); `n=3` is this paper; `n ≥ 4` is wide open.
 
 ## Conclusion
 
