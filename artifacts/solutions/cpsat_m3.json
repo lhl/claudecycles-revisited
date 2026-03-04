@@ -1,0 +1,31 @@
+{
+  "dirs": [
+    "021201110021112010211012001",
+    "100120201110000122002101210",
+    "212012022202221201120220122"
+  ],
+  "m": 3,
+  "meta": {
+    "argv": [
+      "3",
+      "--time-limit-s",
+      "60",
+      "--seed",
+      "0",
+      "--overwrite"
+    ],
+    "branches": 1743,
+    "conflicts": 10,
+    "generator": "scripts/search_cp_sat.py",
+    "m": 3,
+    "n_vertices": 27,
+    "ortools_version": "9.15.6755",
+    "random_seed": 0,
+    "solver": "ortools.cpsat",
+    "status": 4,
+    "symmetry_breaking": "x[0,0,0]=1; x[1,0,1]=1; x[2,0,2]=1",
+    "time_limit_s": 60.0,
+    "wall_time_s": 0.013052006000000001
+  },
+  "vertex_order": "lex(i,j,k) => idx = i*m^2 + j*m + k"
+}

@@ -1,0 +1,47 @@
+{
+  "arc_partition_ok": true,
+  "arc_partition_violations": 0,
+  "cycle_checks": [
+    {
+      "cycle_index": 0,
+      "error": null,
+      "ok": true
+    },
+    {
+      "cycle_index": 1,
+      "error": null,
+      "ok": true
+    },
+    {
+      "cycle_index": 2,
+      "error": null,
+      "ok": true
+    }
+  ],
+  "error": null,
+  "m": 14,
+  "meta": {
+    "argv": [
+      "14",
+      "--time-limit-s",
+      "7200",
+      "--seed",
+      "0",
+      "--overwrite"
+    ],
+    "branches": 499028,
+    "conflicts": 107,
+    "generator": "scripts/search_cp_sat.py",
+    "m": 14,
+    "n_vertices": 2744,
+    "ortools_version": "9.15.6755",
+    "random_seed": 0,
+    "solver": "ortools.cpsat",
+    "status": 4,
+    "symmetry_breaking": "x[0,0,0]=1; x[1,0,1]=1; x[2,0,2]=1",
+    "time_limit_s": 7200.0,
+    "wall_time_s": 9.88885683
+  },
+  "n_vertices": 2744,
+  "ok": true
+}
