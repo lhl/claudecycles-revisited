@@ -121,3 +121,9 @@
 - Commands: `apply_patch` to update `session-analysis/README.md`
 - Result: `session-analysis/README.md` now calls out Phase 0 as “~6h wall, ~47m active” and notes active-time vs wall-time interpretation.
 - Decision: Keep.
+
+### Task: Add extension-run prompt (PROBLEM-4)
+- Plan: Create a single “kickoff prompt” for an autonomous extension run that (1) reviews current repo status/evidence and (2) targets the `PROBLEM-3-extension.md` agenda with solver-backed experiments.
+- Commands: `apply_patch` to add `PROBLEM-4-extension-prompt.md`
+- Result: Added `PROBLEM-4-extension-prompt.md` with goal/requirements/success criteria emphasizing verifier-first, artifact logging, and CP-SAT-first even-`m` search.
+- Decision: Stage + commit prompt file.
