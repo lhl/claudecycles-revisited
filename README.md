@@ -1,8 +1,34 @@
-# REVIEW: Comparison against Knuth's "Claude's Cycles" (claude-cycles.pdf)
+# claudescycles
 
-This document reviews the current state of this repository (`claudescycles`) against the reference note
-**"Claude's Cycles"** by **Donald E. Knuth** (dated 28 Feb 2026; revised 02 Mar 2026), stored locally as
-`claude-cycles.pdf` (5 pages). For grep/LLM-friendly access we also store `pdftotext` extractions in:
+An experiment in **AI-assisted mathematical replication with structured scaffolding**.
+
+Knuth's ["Claude's Cycles"](claude-cycles.pdf) (2026) describes how Claude Opus 4.6, coached by Filip
+Stappers, discovered a construction decomposing the arcs of a directed graph `G_m` into three Hamiltonian
+cycles for odd `m`. The process was impressive — but Knuth also documented friction: Claude lost context
+on restarts, had to be repeatedly reminded to log its progress, and eventually "got stuck" on the even-`m`
+case.
+
+This repo asks: **can better harness design fix those failure modes?** We used Codex CLI (GPT-5.2) with a
+structured execution harness ([AGENTS.md](AGENTS.md)) that enforces verifier-first development, mandatory
+logging, restart-safe memory, and machine-readable evidence. The goal was to replicate and extend the paper's
+results while testing whether scaffolding disciplines improve reliability and reproducibility over lightweight
+coaching.
+
+**What we found:**
+- The harness eliminated context loss and documentation drift — every experiment has exact commands and
+  reproducible artifacts.
+- It did *not* produce independent discovery: the model accessed the reference paper after ~30 minutes of
+  independent work (see [Methodology](#methodology-clean-room-reimplementation) for the full timeline).
+- As an extension, CP-SAT found verified even-`m` decompositions for `m=4,6,8` — the paper's main open
+  problem — though a general even-`m` construction remains elusive.
+
+---
+
+## Review: Comparison against Knuth's "Claude's Cycles"
+
+This section reviews the repository against the reference note **"Claude's Cycles"** by **Donald E. Knuth**
+(dated 28 Feb 2026; revised 02 Mar 2026), stored locally as `claude-cycles.pdf` (5 pages). For
+grep/LLM-friendly access we also store `pdftotext` extractions in:
 
 - `references/claude-cycles.txt` (`pdftotext -layout`)
 - `references/claude-cycles.md` (`pdftotext -layout`, page-by-page, with known extraction errors corrected)
