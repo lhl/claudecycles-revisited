@@ -31,9 +31,10 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 - [x] P1-04: Write odd-`m` proof document (`proofs/`)
 - [x] P1-05: Write `REVIEW.md` comparing against `claude-cycles.pdf`
 - [x] P1-06: Add `claude-cycles.pdf` + `pdftotext` extracts under `references/`
-- [ ] P2-01: Reproduce `m=3` Hamiltonian cycle count claims from the paper
-- [ ] P2-02: Reproduce generalizable subset counts and decomposition counts
+- [x] P2-01: Reproduce `m=3` Hamiltonian cycle count claims from the paper
+- [x] P2-02: Reproduce generalizable subset counts and decomposition counts
 - [ ] P2-03: Cross-check counting results with an independent implementation path
+- [x] P2-04: Add proof-note + followup tracker for Knuth `m=3` results
 - [ ] P3-01: Build even-`m` hypothesis backlog and prioritization
 - [ ] P3-02: Run iterative even-`m` exploration loop (correctness + benchmark)
 - [ ] P3-03: Maintain failure catalog with reasons and rejected families
@@ -62,3 +63,9 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 - `apply_patch` to add `proofs/claude_odd_m.md` -> success
 - `pdftotext -layout claude-cycles.pdf references/claude-cycles.txt` -> success
 - `pdftotext -layout -f 1 -l 1 claude-cycles.pdf -` -> used for review cross-checking
+- `python - <<'PY' ... PY` (calls `claudescycles.m3_cycles.list_hamiltonian_cycles_m3`) -> count=11502 (matches paper)
+- `python - <<'PY' ... PY` (counts `generalize_to_5=1012`, `generalize_to_5_and_7=996`) -> matches paper
+- `python - <<'PY' ... PY` (exact cover) -> `decompositions_total=4554`, `decompositions_all_generalizable=760` (matches paper)
+- `python -m claudescycles.knuth_m3 --out-dir artifacts/knuth_m3` -> OK; outputs written under `artifacts/knuth_m3/`
+- `apply_patch` to add `proofs/claude_like_generalizable.md` -> success
+- `apply_patch` to add `FOLLOWUP.md` -> success

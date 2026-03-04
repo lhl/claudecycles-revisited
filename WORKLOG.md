@@ -67,3 +67,33 @@
 - Commands: `pdfinfo claude-cycles.pdf`; `pdftotext -layout claude-cycles.pdf references/claude-cycles.txt`; `pdftotext -raw claude-cycles.pdf references/claude-cycles.raw.txt`; `python - <<'PY' ... PY` (writes `references/claude-cycles.md`); `nl -ba claudescycles/claude.py | sed -n '1,120p'`; `nl -ba claudescycles/verify.py | sed -n '1,260p'`; `nl -ba claudescycles/scan.py | sed -n '1,220p'`; `nl -ba claudescycles/search.py | sed -n '1,120p'`
 - Result: `references/` now contains stable text/markdown extracts; `REVIEW.md` now cites paper pages and key code entrypoints with line numbers.
 - Decision: Keep; commit these sources + review updates as a single logical unit.
+
+### Task: Enumerate all Hamiltonian cycles for `m=3` (count replication)
+- Plan: Implement a rooted DFS enumerator for directed Hamiltonian cycles in `G_3`, returning each cycle as a per-vertex direction function; confirm Knuth’s reported total count.
+- Commands: `python - <<'PY'\nfrom claudescycles.m3_cycles import list_hamiltonian_cycles_m3\n\ncycles = list_hamiltonian_cycles_m3()\nprint('count', len(cycles))\nprint('unique_arc_masks', len({c.arc_mask for c in cycles}))\nPY`
+- Result: `count 11502`, `unique_arc_masks 11502` (matches Knuth 2026, p.4).
+- Decision: Next implement “generalizable” lifting (counts 1012/996) and exact-cover decomposition counting (4554/760), with machine-readable outputs in `artifacts/`.
+
+### Task: Reproduce “generalizable” counts for `m=3` cycles
+- Plan: Implement Knuth’s `x^` lifting from `m=3` cycles to odd `m` and reproduce the reported counts for `m=5` and `m=7`.
+- Commands: `python - <<'PY'\nfrom time import perf_counter\n\nfrom claudescycles.generalize import generalizes_m3_cycle_to_m\nfrom claudescycles.m3_cycles import iter_hamiltonian_cycles_m3\n\nc5 = 0\nc5c7 = 0\nn = 0\n\nt0 = perf_counter()\nfor cyc in iter_hamiltonian_cycles_m3():\n    n += 1\n    ok5 = generalizes_m3_cycle_to_m(base_dirs=cyc.dirs, m=5)\n    if ok5:\n        c5 += 1\n        ok7 = generalizes_m3_cycle_to_m(base_dirs=cyc.dirs, m=7)\n        if ok7:\n            c5c7 += 1\n\ndt = perf_counter() - t0\nprint('total', n)\nprint('generalize_to_5', c5)\nprint('generalize_to_5_and_7', c5c7)\nprint('elapsed_sec', dt)\nPY`
+- Result: `generalize_to_5 1012`, `generalize_to_5_and_7 996` (matches Knuth 2026, p.4). Runtime ~1.7s on this machine.
+- Decision: Next: implement exact-cover counting for decompositions (expect 4554 total; 760 using only the 996 “generalizable” cycles).
+
+### Task: Reproduce exact-cover decomposition counts for `m=3` (4554 total; 760 generalizable-only)
+- Plan: Use arc-mask exact cover (A,B disjoint implies unique complement C) to count `3×3×3` decompositions from the full Hamiltonian-cycle list; then count decompositions comprised only of the 996 “generalizable” cycles.
+- Commands: `python - <<'PY'\nfrom time import perf_counter\n\nfrom claudescycles.generalize import generalizes_m3_cycle_to_m\nfrom claudescycles.m3_cycles import list_hamiltonian_cycles_m3\nfrom claudescycles.m3_decompositions import (\n    count_m3_decompositions_in_subset,\n    list_m3_decompositions_from_arc_masks,\n)\n\ncycles = list_hamiltonian_cycles_m3()\nmasks = [c.arc_mask for c in cycles]\n\nallowed: set[int] = set()\nfor idx, cyc in enumerate(cycles):\n    if generalizes_m3_cycle_to_m(base_dirs=cyc.dirs, m=5) and generalizes_m3_cycle_to_m(\n        base_dirs=cyc.dirs, m=7\n    ):\n        allowed.add(idx)\nprint('allowed_generalizable', len(allowed))\n\nt0 = perf_counter()\ndecomps = list_m3_decompositions_from_arc_masks(masks)\ndt = perf_counter() - t0\nprint('decompositions_total', len(decomps))\nprint('elapsed_sec', dt)\n\nprint('decompositions_all_generalizable', count_m3_decompositions_in_subset(decomps, allowed=allowed))\nPY`
+- Result: `allowed_generalizable 996`; `decompositions_total 4554`; `decompositions_all_generalizable 760` (matches Knuth 2026, p.4). Exact-cover enumeration runtime ~1.4s on this machine.
+- Decision: Next: add a single CLI to reproduce all of Knuth’s `m=3` counts and write `artifacts/` outputs; then write a proof-note for the “Claude-like iff generalizable” theorem and a `FOLLOWUP.md` tracker.
+
+### Task: Archive feature-parity outputs for Knuth `m=3` counts
+- Plan: Provide a single deterministic CLI that reproduces the `m=3` paper counts and writes machine-readable outputs under `artifacts/`.
+- Commands: `python -m claudescycles.knuth_m3 --out-dir artifacts/knuth_m3`; `head -n 40 artifacts/knuth_m3/counts.json`; `ls -la artifacts/knuth_m3`
+- Result: Wrote `artifacts/knuth_m3/counts.json`, `artifacts/knuth_m3/generalizable_cycle_masks.json`, and `artifacts/knuth_m3/decompositions.json` with counts `{11502,1012,996,4554,760}` matching Knuth 2026 (p.4).
+- Decision: Proceed to proof/documentation parity: add a proof-note for the “Claude-like iff generalizable” theorem, then write `FOLLOWUP.md` summarizing current status + next steps.
+
+### Task: Proof/documentation feature parity (theorem note + followup tracker)
+- Plan: Add a proof note formalizing Knuth’s “Claude-like iff generalizable” theorem and create a single followup tracker summarizing parity + remaining gaps.
+- Commands: `apply_patch` to add `proofs/claude_like_generalizable.md`; `apply_patch` to add `FOLLOWUP.md`
+- Result: Proof-note added and tied to implementation (`claudescycles/generalize.py`, `claudescycles/knuth_m3.py`); followup tracker added with repro commands and parity checklist.
+- Decision: Next: stage/commit the new counting code + artifacts + docs as one logical change; then proceed to P3 even-`m` exploration and/or P2-03 independent cross-check.

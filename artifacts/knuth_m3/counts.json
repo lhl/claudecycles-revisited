@@ -1,0 +1,10 @@
+{
+  "elapsed_sec_exact_cover": 1.45522570470348,
+  "elapsed_sec_total": 3.225828673224896,
+  "m": 3,
+  "n_decompositions_all_generalizable": 760,
+  "n_decompositions_total": 4554,
+  "n_generalize_to_m5": 1012,
+  "n_generalize_to_m5_and_m7": 996,
+  "n_hamiltonian_cycles": 11502
+}
