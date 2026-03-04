@@ -1,0 +1,17 @@
+{
+  "m": 4,
+  "n_vertices": 64,
+  "num_branches": 4886,
+  "num_conflicts": 72,
+  "num_workers": 8,
+  "outcome": "HIT",
+  "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 0\nbooleans: 547\nconflicts: 72\nbranches: 4886\npropagations: 22672\ninteger_propagations: 0\nrestarts: 1\nlp_iterations: 0\nwalltime: 0.0294449\nusertime: 0.0294449\ndeterministic_time: 0.0323116\ngap_integral: 0\nsolution_fingerprint: 0x67833ddc616afb1d\n",
+  "seed": 0,
+  "solver": "ortools-cpsat",
+  "status_name": "OPTIMAL",
+  "symmetry_breaking": {
+    "vertex0_cycle_labels": true
+  },
+  "time_limit_sec": 60.0,
+  "wall_time_sec": 0.029444855000000002
+}

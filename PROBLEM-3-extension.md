@@ -8,7 +8,9 @@ tracker, see `PROBLEM-2-followup.md`.
 
 - **Odd-`m` construction**: implemented, verified for odd `m ∈ [3,101]`, with proof (`proofs/claude_odd_m.md`).
 - **Even-`m` failure**: the odd-`m` construction fails for all even `m ∈ [4,100]` under our verifier.
+- **Even-`m` certificates**: CP-SAT (`AddCircuit`) found verifier-checked decompositions for `m=4,6,8` (see `artifacts/even_m4/`, `artifacts/even_m6/`, `artifacts/even_m8/`).
 - **`m=3` counting parity**: reproduced `11502`, `1012`, `996`, `4554`, `760` (see `artifacts/knuth_m3/`).
+- **Symmetry subcounts**: verified and archived as `artifacts/knuth_m3/symmetry_counts.json` (cycle-level `136` of `996`; decomposition-level `92` of `760`; `0` common to both rotations in either interpretation).
 - **Claude-like theorem**: proved (`proofs/claude_like_generalizable.md`).
 - **Verifier + search tooling**: `claudescycles/verify.py`, `claudescycles/csp.py`, `claudescycles/search.py`.
 
@@ -26,7 +28,9 @@ Knuth explicitly leaves these unresolved:
    "didn't encounter any that were actually nicer" than Claude's (p.4).
 
 3. **Symmetry subcounts** — 136 of 760 remain generalizable under `ijk → jki`; none are common to all three
-   cyclic mappings `{ijk, jki, kij}` (p.4). We have not independently verified these claims.
+   cyclic mappings `{ijk, jki, kij}` (p.4). We verified symmetry counts and archived results as
+   `artifacts/knuth_m3/symmetry_counts.json` (note: the paper’s wording appears ambiguous about whether `136`
+   refers to cycles vs decompositions; the artifact reports both).
 
 ---
 
@@ -38,7 +42,8 @@ Hamiltonian cycles for even `m ≥ 4`, or to prove impossibility for specific ev
 ### What we know
 
 - `m=2`: impossible (Aubert & Schneider 1982).
-- `m=4`: Stappers found a solution empirically; our CSP returned `NO_HIT` within 50K nodes (~10s).
+- `m=4`: CP-SAT finds a verifier-checked decomposition (see `artifacts/even_m4/`). (Historical: our CSP returned `NO_HIT` within 50K nodes (~10s).)
+- `m=6` and `m=8`: CP-SAT finds verifier-checked decompositions (see `artifacts/even_m6/`, `artifacts/even_m8/`).
 - `m=4` has only 64 vertices (192 arcs), so the problem is small enough for SAT/CP-SAT.
 - The odd-`m` Claude/Knuth construction fails structurally for even `m`: the "step by 2" coverage argument
   in the cycle 0 proof requires `gcd(2,m)=1`, which fails for even `m`.
@@ -148,8 +153,8 @@ Post-solve analysis checklist (this is where the research value lives):
 
 ### Success criteria
 
-- [ ] Find a verified decomposition for `m=4` (JSON artifact + verifier `OK`).
-- [ ] Find verified decompositions for `m=6` and `m=8`.
+- [x] Find a verified decomposition for `m=4` (JSON artifact + verifier `OK`).
+- [x] Find verified decompositions for `m=6` and `m=8`.
 - [ ] Complete post-solve analysis checklist for each even-`m` solution found.
 - [ ] Characterize structural differences between even-`m` and odd-`m` solutions.
 - [ ] Either propose a general even-`m` construction or identify the obstruction.
@@ -168,8 +173,7 @@ The paper states (p.4) that 136 of the 760 generalizable decompositions remain g
 
 - Implement the `ijk → jki` remapping on decompositions.
 - Filter the 760 archived decompositions and count.
-- Expected: 136 survive under one rotation, 0 survive under all three.
-- Archive result as `artifacts/knuth_m3/symmetry_counts.json`.
+- Archived result: `artifacts/knuth_m3/symmetry_counts.json`. (Cycle-level: `136` of `996` generalizable cycles remain generalizable under `ijk→jki`; decomposition-level: `92` of `760` all-generalizable decompositions map to another such decomposition under `ijk→jki`; `0` common to both rotations in either interpretation.)
 
 ### E2b: Classify the 760 decompositions
 

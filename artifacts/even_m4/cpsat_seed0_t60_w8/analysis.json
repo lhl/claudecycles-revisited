@@ -1,0 +1,122 @@
+{
+  "claude_like_classing": {
+    "ambiguous_classes": {
+      "i=0,j=0,s=mid": {
+        "021": 1,
+        "210": 1
+      },
+      "i=0,j=m-1,s=mid": {
+        "021": 1,
+        "201": 1
+      },
+      "i=0,j=mid,s=0": {
+        "102": 1,
+        "120": 1
+      },
+      "i=0,j=mid,s=m-1": {
+        "102": 1,
+        "120": 1
+      },
+      "i=0,j=mid,s=mid": {
+        "012": 1,
+        "120": 2,
+        "210": 1
+      },
+      "i=m-1,j=0,s=mid": {
+        "021": 1,
+        "102": 1
+      },
+      "i=m-1,j=m-1,s=mid": {
+        "120": 1,
+        "210": 1
+      },
+      "i=m-1,j=mid,s=0": {
+        "021": 1,
+        "210": 1
+      },
+      "i=m-1,j=mid,s=m-1": {
+        "012": 1,
+        "201": 1
+      },
+      "i=m-1,j=mid,s=mid": {
+        "021": 2,
+        "120": 1,
+        "210": 1
+      },
+      "i=mid,j=0,s=0": {
+        "120": 1,
+        "210": 1
+      },
+      "i=mid,j=0,s=m-1": {
+        "012": 1,
+        "021": 1
+      },
+      "i=mid,j=0,s=mid": {
+        "021": 1,
+        "120": 2,
+        "210": 1
+      },
+      "i=mid,j=m-1,s=0": {
+        "201": 1,
+        "210": 1
+      },
+      "i=mid,j=m-1,s=m-1": {
+        "201": 1,
+        "210": 1
+      },
+      "i=mid,j=m-1,s=mid": {
+        "021": 1,
+        "120": 2,
+        "210": 1
+      },
+      "i=mid,j=mid,s=0": {
+        "012": 2,
+        "201": 1,
+        "210": 1
+      },
+      "i=mid,j=mid,s=m-1": {
+        "201": 3,
+        "210": 1
+      },
+      "i=mid,j=mid,s=mid": {
+        "012": 1,
+        "021": 3,
+        "102": 1,
+        "120": 2,
+        "201": 1
+      }
+    },
+    "class_def": {
+      "i": [
+        "0",
+        "mid",
+        "m-1"
+      ],
+      "j": [
+        "0",
+        "mid",
+        "m-1"
+      ],
+      "note": "checks whether vertex permutation depends only on (i class, j class, s class) with class in {0,mid,m-1}",
+      "s": [
+        "0",
+        "mid",
+        "m-1"
+      ]
+    },
+    "n_classes_ambiguous": 19,
+    "n_classes_total": 27
+  },
+  "m": 4,
+  "matches_odd_m_claude_perm_count": 5,
+  "matches_odd_m_claude_perm_fraction": 0.078125,
+  "n_vertices": 64,
+  "vertex_perm_histogram": {
+    "012": 7,
+    "021": 13,
+    "102": 5,
+    "120": 15,
+    "201": 11,
+    "210": 13
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "elapsed_sec_exact_cover": 1.45522570470348,
-  "elapsed_sec_total": 3.225828673224896,
+  "elapsed_sec_exact_cover": 1.422030690126121,
+  "elapsed_sec_total": 3.12989937979728,
   "m": 3,
   "n_decompositions_all_generalizable": 760,
   "n_decompositions_total": 4554,

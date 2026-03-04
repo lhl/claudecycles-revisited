@@ -127,3 +127,29 @@
 - Commands: `apply_patch` to add `PROBLEM-4-extension-prompt.md`
 - Result: Added `PROBLEM-4-extension-prompt.md` with goal/requirements/success criteria emphasizing verifier-first, artifact logging, and CP-SAT-first even-`m` search.
 - Decision: Stage + commit prompt file.
+
+### Task: Baseline revalidation (verifier + knuth_m3)
+- Plan: Re-run deterministic baseline commands before starting extension work (ensure repo state + environment are consistent).
+- Commands: `python -m claudescycles.verify --input artifacts/claude_m5.json`; `python -m claudescycles.knuth_m3 --out-dir artifacts/knuth_m3`
+- Result: Verifier `OK: m=5 (n=125)`; `knuth_m3` prints counts `{11502,1012,996,4554,760}` and rewrites `artifacts/knuth_m3/*`.
+- Decision: Proceed to E1 (even-`m`) CP-SAT solver implementation, then E2a symmetry verification.
+
+### Task: E1 (even-m): CP-SAT `m=4` hit with `AddCircuit`
+- Plan: Implement OR-Tools CP-SAT encoding with 3 coupled Hamiltonian cycles (per-vertex permutation + `AddCircuit`), add minimal symmetry breaking, and search `m=4`.
+- Commands: `time python -m claudescycles.even_cpsat --m 4 --out-dir artifacts/even_m4/cpsat_seed0_t60_w8 --time-limit-sec 60 --seed 0 --num-workers 8`
+- Result: `HIT` in ~0.48s. Verifier `OK` saved as `artifacts/even_m4/cpsat_seed0_t60_w8/verify.json`; solver stats saved as `artifacts/even_m4/cpsat_seed0_t60_w8/solver_stats.json` (`OPTIMAL`, conflicts=72, branches=4886, wall_time_sec≈0.029).
+- Notes: Quick structure probe written to `artifacts/even_m4/cpsat_seed0_t60_w8/analysis.json`: vertex permutation histogram `{012:7,021:13,102:5,120:15,201:11,210:13}`; not “Claude-like” under coarse `(i∈{0,mid,m-1}, j∈{0,mid,m-1}, s∈{0,mid,m-1})` classes (19/27 classes ambiguous); only ~7.8% of vertices match the odd-`m` Claude permutation formula.
+- Decision: Proceed to `m=6` (and possibly `m=8`) with the same solver; then close E2a symmetry-count claim (136 under `ijk→jki`).
+
+### Task: E1 (even-m): CP-SAT `m=6` and `m=8` hits
+- Plan: Reuse the same CP-SAT encoding/symmetry breaking and attempt larger even `m` with recorded solver parameters and artifacts.
+- Commands: `time python -m claudescycles.even_cpsat --m 6 --out-dir artifacts/even_m6/cpsat_seed0_t120_w8 --time-limit-sec 120 --seed 0 --num-workers 8`; `time python -m claudescycles.even_cpsat --m 8 --out-dir artifacts/even_m8/cpsat_seed0_t300_w8 --time-limit-sec 300 --seed 0 --num-workers 8`
+- Result: Both runs returned `HIT` and verifier `OK` (see `artifacts/even_m6/cpsat_seed0_t120_w8/verify.json`, `artifacts/even_m8/cpsat_seed0_t300_w8/verify.json`). Solver stats saved as `solver_stats.json` in each output dir (both `OPTIMAL`).
+- Notes: Quick structure probes written as `analysis.json` in each output dir. Coarse Claude-like class ambiguity counts: `m=6` has 14 ambiguous classes; `m=8` has 16 ambiguous classes (under `(i,j,s) ∈ {0,mid,m-1}³`).
+- Decision: Treat CP-SAT solver as a reliable even-`m` certificate generator; move to E2a symmetry verification (136 count) and then deeper structure analysis/pattern search.
+
+### Task: E2a: Verify Knuth p.4 symmetry subclaims (136 under `ijk→jki`)
+- Plan: Implement a deterministic remapping for `m=3` arc masks under coordinate rotations and compute “remain generalizable” counts; archive machine-readable results.
+- Commands: `python -m claudescycles.knuth_m3_symmetry`
+- Result: Wrote `artifacts/knuth_m3/symmetry_counts.json`. Cycle-level interpretation matches the paper’s `136` number: among the `996` generalizable Hamiltonian cycles, `136` remain generalizable under `ijk→jki` (and `136` under `ijk→kij`), with `0` common to all three mappings. Decomposition-level interpretation differs: among the `760` all-generalizable decompositions, `92` map to another all-generalizable decomposition under each rotation, with `0` common to both rotations.
+- Decision: Keep both interpretations in the artifact and call out the ambiguity in the paper’s wording; proceed to packaging/commit + next analysis.

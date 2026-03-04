@@ -16,6 +16,7 @@ Replicate and extend `claude-cycles.pdf` results with reproducible scripts.
 - Additional theorem note exists: `proofs/claude_like_generalizable.md` (generalizable cycles + Claude-like theorem).
 - Review writeup exists: `README.md` (comparison vs Knuth note; formerly `REVIEW.md`).
 - Followup tracker exists: `PROBLEM-2-followup.md` (formerly `FOLLOWUP.md`).
+- CP-SAT even-`m` solver exists: `python -m claudescycles.even_cpsat --m <m> --out-dir <dir>` (uses OR-Tools `AddCircuit`).
 
 ## Latest Validated Evidence
 - Verifier rejects an intentionally invalid decomposition for `m=3` (`artifacts/invalid_all0_m3.json`).
@@ -26,13 +27,15 @@ Replicate and extend `claude-cycles.pdf` results with reproducible scripts.
 - Reproduced “generalizable” counts for `m=3` Hamiltonian cycles: `1012` lift to `m=5`; `996` lift to both `m=5` and `m=7` (matches Knuth 2026, p.4).
 - Reproduced `m=3` exact-cover decomposition counts: total `4554` decompositions; `760` decompositions using only the `996` “generalizable” cycles (matches Knuth 2026, p.4).
 - Archived feature-parity outputs in `artifacts/knuth_m3/` via `python -m claudescycles.knuth_m3 --out-dir artifacts/knuth_m3`.
+- Found a verified even-`m` decomposition for `m=4` via CP-SAT (`artifacts/even_m4/cpsat_seed0_t60_w8/solution.json`), verifier `OK` (`artifacts/even_m4/cpsat_seed0_t60_w8/verify.json`), with solver stats + quick structure probe (`solver_stats.json`, `analysis.json`).
+- Found verified even-`m` decompositions for `m=6` and `m=8` via CP-SAT, with solution + verifier + stats under `artifacts/even_m6/cpsat_seed0_t120_w8/` and `artifacts/even_m8/cpsat_seed0_t300_w8/`.
+- Symmetry counts archived: `artifacts/knuth_m3/symmetry_counts.json` (cycle-level: `136` of `996` generalizable cycles remain generalizable under `ijk→jki`; decomposition-level: `92` of `760` all-generalizable decompositions map to another such decomposition under `ijk→jki`; `0` common to both rotations in either interpretation).
 
 ## Open Questions
 - Tighten the cycle-0 Hamiltonicity argument: can we make the “block” proof fully self-contained and machine-checkable?
-- Even `m`: do decompositions exist for any even `m`? If yes, characterize the smallest solvable even `m` and search for families/invariants.
+- Even `m`: solutions exist for `m=4`; find/verify `m=6` and `m=8`, and extract structural invariants/patterns (or characterize obstructions).
 - `m=3` counting claims from the PDF: cross-check the replicated counts with an independent implementation path (and optionally verify symmetry subclaims like the `136` count under `ijk → jki`).
 
 ## Next Actions
-1. P2-03: Implement an independent cross-check for the `m=3` counts (and optionally verify symmetry subclaims).
-2. P3: Extend search/solver for even `m` (start with `m=4,6,8`) and record a failure catalog with reasons.
-3. Proof polish: refactor `proofs/claude_odd_m.md` (especially cycle 0 and cycle 2) to eliminate any remaining narrative gaps.
+1. E1 analysis: compare `m=4/6/8` CP-SAT solutions to extract invariants / propose candidate even-`m` family; add a failure/attempt catalog as we iterate.
+2. Paper parity: decide how to phrase/resolve the symmetry-count ambiguity (cycle-level vs decomposition-level) in our repo docs.

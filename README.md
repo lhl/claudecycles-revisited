@@ -47,17 +47,16 @@ what we have not yet replicated, and where our writeups may still need tightenin
   correct but uses a more descriptive orbit argument and could benefit from a similarly explicit bijection.
   The cycle 0 argument is faithful but still somewhat narrative; further tightening is possible for both
   cycle 0 and cycle 2.
-- **We reproduced Knuth's `m=3` counting + exact-cover results (except the optional symmetry subcount).**
+- **We reproduced Knuth's `m=3` counting + exact-cover results and checked the symmetry subclaim.**
   We reproduce the core paper counts `11502`, `1012`, `996`, `4554`, and `760` (Knuth 2026, p.4) with a
   single deterministic command:
   `python -m claudescycles.knuth_m3 --out-dir artifacts/knuth_m3` (see `artifacts/knuth_m3/counts.json`).
-  We have **not** yet independently verified the additional paper subclaim that `136` of those `760` remain
-  generalizable under the coordinate mapping `ijk → jki` (nor the “none common to all three mappings” claim).
-- **We also have not yet reproduced the note's small even-`m` existence claims.** Knuth reports that Filip
-  Stappers found decompositions empirically for `4 ≤ m ≤ 16` (which includes even `m`) (Knuth 2026, p.1), and
-  the note reports Claude claimed solutions for `m=4,6,8` without a general pattern (Knuth 2026, p.5). Our
-  current repo only establishes that the *odd-`m` Claude/Knuth rule* fails for even `m`, and that a
-  limited-budget CSP run did not find `m=4`.
+  Symmetry verification is archived as `artifacts/knuth_m3/symmetry_counts.json` (see “Counting results” below
+  for cycle-vs-decomposition interpretation).
+- **We reproduced small even-`m` existence with solver certificates.** Using OR-Tools CP-SAT with `AddCircuit`
+  (`claudescycles/even_cpsat.py`), we found verified decompositions for `m=4`, `m=6`, and `m=8` (artifacts under
+  `artifacts/even_m4/`, `artifacts/even_m6/`, `artifacts/even_m8/`). The general even-`m` case remains open as a
+  construction/pattern problem.
 
 ## Methodology (clean-room reimplementation)
 
@@ -327,8 +326,11 @@ Knuth's note explicitly states:
   even solutions (`m=4,6,8`) without a general construction, and that Stappers empirically found decompositions
   for `4 ≤ m ≤ 16` (Knuth 2026, pp.1,5).
 
-Our work does **not** resolve even `m`. What we have established is narrower:
+Our work now resolves **existence for small even `m`** by providing solver certificates, but it still does
+not provide a general even-`m` construction.
 
+- We found verifier-checked decompositions for `m=4`, `m=6`, and `m=8` via OR-Tools CP-SAT with `AddCircuit`
+  (see `artifacts/even_m4/`, `artifacts/even_m6/`, `artifacts/even_m8/`).
 - The specific Claude/Knuth **odd-`m` construction fails for even `m`** in `[4,100]` under our verifier
   (`artifacts/claude_scan_even_4_100.json`).
 - Our CSP/backtracking search did not find a solution for `m=4` within a limited node budget (recorded in
@@ -348,8 +350,11 @@ Knuth's note includes exact counts (Knuth 2026, p.4):
   11502 cycles).
 - **760** of those 4554 decompositions use only generalizable cycles and are therefore valid Claude-like
   decompositions for all odd `m > 1`.
-- **136** of those 760 remain generalizable under the coordinate mapping `ijk → jki`, but **none** are common
-  to all three cyclic mappings `{ijk, jki, kij}`.
+- Knuth states a symmetry subclaim involving `136` under the coordinate mapping `ijk → jki` and “none common
+  to all three mappings `{ijk, jki, kij}`” (Knuth 2026, p.4). Our verification is archived as
+  `artifacts/knuth_m3/symmetry_counts.json`: at the **cycle** level it matches `136` of the `996` generalizable
+  Hamiltonian cycles; at the **decomposition** level it yields `92` of the `760` all-generalizable
+  decompositions. In either interpretation, `0` are common to both nontrivial rotations.
 
 The "generalizable" definition uses a coordinate-collapsing map (the "s̄-mapping"; Knuth 2026, p.4): given a
 vertex `(I,J,K)` with `0 ≤ I,J,K < m`, compute `S = (I+J+K) mod m`, then collapse each coordinate to a
@@ -364,8 +369,8 @@ outputs under `artifacts/knuth_m3/` (see `artifacts/knuth_m3/counts.json`). Repr
 `python -m claudescycles.knuth_m3 --out-dir artifacts/knuth_m3`
 
 The lifting map is implemented in `claudescycles/generalize.py`, enumeration in `claudescycles/m3_cycles.py`,
-and exact-cover counting in `claudescycles/m3_decompositions.py`. The remaining paper-specific symmetry
-subclaim about `136` under `ijk → jki` is not yet independently checked.
+and exact-cover counting in `claudescycles/m3_decompositions.py`. Symmetry verification is archived as
+`artifacts/knuth_m3/symmetry_counts.json`.
 
 ## References
 
@@ -384,10 +389,9 @@ subclaim about `136` under `ijk → jki` is not yet independently checked.
 ## Recommendations / Next Steps
 
 1. **Independent cross-check of the `m=3` counts** (P2-03): implement a second, independent enumeration/counting
-   path (and optionally verify the `136` symmetry subclaim under `ijk → jki`).
-2. **Even-`m` exploration (P3):** attempt to reproduce the claimed `m=4,6,8` solutions with a solver that can
-   provide certificates (e.g., exact cover/SAT/ILP), and catalog failures and invariants. Note that `m=2` is
-   provably impossible (Aubert and Schneider, 1982) and should be excluded from search.
+   path. (Symmetry counts are already archived in `artifacts/knuth_m3/symmetry_counts.json`.)
+2. **Even-`m` exploration (P3):** move from existence to structure: compare the verifier-checked CP-SAT
+   certificates for `m=4,6,8` and search for a compact even-`m` rule family (or characterize the obstruction).
 3. **Proof polish:** refactor cycle 0's argument to remove narrative gaps and make the orbit structure explicit
    (similar to what we did for cycle 1); add a parametric bijection to the cycle 2 orbit argument to bring it
    to the same level of rigor as cycle 1.
@@ -403,9 +407,9 @@ construction and its validation:
 - The proof writeup tracks the note's proof strategy and makes two of the three cycle proofs more explicit
   (with cycle 1 fully algebraic via a parametric bijection and cycle 2 needing a tighter orbit argument).
 
-The major remaining gaps are (i) an **independent cross-check** of the `m=3` counting pipeline (and optionally
-the paper's symmetry subclaims like the `136`-count under `ijk → jki`), and (ii) substantive progress on the
-**even-`m`** case for `m ≥ 4`, which the note (and our own experiments) leave open.
+The major remaining gaps are (i) an **independent cross-check** of the `m=3` counting pipeline (we now also
+have archived symmetry-count verification in `artifacts/knuth_m3/symmetry_counts.json`), and (ii) progress on
+an **even-`m`** construction/pattern: we now have solver certificates for `m=4,6,8`, but no general family.
 
 On the **process and harness** side: our `AGENTS.md` framework successfully addressed documented failure modes
 from the original Stappers/Claude session — context loss on restart and inconsistent documentation discipline —

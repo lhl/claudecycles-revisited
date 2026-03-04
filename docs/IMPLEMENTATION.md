@@ -35,8 +35,12 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 - [x] P2-02: Reproduce generalizable subset counts and decomposition counts
 - [ ] P2-03: Cross-check counting results with an independent implementation path
 - [x] P2-04: Add proof-note + followup tracker for Knuth `m=3` results (`PROBLEM-2-followup.md`, formerly `FOLLOWUP.md`)
+- [x] P2-05: Verify Knuth p.4 symmetry subclaims (see `artifacts/knuth_m3/symmetry_counts.json`)
 - [ ] P3-01: Build even-`m` hypothesis backlog and prioritization
 - [ ] P3-02: Run iterative even-`m` exploration loop (correctness + benchmark)
+- [x] P3-02a: CP-SAT `m=4` HIT (artifacts under `artifacts/even_m4/cpsat_seed0_t60_w8/`)
+- [x] P3-02b: CP-SAT `m=6` HIT (artifacts under `artifacts/even_m6/cpsat_seed0_t120_w8/`)
+- [x] P3-02c: CP-SAT `m=8` HIT (artifacts under `artifacts/even_m8/cpsat_seed0_t300_w8/`)
 - [ ] P3-03: Maintain failure catalog with reasons and rejected families
 - [ ] P4-01: Produce final replication-and-extension report (what holds, what is open, next bets)
 
@@ -69,3 +73,9 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 - `python -m claudescycles.knuth_m3 --out-dir artifacts/knuth_m3` -> OK; outputs written under `artifacts/knuth_m3/`
 - `apply_patch` to add `proofs/claude_like_generalizable.md` -> success
 - `apply_patch` to add `FOLLOWUP.md` -> success (renamed to `PROBLEM-2-followup.md`)
+- `python -m claudescycles.verify --input artifacts/claude_m5.json` -> OK (baseline revalidation)
+- `python -m claudescycles.knuth_m3 --out-dir artifacts/knuth_m3` -> OK (baseline revalidation)
+- `python -m claudescycles.even_cpsat --m 4 --out-dir artifacts/even_m4/cpsat_seed0_t60_w8 --time-limit-sec 60 --seed 0 --num-workers 8` -> HIT; verifier OK (`artifacts/even_m4/cpsat_seed0_t60_w8/verify.json`)
+- `python -m claudescycles.even_cpsat --m 6 --out-dir artifacts/even_m6/cpsat_seed0_t120_w8 --time-limit-sec 120 --seed 0 --num-workers 8` -> HIT; verifier OK (`artifacts/even_m6/cpsat_seed0_t120_w8/verify.json`)
+- `python -m claudescycles.even_cpsat --m 8 --out-dir artifacts/even_m8/cpsat_seed0_t300_w8 --time-limit-sec 300 --seed 0 --num-workers 8` -> HIT; verifier OK (`artifacts/even_m8/cpsat_seed0_t300_w8/verify.json`)
+- `python -m claudescycles.knuth_m3_symmetry` -> wrote symmetry counts (`artifacts/knuth_m3/symmetry_counts.json`)

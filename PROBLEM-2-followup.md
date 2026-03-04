@@ -8,9 +8,10 @@ Canonical source: `claude-cycles.pdf` (see also `references/claude-cycles.md` an
 ## Executive Summary (current status)
 
 - Odd-`m` construction from the note is implemented (`claudescycles/claude.py`) and validated for odd `m` in `[3,101]`.
-- The construction fails on even `m` (as expected; even case remains open in the note).
+- The odd-`m` construction fails on even `m` (as expected); even-`m` existence is now verified for `m=4,6,8` via solver certificates, but no general even-`m` construction is known.
 - Proof writeup exists for the odd-`m` construction: `proofs/claude_odd_m.md`.
 - Paper-count “feature parity” for `m=3` is now implemented and reproduced with artifacts under `artifacts/knuth_m3/`.
+- Symmetry-count verification is archived as `artifacts/knuth_m3/symmetry_counts.json` (see note in `README.md` about interpretation).
 - Review/crosswalk exists: `README.md` (paper pages + code line references).
 
 ## Repro Commands (one-liners)
@@ -21,6 +22,8 @@ Canonical source: `claude-cycles.pdf` (see also `references/claude-cycles.md` an
   - even: `python -m claudescycles.scan --family claude --m-min 4 --m-max 100 --step 2 --out artifacts/claude_scan_even_4_100.json`
 - Reproduce Knuth’s `m=3` counting + exact-cover results:
   - `python -m claudescycles.knuth_m3 --out-dir artifacts/knuth_m3`
+- Verify the `m=3` symmetry subclaim counts:
+  - `python -m claudescycles.knuth_m3_symmetry`
 
 ## Paper parity checklist
 
@@ -56,9 +59,9 @@ Artifacts:
 ## What remains open / not yet replicated
 
 - Independent cross-check path for the `m=3` counts (currently a single implementation pipeline).
-- Even-`m` general case: the note reports existence for small even `m` but no general construction; we have not yet
-  reproduced explicit even-`m` solutions with certificates.
-- Optional parity items from the note’s discussion (symmetry behaviors, “nicest” decompositions, etc.).
+- Even-`m` general case: solver certificates now exist for `m=4,6,8` (see `artifacts/even_m4/`, `artifacts/even_m6/`,
+  `artifacts/even_m8/`), but no general even-`m` construction/pattern is known.
+- Optional parity items from the note’s discussion (“nicest” decompositions, etc.).
 
 ## Where to look next
 
