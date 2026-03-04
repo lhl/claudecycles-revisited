@@ -1,24 +1,20 @@
 # CONTEXT CAPSULE
 
 ## Objective
-Replicate and extend `claude-cycles.pdf` results with reproducible scripts.
+Solve the `G_m` arc decomposition problem (see `PROBLEM.md`) with reproducible scripts and proofs.
 
 ## Current Best Known
-- AGENTS/process scaffolding created.
+- Workflow scaffolding created.
 - Starter punchlist and worklog initialized.
-- Problem split created:
-  - `PROBLEM.md` for replication-only mode
-  - `PROBLEM2.md` for extension mode after baseline replication
 
 ## Latest Validated Evidence
-- None yet in this capsule (bootstrap only).
+- None yet (bootstrap only).
 
 ## Open Questions
-- Best script architecture for verifier/counting/search loops.
-- Feasible strategy for reproducing `m=3` count claims efficiently.
+- Best script architecture for verifier/search/solver loops.
+- Which solver approach is most promising for initial small-`m` discovery (CSP, SAT, ILP, backtracking).
 
 ## Next Actions
 1. Implement deterministic decomposition verifier script.
-2. Run baseline replication using `PROBLEM.md` only (with `PROBLEM2.md` and PDF removed from context).
+2. Build search/solver tooling for small `m` (start with `m=3`).
 3. Store artifacts and update punchlist statuses.
-4. Re-introduce `PROBLEM2.md` for extension loop once baseline is reproduced.

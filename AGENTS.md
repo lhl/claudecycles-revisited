@@ -5,7 +5,7 @@ If this file conflicts with higher-priority platform instructions, follow the hi
 
 ## Mission
 
-Replicate and extend the results in `claude-cycles.pdf` with reproducible code, verifiable outputs, and durable project memory.
+Solve the directed graph decomposition problem defined in `PROBLEM.md` with reproducible code, verifiable outputs, and durable project memory.
 
 ## Working Style
 
@@ -15,6 +15,17 @@ We do require:
 - persistent worklog memory
 - measurable validation
 - tight iterate-validate-document loops
+
+## Available Tools and Libraries
+
+The following solver/constraint libraries are installed and available for use:
+
+- **z3** (Z3 theorem prover / SMT solver)
+- **pysat** (SAT solver toolkit)
+- **ortools** (Google OR-Tools, including CP-SAT constraint solver with `AddCircuit`)
+- **pulp** (LP/MIP solver interface)
+
+Standard scientific Python is also available (numpy, scipy, networkx, etc.).
 
 ## Shared Repo Safety (Must Follow)
 
@@ -84,7 +95,7 @@ For optimization work, always follow:
 
 ## Claim Integrity (Done Means Proven)
 
-Any claim of "done", "solved", "replicated", or "improved" must include all three:
+Any claim of "done", "solved", or "improved" must include all three:
 
 - test/verification evidence (exact command + outcome)
 - runtime/algorithm evidence (what path/rule was exercised)
@@ -101,22 +112,21 @@ Avoid overclaiming; scope statements to tested ranges and conditions.
   - `git diff --staged`
 - Use conventional commit style when possible (`feat:`, `fix:`, `docs:`, `test:`, `refactor:`).
 
-## Initial Punchlist Template (Replicate + Extend)
+## Initial Punchlist Template (Discover + Prove)
 
 Seed `docs/IMPLEMENTATION.md` with this checklist and track progress there:
 
 - [ ] P0: Repository bootstrap
 - [ ] P0: Create/verify `docs/IMPLEMENTATION.md`, `WORKLOG.md`, `state/CONTEXT.md`
 - [ ] P0: Add deterministic verifier script for cycle decomposition validity
-- [ ] P1: Reproduce odd-`m` validity results over a defined range
-- [ ] P1: Reproduce known failure behavior on even `m` for the current construction
-- [ ] P1: Archive reproduction outputs under `artifacts/` with command provenance
-- [ ] P2: Reproduce paper combinatorial counts (`m=3` Hamiltonian cycle counts and generalizable subsets)
-- [ ] P2: Cross-check counts with independent code paths
-- [ ] P3: Even-`m` exploration loop with hypothesis tracking
+- [ ] P1: Build search/solver tooling to find decompositions for small `m`
+- [ ] P1: Discover valid decompositions and candidate construction patterns
+- [ ] P1: Archive outputs under `artifacts/` with command provenance
+- [ ] P2: Generalize candidate patterns and validate over broad `m` ranges
+- [ ] P2: Investigate both odd and even `m` cases
+- [ ] P3: Attempt a formal proof (or clearly scoped partial proof) in `proofs/`
 - [ ] P3: Catalog failed constructions and failure modes (not just successes)
-- [ ] P3: Identify and test candidate generalization families for even `m`
-- [ ] P4: Write final summary of replicated facts, open conjectures, and next experiments
+- [ ] P4: Write final summary of proven facts, open conjectures, and next experiments
 
 ## Worklog Entry Format
 

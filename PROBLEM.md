@@ -1,6 +1,4 @@
-# PROBLEM (Replication Input)
-
-Source context: Donald E. Knuth, "Claude's Cycles" (dated 2026-02-28, revised 2026-03-02).
+# PROBLEM
 
 Given an integer `m > 2`, define a directed graph `G_m` with vertex set `Z_m^3`:
 
@@ -20,7 +18,8 @@ Equivalent requirements:
 - The three cycles are arc-disjoint.
 - Their union is exactly the full arc set of `G_m` (all `3m^3` arcs).
 
-Replication mode guidance:
+Notes:
 
-- Use this file as the primary problem statement for blind replication runs.
-- Keep extension hints and prior solution details out of scope during pure replication.
+- The case `m=2` has been proven impossible (Aubert and Schneider, 1982).
+- It is known that decompositions exist for small even `m` (at least `m=4` through `m=16`), but no general construction is known for even `m`.
+- The problem is open for both odd and even `m`.
