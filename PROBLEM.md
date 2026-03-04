@@ -22,4 +22,3 @@ Notes:
 
 - The case `m=2` has been proven impossible (Aubert and Schneider, 1982).
 - It is known that decompositions exist for small even `m` (at least `m=4` through `m=16`), but no general construction is known for even `m`.
-- The problem is open for both odd and even `m`.
