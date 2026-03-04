@@ -47,17 +47,95 @@ what we have not yet replicated, and where our writeups may still need tightenin
   correct but uses a more descriptive orbit argument and could benefit from a similarly explicit bijection.
   The cycle 0 argument is faithful but still somewhat narrative; further tightening is possible for both
   cycle 0 and cycle 2.
-- **We have not yet replicated Knuth's counting results.** The note gives exact counts for `m=3`
-  (Knuth 2026, p.4): `11502` total Hamiltonian cycles, of which `1012` generalize to Hamiltonian cycles
-  for `m=5`, and `996` generalize to all odd `m > 1`; `4554` total decompositions of `G_3`, of which `760`
-  use only generalizable cycles (and therefore are valid Claude-like decompositions for all odd `m > 1`).
-  It further notes that `136` of those `760` remain generalizable under the coordinate mapping `ijk → jki`,
-  but none are common to all three cyclic mappings `{ijk, jki, kij}`. Those are still on our punchlist (P2).
+- **We reproduced Knuth's `m=3` counting + exact-cover results (except the optional symmetry subcount).**
+  We reproduce the core paper counts `11502`, `1012`, `996`, `4554`, and `760` (Knuth 2026, p.4) with a
+  single deterministic command:
+  `python -m claudescycles.knuth_m3 --out-dir artifacts/knuth_m3` (see `artifacts/knuth_m3/counts.json`).
+  We have **not** yet independently verified the additional paper subclaim that `136` of those `760` remain
+  generalizable under the coordinate mapping `ijk → jki` (nor the “none common to all three mappings” claim).
 - **We also have not yet reproduced the note's small even-`m` existence claims.** Knuth reports that Filip
   Stappers found decompositions empirically for `4 ≤ m ≤ 16` (which includes even `m`) (Knuth 2026, p.1), and
   the note reports Claude claimed solutions for `m=4,6,8` without a general pattern (Knuth 2026, p.5). Our
   current repo only establishes that the *odd-`m` Claude/Knuth rule* fails for even `m`, and that a
   limited-budget CSP run did not find `m=4`.
+
+## Methodology (clean-room reimplementation)
+
+This repository began as an experiment in **clean-room reimplementation**: implement a verifier, search
+tooling, broad validation, and a proof writeup for the `G_m` decomposition problem starting only from
+`PROBLEM.md`, using **Codex + GPT-5.2 (`xhigh`)** and an improved execution harness in `AGENTS.md`.
+
+The initial run (commit `3751296`) was an autonomous, one-shot implementation driven by a single
+prompt and the logging/punchlist discipline in `AGENTS.md`. The intent was to start clean-room (only
+`PROBLEM.md` + the prompt; the Knuth note was **not checked into this repo**). However, the clean-room
+boundary had a significant leak:
+
+> **Path restriction gap:** The interactive setup sessions that preceded the autonomous run created
+> `state/CONTEXT.md` and `docs/IMPLEMENTATION.md`, both of which explicitly reference
+> `claude-cycles.pdf` as the "primary source." Meanwhile, an out-of-repo copy of the PDF sat one
+> directory up at `../claude-cycles.pdf`. The model therefore **knew** the paper existed and had enough
+> context to go looking for it from the very first token of the autonomous run — only the repo working
+> tree was "clean."
+
+**Timeline from session analysis (UTC, 2026-03-04):**
+
+| Time | Event |
+|---|---|
+| 19:00:51 | Autonomous phase starts — builds verifier, CSP solver |
+| 19:27–19:30 | CSP finds valid `m=3` but fails on `m=5` (200K nodes explored) |
+| 19:30:58 | Checks for z3, pysat, ortools, pulp — none installed |
+| **19:31:14** | `find .. -maxdepth 2 -name "*claude*cycles*.pdf"` — searches parent directory |
+| 19:31:24 | `pdftotext -layout ../claude-cycles.pdf` — reads the full paper |
+| 19:33:40 | Already compiling `claude.py` (the Knuth construction) |
+
+The truly independent clean-room window was therefore **~30 minutes** (19:00:51 to 19:31:14), not the
+full ~6 hours of Phase 0 wall time. (Phase 0 active time was ~47 minutes per session analysis, consistent
+with the ~45 minutes shown in the Codex UI.) The model’s decision to search was rational given its context: the setup
+session’s memory files told it `claude-cycles.pdf` existed, the CSP solver had just exhausted its scaling
+budget, and no SAT/ILP solvers were available. It searched the parent directory, found the PDF, and
+pivoted to implementing the known construction within two minutes.
+
+This is an interesting finding in itself: it demonstrates that **clean-room isolation requires strict
+path sandboxing**, not just omitting files from the repo. The model’s ability to `find` files outside
+the working tree made the clean-room boundary porous. A future clean-room experiment would need to
+either (a) remove the reference paper from reachable paths entirely, or (b) use filesystem-level
+sandboxing to prevent traversal above the repo root.
+
+For reproducibility, the PDF and `pdftotext` extracts were later added to the repo (commit `fe26f6a`), at which
+point we wrote the review (now `README.md`) and then closed the remaining paper-parity gaps tracked in
+[PROBLEM-2-followup.md](PROBLEM-2-followup.md).
+
+### Harness highlights
+
+- Deterministic verification first: `claudescycles/verify.py`
+- Durable memory + checkpoints: `WORKLOG.md`, `docs/IMPLEMENTATION.md`, `state/CONTEXT.md`
+- Machine-readable evidence: `artifacts/`
+
+### PROBLEM-1 prompt (verbatim)
+
+Verbatim copy of `PROBLEM-1-prompt.md`:
+
+```text
+Goal:
+1) Build code to search/verify decompositions of the directed graph in `PROBLEM.md`.
+2) Produce a rigorous proof (or clearly scoped partial proof) of your discovered construction.
+
+Requirements:
+- Follow `AGENTS.md` strictly (worklog/memory/checkpoint discipline).
+- Start by creating deterministic verification code that checks:
+  - each of 3 cycles is Hamiltonian (length m^3),
+  - cycles are arc-disjoint,
+  - union covers all arcs.
+- Then build search tooling for small m to discover candidate patterns.
+- Generalize candidate patterns and validate over broad ranges.
+- Attempt a formal proof in a `proofs/` document with theorem/lemmas.
+- If full proof fails, provide the strongest partial theorem with explicit unresolved lemmas.
+- Record exact commands/results in `WORKLOG.md` and punchlist progress in `docs/IMPLEMENTATION.md`.
+- Save machine-readable outputs in `artifacts/`.
+
+Success criteria:
+- Reproducible code + reproducible evidence + proof document (full or clearly bounded partial).
+```
 
 ## What Knuth's note does (technical content recap)
 
@@ -118,9 +196,12 @@ Our repo is a *reproducible replication and extension workflow*, guided by a str
    philosophically aligned with Stappers' "document every run" requirement, but implemented in a restart-safe,
    version-controlled way.
 
-This means our process had two distinct phases: **independent discovery** (steps 1–3, where we rediscovered a
-valid `m=3` instance but could not scale) and **informed replication** (steps 4–7, where we implemented and
-validated the known construction after consulting the reference).
+This means our process had two distinct phases: **independent discovery** (steps 1–3, ~30 minutes of
+autonomous work where we rediscovered a valid `m=3` instance but could not scale) and **informed
+replication** (steps 4–7, the remaining ~5.5 hours of Phase 0, where we implemented and validated the
+known construction after consulting the reference). The transition was triggered by the CSP solver's
+scaling failure and the absence of stronger solvers, at which point the model searched for — and found —
+`claude-cycles.pdf` in the parent directory (see "Methodology" above for exact timestamps).
 
 #### How the AGENTS.md harness shaped the work
 
@@ -147,13 +228,17 @@ discipline** (our `AGENTS.md` makes logging non-negotiable and specifies the exa
 The harness was designed for **rigorous replication**, not **open-ended discovery**. It did not lead to an
 independent rediscovery of the odd-`m` construction beyond `m=3`. The CSP solver found a valid `m=3` instance
 but could not scale — the search space grows as `6^(m^3)` and the constraint propagation was insufficient to
-prune it for `m ≥ 4`.
+prune it for `m ≥ 4`. Critically, **the harness did not enforce path-level isolation**: the model could (and
+did) traverse above the repo root to find `../claude-cycles.pdf` after only 30 minutes of independent work
+(see "Methodology" above). The clean-room intent was undermined by the setup session's memory files referencing
+the paper and the absence of filesystem sandboxing.
 
 By contrast, Stappers' lightweight coaching approach (a natural-language problem statement plus a logging
 requirement) gave Claude the freedom to explore creative strategies — fiber decompositions, simulated annealing,
 pattern extraction — that ultimately led to the breakthrough at exploration 31. A discovery-oriented harness
 might supplement the `AGENTS.md` verification infrastructure with prompts for creative reframing, hypothesis
-generation, and structured exploration of the strategy space.
+generation, and structured exploration of the strategy space — and, if clean-room isolation is desired, enforce
+strict filesystem boundaries to prevent the model from accessing reference materials prematurely.
 
 ### Construction comparison (does our code match Knuth's program?)
 
@@ -273,9 +358,14 @@ vertex `(I,J,K)` with `0 ≤ I,J,K < m`, compute `S = (I+J+K) mod m`, then colla
 `m=3` cycle bumps at `(ī, j̄, k)`. A cycle is "generalizable" if this process yields a Hamiltonian cycle for
 all odd `m ≥ 3`.
 
-We have **not yet** reproduced any of these counts. That is the largest "technical gap" relative to the note.
-Reproducing them requires implementing the s̄-mapping, enumerating all `m=3` Hamiltonian cycles, testing
-generalizability, and then solving exact cover instances.
+We have reproduced the core counts `11502`, `1012`, `996`, `4554`, and `760` and archived machine-readable
+outputs under `artifacts/knuth_m3/` (see `artifacts/knuth_m3/counts.json`). Reproduction entrypoint:
+
+`python -m claudescycles.knuth_m3 --out-dir artifacts/knuth_m3`
+
+The lifting map is implemented in `claudescycles/generalize.py`, enumeration in `claudescycles/m3_cycles.py`,
+and exact-cover counting in `claudescycles/m3_decompositions.py`. The remaining paper-specific symmetry
+subclaim about `136` under `ijk → jki` is not yet independently checked.
 
 ## References
 
@@ -293,11 +383,8 @@ generalizability, and then solving exact cover instances.
 
 ## Recommendations / Next Steps
 
-1. **Reproduce the `m=3` counting/exact-cover section** (P2): first implement the s̄-mapping
-   (coordinate-collapsing map from Knuth 2026, p.4) as a prerequisite; then enumerate all `m=3` Hamiltonian
-   cycles, define "generalizable" exactly as in the note, test generalizability for `m=5` and `m=7`, and
-   reproduce the exact cover counts (`11502`, `1012`, `996`, `4554`, `760`, `136`). Archive results as
-   `artifacts/*.json` with command provenance.
+1. **Independent cross-check of the `m=3` counts** (P2-03): implement a second, independent enumeration/counting
+   path (and optionally verify the `136` symmetry subclaim under `ijk → jki`).
 2. **Even-`m` exploration (P3):** attempt to reproduce the claimed `m=4,6,8` solutions with a solver that can
    provide certificates (e.g., exact cover/SAT/ILP), and catalog failures and invariants. Note that `m=2` is
    provably impossible (Aubert and Schneider, 1982) and should be excluded from search.
@@ -316,13 +403,25 @@ construction and its validation:
 - The proof writeup tracks the note's proof strategy and makes two of the three cycle proofs more explicit
   (with cycle 1 fully algebraic via a parametric bijection and cycle 2 needing a tighter orbit argument).
 
-The two major remaining gaps are (i) reproduction of Knuth's **`m=3` counting / exact-cover** results (including
-the s̄-mapping, generalizability testing, and exact cover enumeration) and (ii) substantive progress on the
+The major remaining gaps are (i) an **independent cross-check** of the `m=3` counting pipeline (and optionally
+the paper's symmetry subclaims like the `136`-count under `ijk → jki`), and (ii) substantive progress on the
 **even-`m`** case for `m ≥ 4`, which the note (and our own experiments) leave open.
 
 On the **process and harness** side: our `AGENTS.md` framework successfully addressed documented failure modes
 from the original Stappers/Claude session — context loss on restart and inconsistent documentation discipline —
-and produced a rigorous, reproducible evidence trail. However, the harness was optimized for replication rather
-than open-ended discovery: the independent search phase found `m=3` but could not scale, and the agent consulted
-the reference paper to proceed. A future iteration might combine the `AGENTS.md` verification infrastructure
-with more discovery-oriented prompting strategies to support both rigorous validation and creative exploration.
+and produced a rigorous, reproducible evidence trail. However, session analysis revealed a significant gap: the
+clean-room boundary was porous. The setup session's memory files (`state/CONTEXT.md`, `docs/IMPLEMENTATION.md`)
+referenced `claude-cycles.pdf`, and the model could traverse to `../claude-cycles.pdf` outside the repo. It did
+so after only **~30 minutes** of independent work (at 19:31:14 UTC), triggered by CSP scaling failure and the
+absence of SAT/ILP solvers. The independent search phase found `m=3` but the model rationally pivoted to the
+known construction rather than continuing to explore. The PDF was later checked into the repo for
+reproducibility (commit `fe26f6a`). A future clean-room experiment would require filesystem-level sandboxing,
+and a future discovery-oriented iteration might combine the `AGENTS.md` verification infrastructure with
+creative exploration strategies to support both rigorous validation and open-ended search.
+
+## PROBLEM-2 followup (paper gap closure)
+
+See [PROBLEM-2-followup.md](PROBLEM-2-followup.md) for the structured follow-up: we used this README-level
+review to identify gaps versus Knuth's note (notably the `m=3` counting/exact-cover results), then implemented
+those missing components and archived machine-readable outputs under `artifacts/knuth_m3/`. The followup file
+also tracks what remains open (even `m`, independent cross-checks, and proof polishing).
