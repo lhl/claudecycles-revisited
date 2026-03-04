@@ -47,8 +47,7 @@ Hamiltonian cycles for even `m ≥ 4`, or to prove impossibility for specific ev
 
 **Phase 1: Find `m=4` with a strong solver.**
 
-- Install `z3-solver` or `ortools` (currently not available; `scipy.optimize.milp` is available but less
-  suited to combinatorial search).
+- Use `z3-solver` or `ortools` CP-SAT (both installed).
 - Encode the decomposition problem as SAT or CP-SAT:
   - Variables: at each vertex `v`, a choice of permutation `σ(v) ∈ S_3` (6 choices → can encode as 3 bits
     or use CP-SAT's integer domain).
@@ -162,11 +161,11 @@ independently written code) to confirm `11502`, `1012`, `996`, `4554`, `760`.
 4. **E2b** (classification of 760) — interesting but lower priority.
 5. **E4** (stretch goals) — only after E1–E3.
 
-## Solver installation note
+## Solver availability
 
-As of session start, no SAT/CP-SAT/ILP solver is installed:
-- `z3`, `pysat`, `ortools`, `pulp`: all missing.
-- `scipy.optimize.milp`: available but not well-suited to combinatorial constraints.
+- `z3-solver`: **installed** ✓
+- `ortools` (CP-SAT): **installed** ✓
+- `scipy.optimize.milp`: available (less suited to combinatorial search)
 
-For E1, **install a solver first**. Recommended: `pip install z3-solver` or
-`pip install ortools` (Google's CP-SAT is excellent for this class of problem).
+Both recommended solvers are ready for E1. CP-SAT (`ortools`) is likely the best fit
+for the subcycle-elimination constraints in the decomposition problem.
