@@ -55,3 +55,15 @@
 - Commands: `apply_patch` to add `proofs/claude_odd_m.md`; `apply_patch` to add `PROBLEM2.md`
 - Result: Proof document written with theorem + lemmas for cycles 0–2 (odd `m`) and an explicit note that the construction fails for even `m`. Extension brief restored and points to code + artifacts.
 - Decision: Next: tighten any proof gaps found during review; then consolidate final repo status in `docs/IMPLEMENTATION.md` and `state/CONTEXT.md`.
+
+### Task: Compare repo against Knuth note; write `REVIEW.md`
+- Plan: Read `claude-cycles.pdf`, cross-check our code/artifacts/proof against Knuth’s construction + claims, and write an executive-summary review with explicit gaps.
+- Commands: `pdftotext -layout claude-cycles.pdf - | sed -n '1,120p'`; `pdftotext -layout claude-cycles.pdf /tmp/claude-cycles.txt`; `rg -n \"Appendix|Cycle 1|Cycle 2|Hamiltonian|Lemma|Theorem|bump\" /tmp/claude-cycles.txt | head -n 80`; `sed -n '145,230p' /tmp/claude-cycles.txt`; `sed -n '220,320p' /tmp/claude-cycles.txt`; `sed -n '1,220p' claudescycles/claude.py`; `sed -n '1,240p' claudescycles/verify.py`; `sed -n '1,260p' proofs/claude_odd_m.md`
+- Result: Added `REVIEW.md` summarizing alignment (odd-`m` rule + proof strategy + scan range) and enumerating remaining gaps (even-`m` recovery/certificates; `m=3` counting + exact cover reproduction).
+- Decision: Keep. Next: implement P2 counting results and strengthen even-`m` search to recover known small cases with certificates.
+
+### Task: Add paper + extracted text/MD + citation pass in `REVIEW.md`
+- Plan: Check in `claude-cycles.pdf`, store deterministic `pdftotext` extractions for fast grep/LLM ingestion, and add page/code-line references throughout `REVIEW.md`.
+- Commands: `pdfinfo claude-cycles.pdf`; `pdftotext -layout claude-cycles.pdf references/claude-cycles.txt`; `pdftotext -raw claude-cycles.pdf references/claude-cycles.raw.txt`; `python - <<'PY' ... PY` (writes `references/claude-cycles.md`); `nl -ba claudescycles/claude.py | sed -n '1,120p'`; `nl -ba claudescycles/verify.py | sed -n '1,260p'`; `nl -ba claudescycles/scan.py | sed -n '1,220p'`; `nl -ba claudescycles/search.py | sed -n '1,120p'`
+- Result: `references/` now contains stable text/markdown extracts; `REVIEW.md` now cites paper pages and key code entrypoints with line numbers.
+- Decision: Keep; commit these sources + review updates as a single logical unit.

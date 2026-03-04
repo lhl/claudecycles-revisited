@@ -10,8 +10,9 @@ Replicate and extend `claude-cycles.pdf` results with reproducible scripts.
   - `PROBLEM.md` for replication-only mode
   - `PROBLEM2.md` for extension mode after baseline replication
 - Deterministic verifier implemented: `python -m claudescycles.verify --input <json>`
-- `claude-cycles.pdf` (one directory up) contains an explicit construction for odd `m` plus proof sketches.
+- `claude-cycles.pdf` (repo root) contains an explicit construction for odd `m` plus proof sketches; `pdftotext` extracts live in `references/`.
 - Proof writeup exists: `proofs/claude_odd_m.md`.
+- Review writeup exists: `REVIEW.md` (comparison vs Knuth note).
 
 ## Latest Validated Evidence
 - Verifier rejects an intentionally invalid decomposition for `m=3` (`artifacts/invalid_all0_m3.json`).
