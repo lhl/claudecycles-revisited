@@ -73,11 +73,29 @@ python3 analyze_sessions.py --project-filter claudescycles --json | \
   jq '.[] | {tool, session_id: .session_id[:12], wall: .wall_seconds}'
 ```
 
+## Archived Codex Sessions
+
+Raw session JSONLs are archived in `codex-sessions/` for posterity and future analysis.
+Each file is a complete event log (metadata, prompts, model responses, tool calls, token counts).
+
+| Session ID | File | Duration | Summary |
+|---|---|---|---|
+| `019cb4f4` | `rollout-...-019cb4f4-...jsonl` (436K) | 30m | **Setup**: Read Knuth's PDF, surveyed AGENTS.md patterns from other repos, built project scaffolding (`AGENTS.md`, `PROBLEM.md`, `state/CONTEXT.md`, `docs/IMPLEMENTATION.md`) |
+| `019cb512` | `rollout-...-019cb512-...jsonl` (4.6M) | 18h 11m | **Replication**: One-shot autonomous implementation (verifier, CSP, odd-`m` construction, proofs), review writing, followup gap filling, README accuracy pass. 18 phases, 392 tool calls, 41.2M tokens |
+| `019cb877` | `rollout-...-019cb877-...jsonl` (906K) | 26m | **Extension**: CP-SAT even-`m` solver (found m=4,6,8), symmetry verification (136/0 counts). 79 tool calls, 8.2M tokens |
+
+Two short-lived sessions (019cb4f1, 019cb510) were aborted false starts and are not archived.
+
 ## Session Data Locations
 
-### Codex CLI
+### Codex CLI (live)
 ```
 ~/.codex/sessions/2026/03/04/rollout-*.jsonl
+```
+
+### Codex CLI (archived)
+```
+session-analysis/codex-sessions/rollout-*.jsonl
 ```
 
 ### Claude Code
