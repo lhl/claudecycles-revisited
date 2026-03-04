@@ -7,7 +7,7 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 ## Baseline
 
 - Primary source: `claude-cycles.pdf`
-- Current status: odd-`m` construction + proof replicated; `m=3` counting/exact-cover parity achieved; even-`m` remains open; independent cross-check pending (P2-03)
+- Current status: odd-`m` construction + proof replicated; `m=3` counting/exact-cover parity achieved; even-`m` existence certificates found for `m=4,6,8` (general even-`m` construction remains open); independent cross-check pending (P2-03)
 - Evidence policy: every completed item must cite exact command(s) and outcomes
 - Problem control files: `PROBLEM.md` (replication), `PROBLEM-3-extension.md` (extension)
 
@@ -42,6 +42,7 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 - [x] P3-02b: CP-SAT `m=6` HIT (artifacts under `artifacts/even_m6/cpsat_seed0_t120_w8/`)
 - [x] P3-02c: CP-SAT `m=8` HIT (artifacts under `artifacts/even_m8/cpsat_seed0_t300_w8/`)
 - [ ] P3-03: Maintain failure catalog with reasons and rejected families
+- [x] P4-00: Add README update section for extensions beyond the note
 - [ ] P4-01: Produce final replication-and-extension report (what holds, what is open, next bets)
 
 ## Deferrals

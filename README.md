@@ -58,6 +58,28 @@ what we have not yet replicated, and where our writeups may still need tightenin
   `artifacts/even_m4/`, `artifacts/even_m6/`, `artifacts/even_m8/`). The general even-`m` case remains open as a
   construction/pattern problem.
 
+## Update (extensions beyond the note)
+
+After reaching paper parity (odd-`m` construction/proofs and `m=3` counting/exact-cover), we extended the repo in
+two directions that go beyond what is explicitly *available* in the note as a reproducible artifact:
+
+1. **Even-`m` solver-backed certificates (existence for small even `m`).** We implemented
+   `claudescycles/even_cpsat.py` (OR-Tools CP-SAT) and archived verifier-checked decompositions:
+   - `m=4`: `artifacts/even_m4/cpsat_seed0_t60_w8/verify.json` (`ok: true`)
+   - `m=6`: `artifacts/even_m6/cpsat_seed0_t120_w8/verify.json` (`ok: true`)
+   - `m=8`: `artifacts/even_m8/cpsat_seed0_t300_w8/verify.json` (`ok: true`)
+
+   Each directory also includes `solution.json` (the decomposition), `solver_stats.json`, and a small
+   `analysis.json` probe. These probes suggest the even-`m` solutions are **not** a trivial extension of the
+   odd-`m` Claude/Knuth rule (e.g., for `m=4`, only `5/64` vertices match the odd-`m` permutation formula; see
+   `artifacts/even_m4/cpsat_seed0_t60_w8/analysis.json`).
+
+2. **Symmetry-claim disambiguation (`m=3`, the “136” number).** We implemented
+   `claudescycles/knuth_m3_symmetry.py` and archived `artifacts/knuth_m3/symmetry_counts.json`, which reports
+   both interpretations that Knuth’s p.4 wording plausibly permits: `136` at the **cycle** level (subset of the
+   `996` generalizable cycles) and `92` at the **decomposition** level (subset of the `760` all-generalizable
+   decompositions), with `0` common to both nontrivial coordinate rotations in either interpretation.
+
 ## Methodology (clean-room reimplementation)
 
 This repository began as an experiment in **clean-room reimplementation**: implement a verifier, search
