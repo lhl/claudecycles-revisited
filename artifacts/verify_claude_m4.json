@@ -1,0 +1,10 @@
+{
+  "errors": [
+    "cycle 0 is not Hamiltonian: repeats vertex 0 at step 8",
+    "cycle 1 is not Hamiltonian: repeats vertex 0 at step 32",
+    "cycle 2 is not Hamiltonian: repeats vertex 0 at step 16"
+  ],
+  "m": 4,
+  "n_vertices": 64,
+  "ok": false
+}

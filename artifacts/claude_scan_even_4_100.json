@@ -1,0 +1,500 @@
+{
+  "family": "claude",
+  "params": {
+    "m_max": 100,
+    "m_min": 4,
+    "step": 2
+  },
+  "rows": [
+    {
+      "elapsed_sec": 6.49522989988327e-05,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 8",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 32",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 16"
+      ],
+      "m": 4,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.00011495687067508698,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 18",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 54",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 54"
+      ],
+      "m": 6,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.00028198398649692535,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 32",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 256",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 128"
+      ],
+      "m": 8,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.0004762113094329834,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 50",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 250",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 250"
+      ],
+      "m": 10,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.0008457191288471222,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 72",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 864",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 432"
+      ],
+      "m": 12,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.0012809531763195992,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 98",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 686",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 686"
+      ],
+      "m": 14,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.001994973048567772,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 128",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 2048",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 1024"
+      ],
+      "m": 16,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.0028175078332424164,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 162",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 1458",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 1458"
+      ],
+      "m": 18,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.004082169849425554,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 200",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 4000",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 2000"
+      ],
+      "m": 20,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.005081591196358204,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 242",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 2662",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 2662"
+      ],
+      "m": 22,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.006985662039369345,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 288",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 6912",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 3456"
+      ],
+      "m": 24,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.008505915757268667,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 338",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 4394",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 4394"
+      ],
+      "m": 26,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.013139900285750628,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 392",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 10976",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 5488"
+      ],
+      "m": 28,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.014537704177200794,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 450",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 6750",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 6750"
+      ],
+      "m": 30,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.017175031825900078,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 512",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 16384",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 8192"
+      ],
+      "m": 32,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.020313305780291557,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 578",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 9826",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 9826"
+      ],
+      "m": 34,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.025105048902332783,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 648",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 23328",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 11664"
+      ],
+      "m": 36,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.02688427409157157,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 722",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 13718",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 13718"
+      ],
+      "m": 38,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.03391333809122443,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 800",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 32000",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 16000"
+      ],
+      "m": 40,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.03762709069997072,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 882",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 18522",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 18522"
+      ],
+      "m": 42,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.04443703964352608,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 968",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 42592",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 21296"
+      ],
+      "m": 44,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.047554184682667255,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 1058",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 24334",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 24334"
+      ],
+      "m": 46,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.05750403227284551,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 1152",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 55296",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 27648"
+      ],
+      "m": 48,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.06241709413006902,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 1250",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 31250",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 31250"
+      ],
+      "m": 50,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.07046276144683361,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 1352",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 70304",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 35152"
+      ],
+      "m": 52,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.07888757390901446,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 1458",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 39366",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 39366"
+      ],
+      "m": 54,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.08882379624992609,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 1568",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 87808",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 43904"
+      ],
+      "m": 56,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.09621441178023815,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 1682",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 48778",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 48778"
+      ],
+      "m": 58,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.10912447795271873,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 1800",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 108000",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 54000"
+      ],
+      "m": 60,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.11418306501582265,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 1922",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 59582",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 59582"
+      ],
+      "m": 62,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.13310997979715466,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 2048",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 131072",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 65536"
+      ],
+      "m": 64,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.14204124081879854,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 2178",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 71874",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 71874"
+      ],
+      "m": 66,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.15828906884416938,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 2312",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 157216",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 78608"
+      ],
+      "m": 68,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.16556300595402718,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 2450",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 85750",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 85750"
+      ],
+      "m": 70,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.19048999808728695,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 2592",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 186624",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 93312"
+      ],
+      "m": 72,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.19960974622517824,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 2738",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 101306",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 101306"
+      ],
+      "m": 74,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.2238809079863131,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 2888",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 219488",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 109744"
+      ],
+      "m": 76,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.23784224083647132,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 3042",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 118638",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 118638"
+      ],
+      "m": 78,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.26367377396672964,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 3200",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 256000",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 128000"
+      ],
+      "m": 80,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.2724047168157995,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 3362",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 137842",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 137842"
+      ],
+      "m": 82,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.30233454005792737,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 3528",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 296352",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 148176"
+      ],
+      "m": 84,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.30853197118267417,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 3698",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 159014",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 159014"
+      ],
+      "m": 86,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.3505320232361555,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 3872",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 340736",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 170368"
+      ],
+      "m": 88,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.3530543427914381,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 4050",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 182250",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 182250"
+      ],
+      "m": 90,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.39778285427019,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 4232",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 389344",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 194672"
+      ],
+      "m": 92,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.4043272100389004,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 4418",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 207646",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 207646"
+      ],
+      "m": 94,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.45112825091928244,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 4608",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 442368",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 221184"
+      ],
+      "m": 96,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.45605423813685775,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 4802",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 235298",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 235298"
+      ],
+      "m": 98,
+      "ok": false
+    },
+    {
+      "elapsed_sec": 0.5063328752294183,
+      "errors": [
+        "cycle 0 is not Hamiltonian: repeats vertex 0 at step 5000",
+        "cycle 1 is not Hamiltonian: repeats vertex 0 at step 500000",
+        "cycle 2 is not Hamiltonian: repeats vertex 0 at step 250000"
+      ],
+      "m": 100,
+      "ok": false
+    }
+  ]
+}

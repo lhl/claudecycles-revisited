@@ -1,0 +1,310 @@
+{
+  "family": "claude",
+  "params": {
+    "m_max": 101,
+    "m_min": 3,
+    "step": 2
+  },
+  "rows": [
+    {
+      "elapsed_sec": 4.909327253699303e-05,
+      "errors": [],
+      "m": 3,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 9.438768029212952e-05,
+      "errors": [],
+      "m": 5,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.0002408558502793312,
+      "errors": [],
+      "m": 7,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.0005039130337536335,
+      "errors": [],
+      "m": 9,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.0008863760158419609,
+      "errors": [],
+      "m": 11,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.001463086809962988,
+      "errors": [],
+      "m": 13,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.002246237825602293,
+      "errors": [],
+      "m": 15,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.0037216776981949806,
+      "errors": [],
+      "m": 17,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.004893674980849028,
+      "errors": [],
+      "m": 19,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.006716522853821516,
+      "errors": [],
+      "m": 21,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.008780947420746088,
+      "errors": [],
+      "m": 23,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.01074529206380248,
+      "errors": [],
+      "m": 25,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.013535157777369022,
+      "errors": [],
+      "m": 27,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.017602830659598112,
+      "errors": [],
+      "m": 29,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.02088738279417157,
+      "errors": [],
+      "m": 31,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.024523229338228703,
+      "errors": [],
+      "m": 33,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.02995044318959117,
+      "errors": [],
+      "m": 35,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.035465271677821875,
+      "errors": [],
+      "m": 37,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.04210087191313505,
+      "errors": [],
+      "m": 39,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.049945687875151634,
+      "errors": [],
+      "m": 41,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.05801905691623688,
+      "errors": [],
+      "m": 43,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.07366460608318448,
+      "errors": [],
+      "m": 45,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.07562235789373517,
+      "errors": [],
+      "m": 47,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.09062931034713984,
+      "errors": [],
+      "m": 49,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.09905892191454768,
+      "errors": [],
+      "m": 51,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.10623318096622825,
+      "errors": [],
+      "m": 53,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.11985052423551679,
+      "errors": [],
+      "m": 55,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.12965170992538333,
+      "errors": [],
+      "m": 57,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.1541334600187838,
+      "errors": [],
+      "m": 59,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.15922179399058223,
+      "errors": [],
+      "m": 61,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.17908512894064188,
+      "errors": [],
+      "m": 63,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.19408695120364428,
+      "errors": [],
+      "m": 65,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.21466476889327168,
+      "errors": [],
+      "m": 67,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.23388598999008536,
+      "errors": [],
+      "m": 69,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.24657672084867954,
+      "errors": [],
+      "m": 71,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.26805611327290535,
+      "errors": [],
+      "m": 73,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.292618605773896,
+      "errors": [],
+      "m": 75,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.3169332412071526,
+      "errors": [],
+      "m": 77,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.34715057723224163,
+      "errors": [],
+      "m": 79,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.3758612358942628,
+      "errors": [],
+      "m": 81,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.40476359613239765,
+      "errors": [],
+      "m": 83,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.4322158549912274,
+      "errors": [],
+      "m": 85,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.468002384994179,
+      "errors": [],
+      "m": 87,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.5148103786632419,
+      "errors": [],
+      "m": 89,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.5346859586425126,
+      "errors": [],
+      "m": 91,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.5890219290740788,
+      "errors": [],
+      "m": 93,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.6260921671055257,
+      "errors": [],
+      "m": 95,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.6571677080355585,
+      "errors": [],
+      "m": 97,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.6966630327515304,
+      "errors": [],
+      "m": 99,
+      "ok": true
+    },
+    {
+      "elapsed_sec": 0.7306961161084473,
+      "errors": [],
+      "m": 101,
+      "ok": true
+    }
+  ]
+}
