@@ -45,32 +45,90 @@ Hamiltonian cycles for even `m ≥ 4`, or to prove impossibility for specific ev
 
 ### Suggested approach
 
-**Phase 1: Find `m=4` with a strong solver.**
+**Phase 1: Find `m=4` with CP-SAT.**
 
-- Use `z3-solver` or `ortools` CP-SAT (both installed).
-- Encode the decomposition problem as SAT or CP-SAT:
-  - Variables: at each vertex `v`, a choice of permutation `σ(v) ∈ S_3` (6 choices → can encode as 3 bits
-    or use CP-SAT's integer domain).
-  - Constraints: for each cycle `c ∈ {0,1,2}`, the functional digraph induced by following direction `σ(v)[c]`
-    must be a single cycle of length `m^3`. This is the hard constraint — subcycle elimination.
-  - Standard technique: use subtour elimination constraints (MTZ formulation or lazy cutting planes).
+Recommended solver: OR-Tools CP-SAT (installed). Use `AddCircuit` for Hamiltonian cycle constraints
+— this is a purpose-built primitive that enforces a single cycle directly, avoiding hand-rolled
+subtour elimination (no MTZ, no lazy cutting planes needed).
+
+**CP-SAT model sketch:**
+
+```python
+from ortools.sat.python import cp_model
+
+model = cp_model.CpModel()
+m = 4
+n = m ** 3
+
+# x[v][c][d] = 1 means "cycle c uses direction d at vertex v"
+x = [[[model.NewBoolVar(f"x_{v}_{c}_{d}")
+        for d in range(3)] for c in range(3)] for v in range(n)]
+
+# (1) Arc partition: each direction d at vertex v is used by exactly one cycle
+for v in range(n):
+    for d in range(3):
+        model.Add(sum(x[v][c][d] for c in range(3)) == 1)
+
+# (2) Per-vertex permutation: each cycle c uses exactly one direction at vertex v
+for v in range(n):
+    for c in range(3):
+        model.Add(sum(x[v][c][d] for d in range(3)) == 1)
+
+# (3) Hamiltonicity: each cycle is a single directed cycle of length n
+#     AddCircuit takes (tail, head, literal) triples
+for c in range(3):
+    arcs = []
+    for v in range(n):
+        for d in range(3):
+            u = succ(v, d, m)  # successor of v along direction d
+            arcs.append((v, u, x[v][c][d]))
+    model.AddCircuit(arcs)
+
+# (4) Symmetry breaking: fix permutation at v=000 (cycle labels are arbitrary)
+model.Add(x[0][0][0] == 1)  # cycle 0 bumps i at (0,0,0)
+model.Add(x[0][1][1] == 1)  # cycle 1 bumps j at (0,0,0)
+model.Add(x[0][2][2] == 1)  # cycle 2 bumps k at (0,0,0)
+```
+
+Note: constraint (1) + (2) together enforce that each vertex gets a permutation of `{0,1,2}`
+across the three cycles. Constraint (3) uses `AddCircuit` which natively handles subcycle
+elimination. Constraint (4) breaks the 6-fold cycle-label symmetry.
+
+**Repro knobs:** Always set and record `--seed`, `--time-limit`, `--num-workers`. Save solver
+stats/logs alongside the solution JSON and verifier output as artifacts. Example:
+
+```
+artifacts/even_m4/
+  solution.json        # per-vertex direction lists (verifier input format)
+  verify.json          # verifier output
+  solver_stats.json    # time, nodes, seed, workers, status
+```
+
+- **Any claimed solution must pass `claudescycles/verify.py`.**
 - Alternative: improve our CSP (`claudescycles/csp.py`) with stronger propagation (arc consistency,
   fiber-layer decomposition, symmetry breaking).
-- **Any claimed solution must pass `claudescycles/verify.py` and be archived as a JSON artifact.**
 
 **Phase 2: Analyze the `m=4` solution.**
 
-- Once we have a verified `m=4` decomposition, characterize its structure:
-  - Does it have any fiber-layer regularity? (Does `σ(v)` depend only on `s = (i+j+k) mod m` and a few
-    coordinates, as in the odd-`m` case?)
-  - Is it "Claude-like" (depends only on whether `i,j,s` are `0`, `m-1`, or interior)?
-  - Compare with the odd-`m` rule: where specifically do they differ?
-- Extract structural invariants that could guide a general even-`m` construction.
+Post-solve analysis checklist (this is where the research value lives):
+
+- [ ] **Diff vs. odd-`m` rule**: how many vertices have a different permutation? Which `s`-layers
+  or hyperplanes concentrate the differences?
+- [ ] **Fiber structure**: does `σ(v)` depend only on `s = (i+j+k) mod m` and a few coordinates,
+  as in the odd-`m` case? Or is the dependence more complex?
+- [ ] **Boundary vs. interior**: is it "Claude-like" (depends only on whether `i,j,s` are `0`, `m-1`,
+  or interior)? If not, what additional case distinctions are needed?
+- [ ] **Invariants**: does `s` still increase by 1 each step? Are there other conserved quantities?
+- [ ] **Canonicalization**: reduce under obvious symmetries (cycle relabeling, vertex translations,
+  coordinate permutations `ijk → jki` etc.) so solutions can be meaningfully compared across runs
+  and across different `m` values.
+- [ ] Extract structural invariants that could guide a general even-`m` construction.
 
 **Phase 3: Scale up.**
 
-- Attempt `m=6,8` with the same solver. `m=6` has 216 vertices (feasible for SAT); `m=8` has 512
-  (may require stronger techniques).
+- Attempt `m=6,8` with the same solver. `m=6` has 216 vertices (feasible for CP-SAT); `m=8` has 512
+  (may require stronger techniques or longer time limits).
+- Apply the same post-solve analysis checklist to each solution.
 - Look for patterns across even solutions. Are there "even-`m` Claude-like" constructions?
 - If a general pattern emerges, prove it.
 
@@ -92,6 +150,7 @@ Hamiltonian cycles for even `m ≥ 4`, or to prove impossibility for specific ev
 
 - [ ] Find a verified decomposition for `m=4` (JSON artifact + verifier `OK`).
 - [ ] Find verified decompositions for `m=6` and `m=8`.
+- [ ] Complete post-solve analysis checklist for each even-`m` solution found.
 - [ ] Characterize structural differences between even-`m` and odd-`m` solutions.
 - [ ] Either propose a general even-`m` construction or identify the obstruction.
 
@@ -99,7 +158,10 @@ Hamiltonian cycles for even `m ≥ 4`, or to prove impossibility for specific ev
 
 ## E2: Symmetry verification and classification
 
-### E2a: Verify the 136 / "none under all three" claims
+### E2a: Verify the 136 / "none under all three" claims (run in parallel with E1)
+
+This is a quick win that closes a paper-parity loose end while E1's solver runs. It requires
+no new solver infrastructure — just a remapping over the existing 760 archived decompositions.
 
 The paper states (p.4) that 136 of the 760 generalizable decompositions remain generalizable under
 `ijk → jki`, but none are common to all three cyclic mappings `{ijk, jki, kij}`.
