@@ -1,4 +1,4 @@
-# FOLLOWUP: Feature-parity tracker vs Knuth’s “Claude’s Cycles”
+# PROBLEM-2 FOLLOWUP: Feature-parity tracker vs Knuth’s “Claude’s Cycles”
 
 This file tracks what we have replicated from Knuth’s **“Claude’s Cycles”** note (2026-02-28; rev 2026-03-02)
 and what remains.
@@ -11,7 +11,7 @@ Canonical source: `claude-cycles.pdf` (see also `references/claude-cycles.md` an
 - The construction fails on even `m` (as expected; even case remains open in the note).
 - Proof writeup exists for the odd-`m` construction: `proofs/claude_odd_m.md`.
 - Paper-count “feature parity” for `m=3` is now implemented and reproduced with artifacts under `artifacts/knuth_m3/`.
-- Review/crosswalk exists: `REVIEW.md` (paper pages + code line references).
+- Review/crosswalk exists: `README.md` (paper pages + code line references).
 
 ## Repro Commands (one-liners)
 
@@ -65,4 +65,3 @@ Artifacts:
 - Punchlist: `docs/IMPLEMENTATION.md`
 - Chronological work/evidence: `WORKLOG.md`
 - Restart capsule: `state/CONTEXT.md`
-

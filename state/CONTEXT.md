@@ -8,13 +8,14 @@ Replicate and extend `claude-cycles.pdf` results with reproducible scripts.
 - Starter punchlist and worklog initialized.
 - Problem split created:
   - `PROBLEM.md` for replication-only mode
-  - `PROBLEM2.md` for extension mode after baseline replication
+  - `PROBLEM-3-extension.md` for extension mode after baseline replication (formerly `PROBLEM2.md`)
+- Original autonomous one-shot prompt captured in `PROBLEM-1-prompt.md` (also embedded verbatim in `README.md`).
 - Deterministic verifier implemented: `python -m claudescycles.verify --input <json>`
 - `claude-cycles.pdf` (repo root) contains an explicit construction for odd `m` plus proof sketches; `pdftotext` extracts live in `references/`.
 - Proof writeup exists: `proofs/claude_odd_m.md`.
 - Additional theorem note exists: `proofs/claude_like_generalizable.md` (generalizable cycles + Claude-like theorem).
-- Review writeup exists: `REVIEW.md` (comparison vs Knuth note).
-- Followup tracker exists: `FOLLOWUP.md`.
+- Review writeup exists: `README.md` (comparison vs Knuth note; formerly `REVIEW.md`).
+- Followup tracker exists: `PROBLEM-2-followup.md` (formerly `FOLLOWUP.md`).
 
 ## Latest Validated Evidence
 - Verifier rejects an intentionally invalid decomposition for `m=3` (`artifacts/invalid_all0_m3.json`).
@@ -29,9 +30,9 @@ Replicate and extend `claude-cycles.pdf` results with reproducible scripts.
 ## Open Questions
 - Tighten the cycle-0 Hamiltonicity argument: can we make the “block” proof fully self-contained and machine-checkable?
 - Even `m`: do decompositions exist for any even `m`? If yes, characterize the smallest solvable even `m` and search for families/invariants.
-- `m=3` counting claims from the PDF: reproduce Hamiltonian-cycle counts and “generalizable” subset counts with independent code paths.
+- `m=3` counting claims from the PDF: cross-check the replicated counts with an independent implementation path (and optionally verify symmetry subclaims like the `136` count under `ijk → jki`).
 
 ## Next Actions
-1. P2: Implement counting tooling for `m=3` and archive machine-readable outputs under `artifacts/`.
-2. P3: Extend CSP/search for even `m` (start with `m=4,6,8`) and record a failure catalog with reasons.
-3. Proof polish: refactor `proofs/claude_odd_m.md` (especially cycle 0) to eliminate any remaining “handwave” steps.
+1. P2-03: Implement an independent cross-check for the `m=3` counts (and optionally verify symmetry subclaims).
+2. P3: Extend search/solver for even `m` (start with `m=4,6,8`) and record a failure catalog with reasons.
+3. Proof polish: refactor `proofs/claude_odd_m.md` (especially cycle 0 and cycle 2) to eliminate any remaining narrative gaps.

@@ -7,9 +7,9 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 ## Baseline
 
 - Primary source: `claude-cycles.pdf`
-- Current status: initial workflow setup
+- Current status: odd-`m` construction + proof replicated; `m=3` counting/exact-cover parity achieved; even-`m` remains open; independent cross-check pending (P2-03)
 - Evidence policy: every completed item must cite exact command(s) and outcomes
-- Problem control files: `PROBLEM.md` (replication), `PROBLEM2.md` (extension)
+- Problem control files: `PROBLEM.md` (replication), `PROBLEM-3-extension.md` (extension)
 
 ## Pre-Analysis (Update Before Each Major Item)
 
@@ -22,19 +22,19 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 
 - [x] P0-01: Bootstrap workflow files (`AGENTS.md`, `docs/IMPLEMENTATION.md`, `WORKLOG.md`, `state/CONTEXT.md`)
 - [x] P0-01a: Add `PROBLEM.md` (original problem statement for replication-only runs)
-- [x] P0-01b: Add `PROBLEM2.md` (extension brief for post-replication work)
+- [x] P0-01b: Add `PROBLEM-3-extension.md` (extension brief for post-replication work; formerly `PROBLEM2.md`)
 - [x] P0-02: Add deterministic verifier script for decomposition validity
 - [x] P0-03: Add small-`m` search tooling (CSP/backtracking baseline)
 - [x] P1-01: Reproduce odd-`m` validity in a documented range
 - [x] P1-02: Reproduce even-`m` failure behavior for current rule set
 - [x] P1-03: Save reproduction outputs under `artifacts/` with command provenance
 - [x] P1-04: Write odd-`m` proof document (`proofs/`)
-- [x] P1-05: Write `REVIEW.md` comparing against `claude-cycles.pdf`
+- [x] P1-05: Write `README.md` comparing against `claude-cycles.pdf` (formerly `REVIEW.md`)
 - [x] P1-06: Add `claude-cycles.pdf` + `pdftotext` extracts under `references/`
 - [x] P2-01: Reproduce `m=3` Hamiltonian cycle count claims from the paper
 - [x] P2-02: Reproduce generalizable subset counts and decomposition counts
 - [ ] P2-03: Cross-check counting results with an independent implementation path
-- [x] P2-04: Add proof-note + followup tracker for Knuth `m=3` results
+- [x] P2-04: Add proof-note + followup tracker for Knuth `m=3` results (`PROBLEM-2-followup.md`, formerly `FOLLOWUP.md`)
 - [ ] P3-01: Build even-`m` hypothesis backlog and prioritization
 - [ ] P3-02: Run iterative even-`m` exploration loop (correctness + benchmark)
 - [ ] P3-03: Maintain failure catalog with reasons and rejected families
@@ -53,7 +53,7 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 - `cat > WORKLOG.md` -> success
 - `cat > state/CONTEXT.md` -> success
 - `apply_patch` to create `PROBLEM.md` -> success
-- `apply_patch` to create `PROBLEM2.md` -> success
+- `apply_patch` to create `PROBLEM2.md` -> success (renamed to `PROBLEM-3-extension.md`)
 - `python -m claudescycles.verify --input artifacts/invalid_all0_m3.json` -> FAIL as expected (invalid input rejected)
 - `python -m claudescycles.search --m 3 --family csp --out artifacts/csp_m3.json` -> HIT (found valid decomposition)
 - `python -m claudescycles.verify --input artifacts/csp_m3.json` -> OK
@@ -68,4 +68,4 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 - `python - <<'PY' ... PY` (exact cover) -> `decompositions_total=4554`, `decompositions_all_generalizable=760` (matches paper)
 - `python -m claudescycles.knuth_m3 --out-dir artifacts/knuth_m3` -> OK; outputs written under `artifacts/knuth_m3/`
 - `apply_patch` to add `proofs/claude_like_generalizable.md` -> success
-- `apply_patch` to add `FOLLOWUP.md` -> success
+- `apply_patch` to add `FOLLOWUP.md` -> success (renamed to `PROBLEM-2-followup.md`)

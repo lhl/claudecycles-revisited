@@ -97,3 +97,27 @@
 - Commands: `apply_patch` to add `proofs/claude_like_generalizable.md`; `apply_patch` to add `FOLLOWUP.md`
 - Result: Proof-note added and tied to implementation (`claudescycles/generalize.py`, `claudescycles/knuth_m3.py`); followup tracker added with repro commands and parity checklist.
 - Decision: Next: stage/commit the new counting code + artifacts + docs as one logical change; then proceed to P3 even-`m` exploration and/or P2-03 independent cross-check.
+
+### Task: Post-rename doc consistency (README methodology + followup links)
+- Plan: After renaming `REVIEW.md`→`README.md`, `FOLLOWUP.md`→`PROBLEM-2-followup.md`, and `PROBLEM2.md`→`PROBLEM-3-extension.md`, update docs so the methodology and pointers remain technically correct and restart-safe.
+- Commands: `git status -sb`; `rg -n "PROBLEM-1-prompt" README.md`; `sed -n '60,140p' README.md`; `sed -n '340,430p' README.md`; `rg -n "REVIEW\\.md|FOLLOWUP\\.md|PROBLEM2\\.md"`; `apply_patch` to update `PROBLEM-2-followup.md`; `apply_patch` to update `docs/IMPLEMENTATION.md`; `apply_patch` to update `state/CONTEXT.md`
+- Result: `README.md` now embeds the verbatim one-shot prompt (`PROBLEM-1-prompt.md`) in a top-level Methodology section and ends with a link/summary to `PROBLEM-2-followup.md`. Repo memory files now reference the renamed documents (`README.md`, `PROBLEM-2-followup.md`, `PROBLEM-3-extension.md`).
+- Decision: Keep; stage/commit doc-only changes after a quick staged-diff review.
+
+### Task: Clarify “clean-room” timeline vs when the note was consulted
+- Plan: Use git history + `WORKLOG.md` evidence to verify when Knuth’s note was consulted vs when `claude-cycles.pdf` was checked into the repo; then tighten the README conclusion/methodology wording accordingly.
+- Commands: `git log --oneline --decorate --graph -n 40`; `git show --name-status --oneline 3751296`; `git show --name-status --oneline fe26f6a`; `git show 3751296:WORKLOG.md | rg -n 'Recover construction|pdftotext|claude-cycles\\.pdf'`; `apply_patch` to update `README.md`
+- Result: `claude-cycles.pdf` was checked into the repo in commit `fe26f6a` (after the initial implementation commit `3751296`), but `WORKLOG.md` in `3751296` records consulting an out-of-repo `../claude-cycles.pdf` during the initial session to obtain the explicit odd-`m` construction.
+- Decision: Keep; README now defines “clean-room” as “clean-room start” and explicitly attributes the odd-`m` construction/proof to the post-search consult of the note (with commit provenance for reproducibility).
+
+### Task: Validate README session-analysis notes (PDF access + 45m UI)
+- Plan: Cross-check the README’s “clean-room boundary leak” narrative against machine-parsed Codex session logs, and reconcile the “~45 minutes” UI observation with active vs wall time.
+- Commands: `python3 session-analysis/analyze_claudescycles.py --phases-only | sed -n '1,220p'`; `apply_patch` to refine wording in `README.md`
+- Result: Phase 0 wall time is ~6h, but active time is ~47m; the timeline shows `find ..` then `pdftotext -layout ../claude-cycles.pdf` around 19:31 UTC, matching the `WORKLOG.md` narrative. The ~45m UI number aligns with “active time,” not wall time.
+- Decision: Keep; leave session-analysis timeline in README, but word it as “knew the PDF existed and could go looking for it,” and explicitly note active vs wall time.
+
+### Task: Update session-analysis docs with active-time note
+- Plan: Make `session-analysis/README.md` explicitly record the Phase 0 active time so the “~45m UI” observation is reconciled in the same place as the phase timeline.
+- Commands: `apply_patch` to update `session-analysis/README.md`
+- Result: `session-analysis/README.md` now calls out Phase 0 as “~6h wall, ~47m active” and notes active-time vs wall-time interpretation.
+- Decision: Keep.
