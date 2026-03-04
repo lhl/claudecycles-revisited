@@ -1,0 +1,13 @@
+{
+  "m": 3,
+  "meta": {
+    "note": "Sanity-check fixture: arc partition is OK but each cycle is NOT Hamiltonian (should fail)."
+  },
+  "vertex_order": "lex(i,j,k) => idx = i*m^2 + j*m + k",
+  "dirs": [
+    "000000000000000000000000000",
+    "111111111111111111111111111",
+    "222222222222222222222222222"
+  ]
+}
+
