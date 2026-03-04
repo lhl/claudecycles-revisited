@@ -7,7 +7,7 @@ Tools for analyzing AI coding assistant sessions used in the claudescycles proje
 This project used two AI coding tools:
 
 - **Codex CLI (GPT-5.2/5.3)**: Setup sessions + main autonomous work session
-- **Claude Code (Opus 4.6)**: Interactive review and REVIEW.md revision
+- **Claude Code (Opus 4.6)**: Interactive review, REVIEW.md→README.md revision, session analysis, docs finalization
 
 The main Codex session had three key autonomous phases:
 1. **"Clean room" implementation → informed replication** (~6h wall, ~47m active): Built verifier, CSP search,
@@ -86,6 +86,18 @@ Each file is a complete event log (metadata, prompts, model responses, tool call
 
 Two short-lived sessions (019cb4f1, 019cb510) were aborted false starts and are not archived.
 
+## Archived Claude Code Sessions
+
+Raw session JSONLs are archived in `claude-sessions/` for posterity and future analysis.
+Each file is a complete event log (timestamps, user/assistant messages, tool calls, token usage with cache breakdowns).
+
+| Session ID | File | Wall / Active | Turns | Tokens | Summary |
+|---|---|---|---|---|---|
+| `4ee5a7fb` | `4ee5a7fb-...jsonl` (2.4M) | 11h 40m / 57m | 188 user, 315 assistant | 33.5M API tokens | **Review + Analysis**: Interactive REVIEW.md editing (citation corrections, formula fixes), session analysis tooling setup, Codex session scanning (PDF access timeline discovery), extension review, README framing |
+| `dc550b0c` | `dc550b0c-...jsonl` (552K) | 1h 3m / 11m | 43 user, 65 assistant | 4.0M API tokens | **Docs finalization**: Extension review (CP-SAT even-m, symmetry), Future Directions section, final docs commit |
+
+One additional session (`0b08c8f6`, 567 bytes) was a false start with only a SessionStart hook event and no conversation.
+
 ## Session Data Locations
 
 ### Codex CLI (live)
@@ -98,9 +110,14 @@ Two short-lived sessions (019cb4f1, 019cb510) were aborted false starts and are 
 session-analysis/codex-sessions/rollout-*.jsonl
 ```
 
-### Claude Code
+### Claude Code (live)
 ```
 ~/.claude/projects/-home-lhl-github-lhl-claudescycles/*.jsonl
+```
+
+### Claude Code (archived)
+```
+session-analysis/claude-sessions/*.jsonl
 ```
 
 ## Phase Classification
@@ -120,3 +137,13 @@ wall time may be much longer than its active compute time. The `active` metric
 - **Token usage**: Cumulative input/output tokens (Codex reports running totals;
   per-phase values are computed as deltas)
 - **Reasoning tokens**: Chain-of-thought tokens used by the model (Codex-specific)
+
+## Combined Project Session Summary
+
+| Tool | Sessions | Total Wall | Total Active | Total Tokens | Role |
+|---|---|---|---|---|---|
+| Codex CLI (GPT-5.2/5.3) | 3 useful + 2 aborted | ~19h wall | ~2h 57m | 50.8M | Autonomous implementation: scaffolding, replication, extension |
+| Claude Code (Opus 4.6) | 2 useful + 1 false start | ~12h 43m wall | ~1h 9m | 37.5M | Interactive review: citations, analysis tooling, docs finalization |
+| **Total** | **5 useful sessions** | **~31h 43m wall** | **~4h 6m active** | **88.3M tokens** | |
+
+All session JSONLs are archived in `codex-sessions/` and `claude-sessions/` respectively.
