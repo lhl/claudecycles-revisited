@@ -1,0 +1,32 @@
+{
+  "arc_partition_ok": true,
+  "arc_partition_violations": 0,
+  "cycle_checks": [
+    {
+      "cycle_index": 0,
+      "error": null,
+      "ok": true
+    },
+    {
+      "cycle_index": 1,
+      "error": null,
+      "ok": true
+    },
+    {
+      "cycle_index": 2,
+      "error": null,
+      "ok": true
+    }
+  ],
+  "error": null,
+  "m": 7,
+  "meta": {
+    "A": 0,
+    "family": "odd_m_row_based_vw_construction",
+    "generator": "claudescycles.constructions.construct_decomposition_odd_m",
+    "m": 7,
+    "notes": "Proved Hamilton decomposition for odd m>=5 via (u,v,w)=(i,i+j,i+j+k) lift argument; m=3 excluded."
+  },
+  "n_vertices": 343,
+  "ok": true
+}

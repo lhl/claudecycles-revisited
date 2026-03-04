@@ -1,0 +1,353 @@
+{
+  "all_ok": true,
+  "argv": [
+    "--m-max",
+    "101"
+  ],
+  "generator": "scripts/validate_construction_odd.py",
+  "results": [
+    {
+      "A": 0,
+      "error": null,
+      "m": 5,
+      "ok": true,
+      "seconds": 0.0001068115234375
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 7,
+      "ok": true,
+      "seconds": 0.0002224445343017578
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 9,
+      "ok": true,
+      "seconds": 0.0004570484161376953
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 11,
+      "ok": true,
+      "seconds": 0.0008082389831542969
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 13,
+      "ok": true,
+      "seconds": 0.0013020038604736328
+    },
+    {
+      "A": 5,
+      "error": null,
+      "m": 15,
+      "ok": true,
+      "seconds": 0.0019369125366210938
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 17,
+      "ok": true,
+      "seconds": 0.0027723312377929688
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 19,
+      "ok": true,
+      "seconds": 0.003893613815307617
+    },
+    {
+      "A": 5,
+      "error": null,
+      "m": 21,
+      "ok": true,
+      "seconds": 0.005480527877807617
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 23,
+      "ok": true,
+      "seconds": 0.007143735885620117
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 25,
+      "ok": true,
+      "seconds": 0.010146617889404297
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 27,
+      "ok": true,
+      "seconds": 0.011778831481933594
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 29,
+      "ok": true,
+      "seconds": 0.01480722427368164
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 31,
+      "ok": true,
+      "seconds": 0.01751112937927246
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 33,
+      "ok": true,
+      "seconds": 0.020322799682617188
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 35,
+      "ok": true,
+      "seconds": 0.024700403213500977
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 37,
+      "ok": true,
+      "seconds": 0.030973434448242188
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 39,
+      "ok": true,
+      "seconds": 0.03369569778442383
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 41,
+      "ok": true,
+      "seconds": 0.039057016372680664
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 43,
+      "ok": true,
+      "seconds": 0.04540896415710449
+    },
+    {
+      "A": 5,
+      "error": null,
+      "m": 45,
+      "ok": true,
+      "seconds": 0.050187110900878906
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 47,
+      "ok": true,
+      "seconds": 0.0566251277923584
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 49,
+      "ok": true,
+      "seconds": 0.06322884559631348
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 51,
+      "ok": true,
+      "seconds": 0.07391595840454102
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 53,
+      "ok": true,
+      "seconds": 0.0809934139251709
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 55,
+      "ok": true,
+      "seconds": 0.08876490592956543
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 57,
+      "ok": true,
+      "seconds": 0.10207509994506836
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 59,
+      "ok": true,
+      "seconds": 0.1130828857421875
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 61,
+      "ok": true,
+      "seconds": 0.12157130241394043
+    },
+    {
+      "A": 5,
+      "error": null,
+      "m": 63,
+      "ok": true,
+      "seconds": 0.13802504539489746
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 65,
+      "ok": true,
+      "seconds": 0.14864206314086914
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 67,
+      "ok": true,
+      "seconds": 0.16277217864990234
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 69,
+      "ok": true,
+      "seconds": 0.1803445816040039
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 71,
+      "ok": true,
+      "seconds": 0.197662353515625
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 73,
+      "ok": true,
+      "seconds": 0.213606595993042
+    },
+    {
+      "A": 5,
+      "error": null,
+      "m": 75,
+      "ok": true,
+      "seconds": 0.2333822250366211
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 77,
+      "ok": true,
+      "seconds": 0.2573981285095215
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 79,
+      "ok": true,
+      "seconds": 0.28626585006713867
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 81,
+      "ok": true,
+      "seconds": 0.3071773052215576
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 83,
+      "ok": true,
+      "seconds": 0.31799888610839844
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 85,
+      "ok": true,
+      "seconds": 0.34572458267211914
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 87,
+      "ok": true,
+      "seconds": 0.38416194915771484
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 89,
+      "ok": true,
+      "seconds": 0.40062761306762695
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 91,
+      "ok": true,
+      "seconds": 0.44186902046203613
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 93,
+      "ok": true,
+      "seconds": 0.45649027824401855
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 95,
+      "ok": true,
+      "seconds": 0.4892573356628418
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 97,
+      "ok": true,
+      "seconds": 0.5350480079650879
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 99,
+      "ok": true,
+      "seconds": 0.5856795310974121
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 101,
+      "ok": true,
+      "seconds": 0.5908782482147217
+    }
+  ]
+}
