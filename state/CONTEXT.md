@@ -17,7 +17,7 @@ Replicate and extend `claude-cycles.pdf` results with reproducible scripts.
 - Review writeup exists: `README.md` (comparison vs Knuth note; formerly `REVIEW.md`).
 - Followup tracker exists: `PROBLEM-2-followup.md` (formerly `FOLLOWUP.md`).
 - CP-SAT even-`m` solver exists: `python -m claudescycles.even_cpsat --m <m> --out-dir <dir>` (uses OR-Tools `AddCircuit`).
-- `COMPARISON.md` summarizes baseline vs cleanroom branches; session metrics were re-audited against session logs and the Opus literature-proof section is explicitly treated as unverified.
+- `COMPARISON.md` summarizes the baseline plus four cleanroom branches (`5.2`, `5.3-Codex`, `5.4`, `Opus 4.6`); session metrics were re-audited against session logs and the Opus literature-proof section is explicitly treated as unverified.
 
 ## Latest Validated Evidence
 - Verifier rejects an intentionally invalid decomposition for `m=3` (`artifacts/invalid_all0_m3.json`).
@@ -31,6 +31,7 @@ Replicate and extend `claude-cycles.pdf` results with reproducible scripts.
 - Found a verified even-`m` decomposition for `m=4` via CP-SAT (`artifacts/even_m4/cpsat_seed0_t60_w8/solution.json`), verifier `OK` (`artifacts/even_m4/cpsat_seed0_t60_w8/verify.json`), with solver stats + quick structure probe (`solver_stats.json`, `analysis.json`).
 - Found verified even-`m` decompositions for `m=6` and `m=8` via CP-SAT, with solution + verifier + stats under `artifacts/even_m6/cpsat_seed0_t120_w8/` and `artifacts/even_m8/cpsat_seed0_t300_w8/`.
 - Symmetry counts archived: `artifacts/knuth_m3/symmetry_counts.json` (cycle-level: `136` of `996` generalizable cycles remain generalizable under `ijk→jki`; decomposition-level: `92` of `760` all-generalizable decompositions map to another such decomposition under `ijk→jki`; `0` common to both rotations in either interpretation).
+- Audited `cleanroom-5.4` from its checked-in session analysis and branch artifacts: GPT-5.4 (`xhigh`) independently converged on the same `(u,v,w)` odd-`m` skew-product construction as cleanroom-5.2/5.3, with session `019cbf6f` (`24m 43s` wall/active, `81` tool calls, `4.60M` total tokens), solver witnesses through `m=14`, odd-family validation through `m=31`, a `152`-line README, and a `254`-line partial theorem.
 
 ## Open Questions
 - Tighten the cycle-0 Hamiltonicity argument: can we make the “block” proof fully self-contained and machine-checkable?

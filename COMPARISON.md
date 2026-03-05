@@ -1,6 +1,6 @@
 # Comparison: Baseline vs. Cleanroom Runs
 
-This document compares four runs of the Claude's Cycles replication/extension experiment across
+This document compares five runs of the Claude's Cycles replication/extension experiment across
 different models, reasoning levels, and isolation conditions.
 
 ## Experiment Overview
@@ -14,14 +14,15 @@ Stappers, discovered a construction for odd `m` over 31 explorations (~1 hour).
 | Run | Branch | Model | Reasoning | Isolation | Paper Access |
 |-----|--------|-------|-----------|-----------|--------------|
 | **Baseline** | [`main`](https://github.com/lhl/claudescycles-revisited/tree/main) | GPT-5.2 (Codex CLI) | xhigh | Porous (paper at `../`) | Yes, after ~30 min |
-| **Cleanroom A** | [`cleanroom-5.2`](https://github.com/lhl/claudescycles-revisited/tree/cleanroom-5.2) | GPT-5.2 (Codex CLI) | xhigh | Strict cleanroom | None |
-| **Cleanroom B** | [`cleanroom-5.3-codex`](https://github.com/lhl/claudescycles-revisited/tree/cleanroom-5.3-codex) | GPT-5.3-Codex (Codex CLI) | xhigh | Strict cleanroom | None |
-| **Cleanroom C** | [`cleanroom-opus-4.6`](https://github.com/lhl/claudescycles-revisited/tree/cleanroom-opus-4.6) | Claude Opus 4.6 (Claude Code) | ultrathink | Strict cleanroom | None |
+| **Cleanroom 5.2** | [`cleanroom-5.2`](https://github.com/lhl/claudescycles-revisited/tree/cleanroom-5.2) | GPT-5.2 (Codex CLI) | xhigh | Strict cleanroom | None |
+| **Cleanroom 5.3-Codex** | [`cleanroom-5.3-codex`](https://github.com/lhl/claudescycles-revisited/tree/cleanroom-5.3-codex) | GPT-5.3-Codex (Codex CLI) | xhigh | Strict cleanroom | None |
+| **Cleanroom 5.4** | [`cleanroom-5.4`](https://github.com/lhl/claudescycles-revisited/tree/cleanroom-5.4) | GPT-5.4 (Codex CLI) | xhigh | Strict cleanroom | None |
+| **Cleanroom Opus 4.6** | [`cleanroom-opus-4.6`](https://github.com/lhl/claudescycles-revisited/tree/cleanroom-opus-4.6) | Claude Opus 4.6 (Claude Code) | ultrathink | Strict cleanroom | None |
 
 The **baseline** run had the Knuth paper one directory up and setup-session memory files that
 referenced it by name. A prior setup session (GPT-5.3-Codex) had already read the PDF; in the main replication
 session the model re-discovered and read the PDF after ~30 minutes of independent work when its
-CSP solver failed to scale (see `README.md`, "Methodology" section). The three
+CSP solver failed to scale (see `README.md`, "Methodology" section). The four
 **cleanroom** runs had no reference paper accessible and were given only `PROBLEM.md` (the bare
 graph definition and goal) plus `AGENTS.md` (the execution harness).
 
@@ -38,23 +39,26 @@ construction discovery.
 
 ## Session Metrics
 
-| Metric | Baseline (5.2) | Cleanroom A (5.2) | Cleanroom B (5.3) | Cleanroom C (Opus 4.6) |
-|--------|---------------:|-------------------:|-------------------:|-----------------------:|
-| **Session ID** | `019cb512` | `019cb9d0` | `019cbc54` | `f2a37262` |
-| **Wall time** | 18h 11m | 1h 27m | 12m 33s | 3h 55m |
-| **Active time** | 2h 38m | 1h 08m | 12m 33s | 51m 45s |
-| **User msgs** | 18 | 2 | 1 | 86 |
-| **Tool calls** | 392 | 170 | 64 | 83 |
-| **Total tokens** | 41.22M | 13.55M | 5.45M | 10.22M (API) |
-| **Output tokens** | 318.8K | 152.1K | 42.5K | 165.0K |
-| **Reasoning tokens** | 238.7K (75% of output) | 109.9K (72%) | 17.7K (42%) | — (not exposed) |
-| **Cache hit rate** | 95.5% | 96.7% | 98.6% | 81.8% |
+| Metric | Baseline (5.2) | Cleanroom 5.2 | Cleanroom 5.3-Codex | Cleanroom 5.4 | Opus 4.6 |
+|--------|---------------:|--------------:|---------------------:|--------------:|----------:|
+| **Session ID** | `019cb512` | `019cb9d0` | `019cbc54` | `019cbf6f` | `f2a37262` |
+| **Wall time** | 18h 11m | 1h 27m | 12m 33s | 24m 43s | 3h 55m |
+| **Active time** | 2h 38m | 1h 08m | 12m 33s | 24m 43s | 51m 45s |
+| **User msgs** | 18 | 2 | 1 | 2 | 86 |
+| **Tool calls** | 392 | 170 | 64 | 81 | 83 |
+| **Total tokens** | 41.22M | 13.55M | 5.45M | 4.60M | 10.22M (API) |
+| **Output tokens** | 318.8K | 152.1K | 42.5K | 63.8K | 165.0K |
+| **Reasoning tokens** | 238.7K (75% of output) | 109.9K (72%) | 17.7K (42%) | 30.9K (49%) | — (not exposed) |
+| **Cache hit rate** | 95.5% | 96.7% | 98.6% | 96.0% | 81.8% |
 
 **Key observations**:
 - GPT-5.3-Codex was substantially faster than GPT-5.2 on the cleanroom task (12m active vs 68m),
   with ~60% fewer tokens and ~62% fewer tool calls, while reaching the same odd-`m` construction/proof
   (but with a smaller even-`m` CP-SAT sweep and fewer archived artifacts).
-- Claude Opus 4.6 had ~52m active time (vs ~68m for Cleanroom A) but much longer wall time (~4h) due
+- GPT-5.4 independently recovered the same odd-`m` construction/proof family in 24m 43s with the
+  lowest total token use of the cleanroom Codex runs (4.60M), a zero-idle session profile, and a
+  mid-sized artifact package (solver witnesses through `m=14`, odd-family checks through `m=31`).
+- Claude Opus 4.6 had ~52m active time (vs ~68m for Cleanroom 5.2) but much longer wall time (~4h) due
   to idle gaps, and it produced many more exploratory scripts before settling on a solver-heavy approach.
 - Codex runs show high cached-input rates (95–99%). Claude Code’s cache rate (81.8%) is computed from
   its cache-read / (cache-read + cache-create + non-cached input) token accounting, and is not directly
@@ -68,19 +72,19 @@ construction discovery.
 
 ### Core Results Summary
 
-| Capability | Baseline | Cleanroom A (5.2) | Cleanroom B (5.3) | Cleanroom C (Opus 4.6) |
-|------------|:--------:|:------------------:|:------------------:|:----------------------:|
-| **Deterministic verifier** | Yes | Yes | Yes | Yes |
-| **CP-SAT solver** | Yes (even only) | Yes | Yes | Yes |
-| **Odd-m construction** | Knuth's (from paper) | Independent | Independent | None (solver only) |
-| **Odd-m proof** | Paraphrase of Knuth | Original (skew-product) | Original (skew-product) | Solver evidence; literature sketch (unverified) |
-| **Odd-m validation range** | 3–101 | 5–101 | 5–101 | 3–30 (solver) |
-| **Even-m CP-SAT solutions** | m=4,6,8 | m=4,6,8,10,12,14,16 | m=4,6,8,10,12 | m=4,6,8,10,...,30 |
-| **Even-m parity obstruction** | Not identified | Proved | Not explicitly | Not identified |
-| **m=3 counting/exact-cover** | 11502/1012/996 cycles; 4554/760 decompositions | Not attempted | Not attempted | Not attempted |
-| **Symmetry analysis (m=3)** | 136/92/0 verified | Not attempted | Not attempted | Not attempted |
-| **Failed constructions catalog** | Not applicable | 5 documented | 4 documented | 4 documented |
-| **Structural analysis scripts** | Not applicable | — | — | 10 scripts |
+| Capability | Baseline | Cleanroom 5.2 | Cleanroom 5.3-Codex | Cleanroom 5.4 | Opus 4.6 |
+|------------|:--------:|:--------------:|:-------------------:|:--------------:|:---------:|
+| **Deterministic verifier** | Yes | Yes | Yes | Yes | Yes |
+| **CP-SAT solver** | Yes (even only) | Yes | Yes | Yes | Yes |
+| **Odd-m construction** | Knuth's (from paper) | Independent | Independent | Independent | None (solver only) |
+| **Odd-m proof** | Paraphrase of Knuth | Original (skew-product) | Original (skew-product) | Original (skew-product) | Solver evidence; literature sketch (unverified) |
+| **Odd-m validation range** | 3–101 | 5–101 | 5–101 | 5–31 | 3–30 (solver) |
+| **Even-m CP-SAT solutions** | m=4,6,8 | m=4,6,8,10,12,14,16 | m=4,6,8,10,12 | m=4,6,8,10,12,14 | m=4,6,8,10,...,30 |
+| **Even-m obstruction found** | Not identified | Proved | Not explicitly | Direct-proof obstruction | Not identified |
+| **m=3 counting/exact-cover** | 11502/1012/996 cycles; 4554/760 decompositions | Not attempted | Not attempted | Not attempted | Not attempted |
+| **Symmetry analysis (m=3)** | 136/92/0 verified | Not attempted | Not attempted | Not attempted | Not attempted |
+| **Failed constructions / failure modes** | Not applicable | 5 documented | 4 documented | 2 documented | 4 documented |
+| **Analysis / proof-support scripts** | Not applicable | — | — | Return-map checks | 10 scripts |
 
 ### Detailed Breakdown
 
@@ -90,7 +94,7 @@ construction discovery.
 decompositions). Proof is a structured paraphrase of Knuth's arguments. The most complete in terms
 of paper parity, but not an independent discovery.
 
-**Cleanroom A (GPT-5.2)**: Independently discovered an odd-`m` construction for `m >= 5` based on
+**Cleanroom 5.2 (GPT-5.2)**: Independently discovered an odd-`m` construction for `m >= 5` based on
 a coordinate transformation `(i,j,k) -> (u,v,w) = (i, i+j, i+j+k)` and a skew-product lift
 argument. The construction uses a parameter `A` (selected via CRT/gcd constraints) controlling row
 assignments. Proved correctness with two structural lemmas (base-cycle period + lift criterion).
@@ -98,13 +102,20 @@ Found even-`m` CP-SAT solutions up to `m=16` (widest among the Codex cleanroom r
 proved a fundamental parity obstruction: constructions depending only on `(v,w)` cannot work for even
 `m` because the three `Delta_c` values must all be odd (coprime to even `m`) but sum to `m^2` (even).
 
-**Cleanroom B (GPT-5.3-Codex)**: Produced essentially the same construction and proof as Cleanroom
-A — identical coordinate transformation, identical parameter selection, identical skew-product
-lemmas — in a fraction of the active time and with far fewer tokens/tool calls. The implementation is
-very similar to Cleanroom A's. This is remarkable convergence: two independent runs of related models
-arrived at the same novel mathematical construction and proof framework.
+**Cleanroom 5.3-Codex (GPT-5.3-Codex)**: Produced essentially the same construction and proof as
+Cleanroom 5.2 — identical coordinate transformation, identical parameter selection, identical
+skew-product lemmas — in a fraction of the active time and with far fewer tokens/tool calls. The
+implementation is very similar to Cleanroom 5.2's.
 
-**Cleanroom C (Claude Opus 4.6)**: Took a fundamentally different approach. Rather than discovering
+**Cleanroom 5.4 (GPT-5.4)**: Independently rediscovered the same `(u,v,w)` row-based odd-`m`
+construction and proof framework as the 5.2/5.3 cleanroom runs, but packaged it as a tighter
+"partial theorem" repo: solver witnesses for `m=3,4,6,8,10,12,14`, proof-backed odd-family
+validation for `m=5..31`, return-map checks for every odd `m` in that range, and explicit failure
+modes for even `m` and `m=3`. It did not prove the stronger parity obstruction from Cleanroom 5.2,
+but it clearly isolated why the present proof/family breaks for even moduli (`+2` not invertible)
+and why the row-parameter argument fails at `m=3`.
+
+**Cleanroom Opus 4.6 (Claude Opus 4.6)**: Took a fundamentally different approach. Rather than discovering
 a closed-form construction, Opus built a CP-SAT solver and pushed it to `m=30` (the widest
 solver-based range), then spent most of its time on **exploratory structural analysis**: 10
 separate scripts probing diagonal patterns, rotation symmetry, cyclic coordinate equivariance, 2D
@@ -118,9 +129,9 @@ verified. Treat that portion as **literature leads**, not as a settled proof.
 
 ## Construction Comparison
 
-### The Independent Discovery (Cleanroom A and B)
+### The Independent Discovery (Cleanroom 5.2 / 5.3-Codex / 5.4)
 
-Both GPT-5.2 and GPT-5.3 independently discovered the **same novel construction**, which is
+GPT-5.2, GPT-5.3-Codex, and GPT-5.4 independently discovered the **same novel construction**, which is
 *different from Knuth's construction*:
 
 **Knuth/Baseline construction** (from the paper):
@@ -146,6 +157,10 @@ at a different level of abstraction (orbit arguments on `s`-layers).
 Both constructions produce valid decompositions for all odd `m >= 5` but they are **not the same
 decomposition** — they assign different permutations at most vertices.
 
+Among the three GPT cleanroom runs, the core construction code in `cleanroom-5.3-codex` and
+`cleanroom-5.4` is effectively identical, and both closely match the `cleanroom-5.2` family. That
+strengthens the convergence claim: this was not just a one-off 5.2 discovery.
+
 ### Opus 4.6's Exploration-Heavy Approach
 
 Opus 4.6 tried four explicit construction strategies and found them infeasible within the attempted families:
@@ -157,7 +172,7 @@ Opus 4.6 tried four explicit construction strategies and found them infeasible w
 | Pure rotation | `d_c(v) = (c + delta(v)) mod 3` | Only uses 3 of 6 permutations in S_3 |
 | Layer lifting | Build z-primary C_2, fix C_0/C_1 at normal vertices | Remaining 2-factor doesn't decompose |
 
-These are **different construction attempts** than what GPT-5.2/5.3 tried. Opus explored the
+These are **different construction attempts** than what the GPT cleanroom runs tried. Opus explored the
 diagonal/rotation/lifting design space more broadly but never discovered the `(u,v,w)` coordinate
 transformation that unlocks the skew-product structure. Instead, it pivoted to a literature-based
 existence argument. This is a valid research direction, but the specific citations/claim in the
@@ -173,15 +188,15 @@ Opus also produced unique **structural findings** not present in the other runs:
 
 ## Proof Strategy Comparison
 
-| Aspect | Baseline | Cleanroom A & B | Cleanroom C |
-|--------|----------|-----------------|-------------|
-| **Proof type** | Paraphrase of Knuth | Original constructive | Computational + literature leads (unverified) |
-| **Scope** | Odd `m > 2` | Odd `m >= 5` | `m=3..30` (solver evidence) |
-| **Key technique** | `s`-layer orbit argument | Skew-product lift (2 lemmas) | CP-SAT + structural probes; literature leads (unverified) |
-| **m=3 coverage** | Included in construction | Solver artifact (excluded from proof) | Solver artifacts |
-| **Even-m coverage** | Acknowledged open | Proved obstruction for `(v,w)`-only families | Solver artifacts (`m <= 30`) |
-| **Rigor level** | Narrative/explanatory | Algebraic with CRT existence proof | Computational + heuristic analysis |
-| **Originality** | Replication | Novel | Exploratory (no construction) |
+| Aspect | Baseline | Cleanroom 5.2 | Cleanroom 5.3-Codex | Cleanroom 5.4 | Opus 4.6 |
+|--------|----------|----------------|---------------------|----------------|-----------|
+| **Proof type** | Paraphrase of Knuth | Original constructive | Original constructive | Original constructive | Computational + literature leads (unverified) |
+| **Scope** | Odd `m > 2` | Odd `m >= 5` | Odd `m >= 5` | Odd `m >= 5` | `m=3..30` (solver evidence) |
+| **Key technique** | `s`-layer orbit argument | Skew-product lift + parity obstruction | Skew-product lift | Skew-product lift + return-map checks | CP-SAT + structural probes; literature leads (unverified) |
+| **m=3 coverage** | Included in construction | Solver artifact (excluded from proof) | Solver artifact (excluded from proof) | Solver artifact (excluded from proof) | Solver artifacts |
+| **Even-m coverage** | Acknowledged open | Proved obstruction for `(v,w)`-only families | Solver artifacts; no obstruction proof | Explicit obstruction for current proof family; solver artifacts to `m=14` | Solver artifacts (`m <= 30`) |
+| **Rigor level** | Narrative/explanatory | Algebraic with CRT existence proof | Algebraic and concise | Algebraic with checked return maps | Computational + heuristic analysis |
+| **Originality** | Replication | Novel | Novel (same family) | Novel (same family) | Exploratory (no construction) |
 
 The cleanroom GPT runs produced the most **technically original** proof work: a novel construction
 with an elegant factored proof via skew-product dynamics. Opus produced the **broadest computational
@@ -193,7 +208,7 @@ results including counting and symmetry analysis.
 
 ## Harness Effects
 
-All four runs used the same `AGENTS.md` harness (verifier-first development, mandatory logging,
+All five runs used the same `AGENTS.md` harness (verifier-first development, mandatory logging,
 restart-safe memory, machine-readable evidence). Comparing outcomes:
 
 ### What the harness consistently produced
@@ -206,23 +221,24 @@ Every run, regardless of model, followed the same disciplined pipeline:
 5. Maintain restart-safe context capsule in `state/CONTEXT.md`
 6. Archive machine-readable artifacts
 
-This consistency across three different models demonstrates the harness is **model-agnostic** —
-the structured execution protocol transfers across model families and reasoning modes.
+This consistency across multiple model families and reasoning modes demonstrates the harness is
+**model-agnostic** — the structured execution protocol transfers across model families and
+reasoning modes.
 
 ### Where the harness helped most
 
 - **Documentation discipline**: All cleanroom runs produced complete worklogs and implementation
   tracking, solving the "repeated reminding" problem Knuth documented from Stappers' session.
 - **Reproducibility**: Every *computational* assertion is backed by an artifact with exact provenance.
-- **Failed-attempt preservation**: All three cleanroom runs documented failed construction
-  approaches, preventing wasted effort in future work.
+- **Failed-attempt preservation**: All four cleanroom runs preserved dead ends or explicit failure
+  modes, preventing wasted effort in future work.
 
 ### Where the harness didn't help
 
 - **Discovery strategy**: The harness prescribes "build verifier → search → generalize → prove"
-  but doesn't guide *how* to generalize. The GPT models independently found the `(u,v,w)` coordinate
-  change; Opus tried different (ultimately unsuccessful) construction strategies. The harness
-  couldn't compensate for this divergence in mathematical insight.
+  but doesn't guide *how* to generalize. The GPT cleanroom models independently found the
+  `(u,v,w)` coordinate change; Opus tried different (ultimately unsuccessful) construction
+  strategies. The harness couldn't compensate for this divergence in mathematical insight.
 - **Construction discovery for Opus**: Despite more time and more exploration, Opus didn't find a
   closed-form construction. It compensated with a solver-heavy approach plus a literature-based
   existence argument (not yet independently verified) — arguably more "research-like" but one that
@@ -240,20 +256,24 @@ The strict cleanroom (no paper access) produced qualitatively different outcomes
 
 ## Efficiency Comparison
 
-| Metric | Cleanroom A (5.2) | Cleanroom B (5.3) | Cleanroom C (Opus 4.6) |
-|--------|------------------:|------------------:|:----------------------:|
-| Active time | 1h 08m | 12m 33s | 51m 45s |
-| Tokens per minute (active) | 200K | 435K | 198K |
-| Tool calls per minute | 2.5 | 5.1 | 1.6 |
-| Output tokens | 152.1K | 42.5K | 165.0K |
-| Reasoning % of output | 72% | 42% | — |
-| `scripts/*.py` files | 4 | 4 | 12 |
-| Tracked `artifacts/*` files | 30 | 14 | 49 |
-| Proof length | 284 lines | 151 lines | 180 lines |
+| Metric | Cleanroom 5.2 | Cleanroom 5.3-Codex | Cleanroom 5.4 | Opus 4.6 |
+|--------|--------------:|---------------------:|--------------:|----------:|
+| Active time | 1h 08m | 12m 33s | 24m 43s | 51m 45s |
+| Tokens per minute (active) | 200K | 435K | 186K | 198K |
+| Tool calls per minute | 2.5 | 5.1 | 3.3 | 1.6 |
+| Output tokens | 152.1K | 42.5K | 63.8K | 165.0K |
+| Reasoning % of output | 72% | 42% | 49% | — |
+| `scripts/*.py` files | 4 | 4 | 5 | 12 |
+| Tracked `artifacts/*` files | 30 | 14 | 17 | 49 |
+| Proof length | 284 lines | 151 lines | 254 lines | 180 lines |
 
-**GPT-5.3-Codex** was the most efficient by every metric: fastest wall time, fewest tokens, highest
-tool-call throughput, and most concise proof, while achieving the same construction and proof framework.
-It also spent proportionally less on reasoning tokens (42% vs 72% of output) than the GPT-5.2 cleanroom run.
+**GPT-5.3-Codex** was still the fastest cleanroom run by a wide margin: shortest active time,
+highest tool-call throughput, and the most concise proof, while achieving the same construction and
+proof framework as the other GPT cleanroom runs.
+
+**GPT-5.4** sat between 5.3 and 5.2 on elapsed time, but used the fewest total tokens of the
+cleanroom Codex runs and shipped a fuller package than 5.3: solver artifacts through `m=14`,
+return-map checks, a 254-line theorem writeup, and a polished README in a 2-turn near-one-shot run.
 
 **Claude Opus 4.6** was the most exploratory: it produced the most scripts (12 vs 4), pushed the
 solver to the widest `m` range (`m <= 30`), and generated the most output tokens (165K). Its
@@ -261,28 +281,36 @@ longer thinking blocks (24K + 32K tokens) reflect deeper upfront planning. Despi
 it did not find a closed-form construction — suggesting the mathematical insight required for the
 `(u,v,w)` transformation may not emerge from broader exploration alone.
 
-**GPT-5.2** (Cleanroom A) produced a longer proof, more artifacts, and a wider even-`m` CP-SAT sweep than
-Cleanroom B, but at a much higher token/tool-call cost.
+**GPT-5.2** (Cleanroom 5.2) still matters as the widest Codex even-`m` sweep and the only cleanroom
+run that proved the stronger parity obstruction, but it paid for that with much higher
+token/tool-call cost.
 
 ---
 
 ## README Quality Comparison
 
-All three cleanroom models wrote their own READMEs without post-hoc editing.
+All four cleanroom models wrote their own READMEs without post-hoc editing.
 
-**Cleanroom A (GPT-5.2)** — 103 lines, 4.1KB:
+**Cleanroom 5.2 (GPT-5.2)** — 103 lines, 4.1KB:
 - Well-structured with Problem/Implementation/Status/Quickstart/Future sections
 - Clear three-way status split: Proven / Computational evidence / Open
 - Practical: copy-paste CLI commands, seed sensitivity noted
 - Professional tone, appropriate mathematical terminology
 
-**Cleanroom B (GPT-5.3)** — 135 lines, 3.6KB:
-- Similar structure to A (convergent even in documentation style)
+**Cleanroom 5.3-Codex (GPT-5.3-Codex)** — 135 lines, 3.6KB:
+- Similar structure to Cleanroom 5.2 (convergent even in documentation style)
 - More detailed "What Is Implemented" breakdown (4 numbered sections)
 - Artifact inventory with directory explanations
 - Slightly more terse, uses `##` headers inconsistently (some sections lack hierarchy)
 
-**Cleanroom C (Claude Opus 4.6)** — 161 lines, 8.0KB:
+**Cleanroom 5.4 (GPT-5.4)** — 152 lines, 4.9KB:
+- Theorem-focused: explicit proved / computational / open split, artifact layout, and proof summary
+- Best mathematical boundary-setting among the GPT READMEs: clearly scopes odd `m >= 5`, `m=3`,
+  and even-`m` open work
+- Strong reproducibility section with direct verifier/search/generator commands
+- Slightly denser than 5.2/5.3, but more rigorous about what is and is not proved
+
+**Cleanroom Opus 4.6 (Claude Opus 4.6)** — 161 lines, 8.0KB:
 - Most comprehensive: includes structural findings, failed constructions table, performance data,
   open problems, 7 academic references
 - Mathematical framing (Cayley digraph identification, S_3 saturation evidence)
@@ -290,8 +318,8 @@ All three cleanroom models wrote their own READMEs without post-hoc editing.
 - Includes a computational performance table with O(m^4) scaling analysis
 - Includes 7 academic references (some citations appear inaccurate; treat as pointers to verify)
 
-Opus's README is the most informative standalone document; the GPT READMEs are more practical
-as project guides. All three are candid about the lack of a general even-`m` construction; Opus’s
+Opus's README is the most informative standalone document; the GPT READMEs are more practical as
+project guides. All four are candid about the lack of a general even-`m` construction; Opus’s
 literature-proof section needs independent verification.
 
 ---
@@ -300,20 +328,20 @@ literature-proof section needs independent verification.
 
 ### 1. Independent convergence on a novel construction
 
-GPT-5.2 and GPT-5.3 independently discovered the same `(u,v,w)` coordinate transformation and
-skew-product proof structure. The construction code is nearly identical between the two runs.
-This suggests the approach is a natural "attractor" in the solution space for models with strong
-mathematical reasoning — the coordinate change that makes every arc increment `w` by 1 is a
-canonical simplification that both models found via CP-SAT pattern analysis.
+GPT-5.2, GPT-5.3-Codex, and GPT-5.4 independently discovered the same `(u,v,w)` coordinate
+transformation and skew-product proof structure. The construction code is nearly identical between
+the 5.3 and 5.4 runs and closely aligned with 5.2. This makes the attractor claim stronger: the
+coordinate change that makes every arc increment `w` by 1 appears to be a canonical simplification
+that multiple GPT generations found from cleanroom evidence alone.
 
 ### 2. Different model families, different strategies
 
-The GPT models (5.2/5.3) converged on **constructive proof via pattern discovery**: find solutions
-with CP-SAT, analyze the direction tables, identify the `(v,w)` dependence, derive a parametric
-family, and prove it. Claude Opus 4.6 pursued **exploratory analysis + solver evidence**: broader
-structural investigation (10 analysis scripts), failed construction attempts, and solver
-certificates through `m=30`. It also sketched a literature-based existence argument, but that
-portion is not yet independently verified for this directed decomposition problem.
+The GPT models (5.2/5.3/5.4) converged on **constructive proof via pattern discovery**: find
+solutions with CP-SAT, analyze the direction tables, identify the `(v,w)` dependence, derive a
+parametric family, and prove it. Claude Opus 4.6 pursued **exploratory analysis + solver
+evidence**: broader structural investigation (10 analysis scripts), failed construction attempts,
+and solver certificates through `m=30`. It also sketched a literature-based existence argument,
+but that portion is not yet independently verified for this directed decomposition problem.
 
 Neither strategy is strictly superior:
 - The GPT approach produced a **novel explicit construction** — arguably more valuable for
@@ -331,25 +359,26 @@ non-trivial mathematical constructions that differ from known solutions to the s
 
 ### 4. Speed vs. depth tradeoff
 
-| | Fast + Focused | Slow + Exploratory |
-|---|---|---|
-| **Model** | GPT-5.3-Codex (12m) | Claude Opus 4.6 (52m) |
-| **Construction found?** | Yes (identical to 5.2) | No |
-| **Unique insights** | Minimal beyond construction | S_3 saturation, linear invariant analysis, cyclic symmetry |
-| **Proof strategy** | Constructive (original) | Computational (solver) + literature sketch (unverified) |
+| | Fastest convergence | Most token-efficient theorem package | Slow + exploratory |
+|---|---|---|---|
+| **Model** | GPT-5.3-Codex (12m) | GPT-5.4 (25m) | Claude Opus 4.6 (52m active) |
+| **Construction found?** | Yes | Yes | No |
+| **Unique insights** | Minimal beyond construction | Explicit proof-boundary/failure-mode packaging | S_3 saturation, linear invariant analysis, cyclic symmetry |
+| **Proof strategy** | Constructive (original) | Constructive (original) + return-map checks | Computational (solver) + literature sketch (unverified) |
 
-GPT-5.3's efficiency came from a more direct problem-solving path; Opus's exploration produced
-richer structural understanding at the cost of not finding the key construction. Whether the
-exploration is "wasted" depends on the goal: for a one-shot solve, 5.3 wins; for a research survey,
-Opus's structural findings are independently valuable.
+GPT-5.3's efficiency came from a very direct problem-solving path; GPT-5.4 traded some speed for a
+more complete theorem package; Opus's exploration produced richer structural understanding at the
+cost of not finding the key construction. Whether that exploration is "wasted" depends on the goal:
+for a one-shot solve, 5.3 wins; for a compact theorem package, 5.4 is arguably the best compromise;
+for a research survey, Opus's structural findings are independently valuable.
 
 ### 5. Harness effectiveness is model-agnostic
 
-The `AGENTS.md` harness produced consistent process outcomes across all three models:
+The `AGENTS.md` harness produced consistent process outcomes across all four cleanroom models:
 - All built verifiers first
 - All maintained worklogs with exact commands
 - All archived machine-readable artifacts
-- All documented failed approaches
+- All preserved failed approaches or explicit failure modes
 - All maintained restart-safe context capsules
 
 This validates the harness design: the structured execution protocol transfers across model
@@ -358,10 +387,12 @@ evidence-based) but not *what* they discover (that depends on the model's mathem
 
 ### 6. Even-`m` remains the hard open problem
 
-No run produced a general even-`m` construction. Cleanroom A's parity obstruction proof shows that
-the natural `(v,w)`-only approach fundamentally cannot work for even `m`. Opus provides solver
-certificates through `m=30` but no general construction; its literature-proof sketch remains
-unverified. The even-`m` case likely requires either:
+No run produced a general even-`m` construction. Cleanroom 5.2's parity obstruction proof shows
+that the natural `(v,w)`-only approach fundamentally cannot work for even `m`; Cleanroom 5.4
+independently recovered a weaker but explicit obstruction inside the same proof family (the `+2`
+return-map shift is noninvertible modulo even `m`). Opus provides solver certificates through
+`m=30` but no general construction; its literature-proof sketch remains unverified. The even-`m`
+case likely requires either:
 - A construction with essential `u`-dependence (breaking the skew-product structure)
 - A fundamentally different approach (e.g., the recursive/group-theoretic methods Opus suggested)
 
@@ -369,16 +400,16 @@ unverified. The even-`m` case likely requires either:
 
 ## Summary Table
 
-| Dimension | Baseline (5.2) | Cleanroom A (5.2) | Cleanroom B (5.3) | Cleanroom C (Opus 4.6) |
-|-----------|:--------------:|:------------------:|:------------------:|:----------------------:|
-| **Paper access** | Yes (after 30m) | No | No | No |
-| **Active time** | 2h 38m | 1h 08m | 12m 33s | 51m 45s |
-| **Construction found** | Replicated Knuth's | Novel (skew-product) | Novel (same as A) | None |
-| **Proof originality** | Paraphrase | Original | Original | Computational + literature leads |
-| **Proof scope** | Odd m > 2 | Odd m >= 5 | Odd m >= 5 | `m <= 30` (solver); all-`m` claim TBD |
-| **Even-m evidence** | m=4,6,8 | m=4,...,16 | m=4,...,12 | m=4,...,30 |
-| **m=3 counting** | Full (11502/1012/996; 4554/760) | — | — | — |
-| **Structural insights** | From paper | Parity obstruction | (Same as A) | S_3, linear invariants, symmetry |
-| **Failed attempts documented** | — | 5 | 4 | 4 |
-| **README quality** | N/A (multi-author) | Professional | Professional | Research-paper quality |
-| **Efficiency** | Moderate | Good | Excellent | Moderate (exploration-heavy) |
+| Dimension | Baseline (5.2) | Cleanroom 5.2 | Cleanroom 5.3-Codex | Cleanroom 5.4 | Opus 4.6 |
+|-----------|:--------------:|:--------------:|:-------------------:|:--------------:|:---------:|
+| **Paper access** | Yes (after 30m) | No | No | No | No |
+| **Active time** | 2h 38m | 1h 08m | 12m 33s | 24m 43s | 51m 45s |
+| **Construction found** | Replicated Knuth's | Novel (skew-product) | Novel (same as 5.2) | Novel (same as 5.2/5.3) | None |
+| **Proof originality** | Paraphrase | Original | Original | Original | Computational + literature leads |
+| **Proof scope** | Odd m > 2 | Odd m >= 5 | Odd m >= 5 | Odd m >= 5 | `m <= 30` (solver); all-`m` claim TBD |
+| **Even-m evidence** | m=4,6,8 | m=4,...,16 | m=4,...,12 | m=4,...,14 | m=4,...,30 |
+| **m=3 counting** | Full (11502/1012/996; 4554/760) | — | — | — | — |
+| **Structural insights** | From paper | Parity obstruction | (Same as 5.2) | Return-map obstruction | S_3, linear invariants, symmetry |
+| **Failed attempts documented** | — | 5 | 4 | 2 | 4 |
+| **README quality** | N/A (multi-author) | Professional | Professional | Theorem-focused | Research-paper quality |
+| **Efficiency** | Moderate | Good | Excellent | Very good | Moderate (exploration-heavy) |
