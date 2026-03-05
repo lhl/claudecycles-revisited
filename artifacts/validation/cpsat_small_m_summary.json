@@ -1,0 +1,67 @@
+{
+  "all_ok": true,
+  "count": 6,
+  "generator": "inline-summary",
+  "results": [
+    {
+      "branches": 251953,
+      "conflicts": 13344,
+      "error": null,
+      "m": 10,
+      "ok": true,
+      "path": "artifacts/solutions/cpsat_m10.json",
+      "seed": 0,
+      "wall_time_s": 11.163919295000001
+    },
+    {
+      "branches": 125227,
+      "conflicts": 6,
+      "error": null,
+      "m": 12,
+      "ok": true,
+      "path": "artifacts/solutions/cpsat_m12.json",
+      "seed": 0,
+      "wall_time_s": 3.637076725
+    },
+    {
+      "branches": 1743,
+      "conflicts": 10,
+      "error": null,
+      "m": 3,
+      "ok": true,
+      "path": "artifacts/solutions/cpsat_m3.json",
+      "seed": 0,
+      "wall_time_s": 0.011858279000000001
+    },
+    {
+      "branches": 8052,
+      "conflicts": 222,
+      "error": null,
+      "m": 4,
+      "ok": true,
+      "path": "artifacts/solutions/cpsat_m4.json",
+      "seed": 0,
+      "wall_time_s": 0.07947209300000001
+    },
+    {
+      "branches": 53871,
+      "conflicts": 2101,
+      "error": null,
+      "m": 6,
+      "ok": true,
+      "path": "artifacts/solutions/cpsat_m6.json",
+      "seed": 0,
+      "wall_time_s": 1.341095522
+    },
+    {
+      "branches": 176276,
+      "conflicts": 487,
+      "error": null,
+      "m": 8,
+      "ok": true,
+      "path": "artifacts/solutions/cpsat_m8.json",
+      "seed": 0,
+      "wall_time_s": 3.5222736660000002
+    }
+  ]
+}

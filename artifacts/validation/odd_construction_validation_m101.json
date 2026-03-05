@@ -1,0 +1,355 @@
+{
+  "all_ok": true,
+  "argv": [
+    "--m-max",
+    "101",
+    "--out",
+    "artifacts/validation/odd_construction_validation_m101.json"
+  ],
+  "generator": "scripts/validate_construction_odd.py",
+  "results": [
+    {
+      "A": 0,
+      "error": null,
+      "m": 5,
+      "ok": true,
+      "seconds": 0.00013327598571777344
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 7,
+      "ok": true,
+      "seconds": 0.0002849102020263672
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 9,
+      "ok": true,
+      "seconds": 0.00045418739318847656
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 11,
+      "ok": true,
+      "seconds": 0.0007975101470947266
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 13,
+      "ok": true,
+      "seconds": 0.0012826919555664062
+    },
+    {
+      "A": 5,
+      "error": null,
+      "m": 15,
+      "ok": true,
+      "seconds": 0.0020122528076171875
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 17,
+      "ok": true,
+      "seconds": 0.0030515193939208984
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 19,
+      "ok": true,
+      "seconds": 0.0044176578521728516
+    },
+    {
+      "A": 5,
+      "error": null,
+      "m": 21,
+      "ok": true,
+      "seconds": 0.005967855453491211
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 23,
+      "ok": true,
+      "seconds": 0.007810354232788086
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 25,
+      "ok": true,
+      "seconds": 0.010195255279541016
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 27,
+      "ok": true,
+      "seconds": 0.012929439544677734
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 29,
+      "ok": true,
+      "seconds": 0.016071796417236328
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 31,
+      "ok": true,
+      "seconds": 0.019063949584960938
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 33,
+      "ok": true,
+      "seconds": 0.02279973030090332
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 35,
+      "ok": true,
+      "seconds": 0.02681756019592285
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 37,
+      "ok": true,
+      "seconds": 0.031426191329956055
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 39,
+      "ok": true,
+      "seconds": 0.037049293518066406
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 41,
+      "ok": true,
+      "seconds": 0.04238700866699219
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 43,
+      "ok": true,
+      "seconds": 0.04735088348388672
+    },
+    {
+      "A": 5,
+      "error": null,
+      "m": 45,
+      "ok": true,
+      "seconds": 0.05432868003845215
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 47,
+      "ok": true,
+      "seconds": 0.0646677017211914
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 49,
+      "ok": true,
+      "seconds": 0.07090878486633301
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 51,
+      "ok": true,
+      "seconds": 0.07923150062561035
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 53,
+      "ok": true,
+      "seconds": 0.08785510063171387
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 55,
+      "ok": true,
+      "seconds": 0.1022484302520752
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 57,
+      "ok": true,
+      "seconds": 0.11867165565490723
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 59,
+      "ok": true,
+      "seconds": 0.13156652450561523
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 61,
+      "ok": true,
+      "seconds": 0.13870859146118164
+    },
+    {
+      "A": 5,
+      "error": null,
+      "m": 63,
+      "ok": true,
+      "seconds": 0.1533348560333252
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 65,
+      "ok": true,
+      "seconds": 0.16728425025939941
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 67,
+      "ok": true,
+      "seconds": 0.17689061164855957
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 69,
+      "ok": true,
+      "seconds": 0.21557378768920898
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 71,
+      "ok": true,
+      "seconds": 0.2170543670654297
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 73,
+      "ok": true,
+      "seconds": 0.24666190147399902
+    },
+    {
+      "A": 5,
+      "error": null,
+      "m": 75,
+      "ok": true,
+      "seconds": 0.2617921829223633
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 77,
+      "ok": true,
+      "seconds": 0.2854914665222168
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 79,
+      "ok": true,
+      "seconds": 0.30872273445129395
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 81,
+      "ok": true,
+      "seconds": 0.33531975746154785
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 83,
+      "ok": true,
+      "seconds": 0.3652818202972412
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 85,
+      "ok": true,
+      "seconds": 0.37251996994018555
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 87,
+      "ok": true,
+      "seconds": 0.4176905155181885
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 89,
+      "ok": true,
+      "seconds": 0.4552321434020996
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 91,
+      "ok": true,
+      "seconds": 0.4878065586090088
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 93,
+      "ok": true,
+      "seconds": 0.5054664611816406
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 95,
+      "ok": true,
+      "seconds": 0.5429491996765137
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 97,
+      "ok": true,
+      "seconds": 0.6016900539398193
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 99,
+      "ok": true,
+      "seconds": 0.6260707378387451
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 101,
+      "ok": true,
+      "seconds": 0.6859166622161865
+    }
+  ]
+}

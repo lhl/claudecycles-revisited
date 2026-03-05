@@ -1,0 +1,43 @@
+{
+  "all_ok": true,
+  "argv": [
+    "--m-values",
+    "5",
+    "7",
+    "9",
+    "11",
+    "--out",
+    "artifacts/validation/odd_construction_validation_sample.json"
+  ],
+  "generator": "scripts/validate_construction_odd.py",
+  "results": [
+    {
+      "A": 0,
+      "error": null,
+      "m": 5,
+      "ok": true,
+      "seconds": 0.00015091896057128906
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 7,
+      "ok": true,
+      "seconds": 0.0003304481506347656
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 9,
+      "ok": true,
+      "seconds": 0.0006911754608154297
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 11,
+      "ok": true,
+      "seconds": 0.0012416839599609375
+    }
+  ]
+}
