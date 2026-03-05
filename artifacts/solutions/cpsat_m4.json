@@ -1,0 +1,29 @@
+{
+  "dirs": [
+    "0022220012022010122020012002020212021021010001201022022020102100",
+    "1101001121100121201111100110102100202202221110120201210202220222",
+    "2210112200211202010202221221211021110110102222012110101111011011"
+  ],
+  "m": 4,
+  "meta": {
+    "argv": [
+      "4",
+      "--time-limit",
+      "60",
+      "--out",
+      "artifacts/solutions/cpsat_m4.json"
+    ],
+    "branches": 8052,
+    "conflicts": 222,
+    "generator": "scripts/search_cp_sat.py",
+    "m": 4,
+    "n_vertices": 64,
+    "ortools_version": "9.15.6755",
+    "random_seed": 0,
+    "solver": "ortools.cpsat",
+    "status": 4,
+    "symmetry_breaking": "x[0,0,0]=1; x[1,0,1]=1; x[2,0,2]=1",
+    "time_limit_s": 60.0,
+    "wall_time_s": 0.072534954
+  }
+}

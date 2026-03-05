@@ -1,0 +1,46 @@
+{
+  "arc_partition_ok": true,
+  "arc_partition_violations": 0,
+  "cycle_checks": [
+    {
+      "cycle_index": 0,
+      "error": null,
+      "ok": true
+    },
+    {
+      "cycle_index": 1,
+      "error": null,
+      "ok": true
+    },
+    {
+      "cycle_index": 2,
+      "error": null,
+      "ok": true
+    }
+  ],
+  "error": null,
+  "m": 3,
+  "meta": {
+    "argv": [
+      "3",
+      "--time-limit",
+      "60",
+      "--out",
+      "artifacts/solutions/cpsat_m3.json"
+    ],
+    "branches": 1743,
+    "conflicts": 10,
+    "generator": "scripts/search_cp_sat.py",
+    "m": 3,
+    "n_vertices": 27,
+    "ortools_version": "9.15.6755",
+    "random_seed": 0,
+    "solver": "ortools.cpsat",
+    "status": 4,
+    "symmetry_breaking": "x[0,0,0]=1; x[1,0,1]=1; x[2,0,2]=1",
+    "time_limit_s": 60.0,
+    "wall_time_s": 0.013318638
+  },
+  "n_vertices": 27,
+  "ok": true
+}

@@ -1,0 +1,112 @@
+{
+  "all_ok": true,
+  "argv": [
+    "--m-min",
+    "5",
+    "--m-max",
+    "31",
+    "--out",
+    "artifacts/validation/odd_m_validation.json"
+  ],
+  "generator": "scripts/validate_construction_odd.py",
+  "results": [
+    {
+      "A": 0,
+      "error": null,
+      "m": 5,
+      "ok": true,
+      "seconds": 0.00014829635620117188
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 7,
+      "ok": true,
+      "seconds": 0.00030422210693359375
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 9,
+      "ok": true,
+      "seconds": 0.0006082057952880859
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 11,
+      "ok": true,
+      "seconds": 0.0011081695556640625
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 13,
+      "ok": true,
+      "seconds": 0.0017247200012207031
+    },
+    {
+      "A": 5,
+      "error": null,
+      "m": 15,
+      "ok": true,
+      "seconds": 0.003238677978515625
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 17,
+      "ok": true,
+      "seconds": 0.012053251266479492
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 19,
+      "ok": true,
+      "seconds": 0.0158383846282959
+    },
+    {
+      "A": 5,
+      "error": null,
+      "m": 21,
+      "ok": true,
+      "seconds": 0.028549671173095703
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 23,
+      "ok": true,
+      "seconds": 0.039031028747558594
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 25,
+      "ok": true,
+      "seconds": 0.013046979904174805
+    },
+    {
+      "A": 2,
+      "error": null,
+      "m": 27,
+      "ok": true,
+      "seconds": 0.014325618743896484
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 29,
+      "ok": true,
+      "seconds": 0.01802802085876465
+    },
+    {
+      "A": 0,
+      "error": null,
+      "m": 31,
+      "ok": true,
+      "seconds": 0.02231764793395996
+    }
+  ]
+}

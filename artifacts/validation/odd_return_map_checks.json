@@ -1,0 +1,5824 @@
+{
+  "all_ok": true,
+  "argv": [
+    "--m-min",
+    "5",
+    "--m-max",
+    "31",
+    "--out",
+    "artifacts/validation/odd_return_map_checks.json"
+  ],
+  "generator": "scripts/check_return_maps_odd.py",
+  "results": [
+    {
+      "A": 0,
+      "cycles": [
+        {
+          "cycle_index": 0,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 0,
+              "expected_u_delta": 1,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 1,
+              "expected_u_delta": 2,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 2,
+              "expected_u_delta": 2,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 3,
+              "expected_u_delta": 2,
+              "expected_v_after": 3,
+              "start_v": 4
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 1,
+          "expected_total_u_shift_mod_m": 1,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 3,
+              "actual_v_after": 4,
+              "expected_u_delta": 3,
+              "expected_v_after": 4,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 0,
+              "expected_u_delta": 4,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 3,
+              "actual_v_after": 1,
+              "expected_u_delta": 3,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 3,
+              "actual_v_after": 2,
+              "expected_u_delta": 3,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 3,
+              "actual_v_after": 3,
+              "expected_u_delta": 3,
+              "expected_v_after": 3,
+              "start_v": 4
+            }
+          ],
+          "total_u_shift_mod_m": 1,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 2,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 2,
+              "expected_u_delta": 1,
+              "expected_v_after": 2,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 3,
+              "expected_u_delta": 0,
+              "expected_v_after": 3,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 0,
+              "expected_u_delta": 0,
+              "expected_v_after": 0,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 1,
+              "expected_u_delta": 1,
+              "expected_v_after": 1,
+              "start_v": 4
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        }
+      ],
+      "m": 5,
+      "ok": true
+    },
+    {
+      "A": 0,
+      "cycles": [
+        {
+          "cycle_index": 0,
+          "expected_total_u_shift_mod_m": 4,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 6,
+              "expected_u_delta": 0,
+              "expected_v_after": 6,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 0,
+              "expected_u_delta": 1,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 1,
+              "expected_u_delta": 2,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 2,
+              "expected_u_delta": 2,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 3,
+              "expected_u_delta": 2,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 4,
+              "expected_u_delta": 2,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 5,
+              "expected_u_delta": 2,
+              "expected_v_after": 5,
+              "start_v": 6
+            }
+          ],
+          "total_u_shift_mod_m": 4,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 1,
+          "expected_total_u_shift_mod_m": 1,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 6,
+              "expected_u_delta": 5,
+              "expected_v_after": 6,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 6,
+              "actual_v_after": 0,
+              "expected_u_delta": 6,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 1,
+              "expected_u_delta": 5,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 2,
+              "expected_u_delta": 5,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 3,
+              "expected_u_delta": 5,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 4,
+              "expected_u_delta": 5,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 5,
+              "expected_u_delta": 5,
+              "expected_v_after": 5,
+              "start_v": 6
+            }
+          ],
+          "total_u_shift_mod_m": 1,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 2,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 2,
+              "expected_u_delta": 1,
+              "expected_v_after": 2,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 3,
+              "expected_u_delta": 0,
+              "expected_v_after": 3,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 5,
+              "expected_u_delta": 0,
+              "expected_v_after": 5,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 6,
+              "expected_u_delta": 0,
+              "expected_v_after": 6,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 0,
+              "expected_u_delta": 0,
+              "expected_v_after": 0,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 1,
+              "expected_u_delta": 1,
+              "expected_v_after": 1,
+              "start_v": 6
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        }
+      ],
+      "m": 7,
+      "ok": true
+    },
+    {
+      "A": 2,
+      "cycles": [
+        {
+          "cycle_index": 0,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 8,
+              "expected_u_delta": 2,
+              "expected_v_after": 8,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 3,
+              "actual_v_after": 0,
+              "expected_u_delta": 3,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 1,
+              "expected_u_delta": 4,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 2,
+              "expected_u_delta": 4,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 3,
+              "expected_u_delta": 4,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 4,
+              "expected_u_delta": 4,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 5,
+              "expected_u_delta": 4,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 6,
+              "expected_u_delta": 2,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 7,
+              "expected_u_delta": 2,
+              "expected_v_after": 7,
+              "start_v": 8
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 1,
+          "expected_total_u_shift_mod_m": 5,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 8,
+              "expected_u_delta": 5,
+              "expected_v_after": 8,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 6,
+              "actual_v_after": 0,
+              "expected_u_delta": 6,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 1,
+              "expected_u_delta": 5,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 2,
+              "expected_u_delta": 5,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 3,
+              "expected_u_delta": 5,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 4,
+              "expected_u_delta": 5,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 5,
+              "expected_u_delta": 5,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 6,
+              "expected_u_delta": 7,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 7,
+              "expected_u_delta": 7,
+              "expected_v_after": 7,
+              "start_v": 8
+            }
+          ],
+          "total_u_shift_mod_m": 5,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 2,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 2,
+              "expected_u_delta": 1,
+              "expected_v_after": 2,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 3,
+              "expected_u_delta": 0,
+              "expected_v_after": 3,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 5,
+              "expected_u_delta": 0,
+              "expected_v_after": 5,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 6,
+              "expected_u_delta": 0,
+              "expected_v_after": 6,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 7,
+              "expected_u_delta": 0,
+              "expected_v_after": 7,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 8,
+              "expected_u_delta": 0,
+              "expected_v_after": 8,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 0,
+              "expected_u_delta": 0,
+              "expected_v_after": 0,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 1,
+              "expected_u_delta": 1,
+              "expected_v_after": 1,
+              "start_v": 8
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        }
+      ],
+      "m": 9,
+      "ok": true
+    },
+    {
+      "A": 0,
+      "cycles": [
+        {
+          "cycle_index": 0,
+          "expected_total_u_shift_mod_m": 8,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 10,
+              "expected_u_delta": 0,
+              "expected_v_after": 10,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 0,
+              "expected_u_delta": 1,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 1,
+              "expected_u_delta": 2,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 2,
+              "expected_u_delta": 2,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 3,
+              "expected_u_delta": 2,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 4,
+              "expected_u_delta": 2,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 5,
+              "expected_u_delta": 2,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 6,
+              "expected_u_delta": 2,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 7,
+              "expected_u_delta": 2,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 8,
+              "expected_u_delta": 2,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 9,
+              "expected_u_delta": 2,
+              "expected_v_after": 9,
+              "start_v": 10
+            }
+          ],
+          "total_u_shift_mod_m": 8,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 1,
+          "expected_total_u_shift_mod_m": 1,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 9,
+              "actual_v_after": 10,
+              "expected_u_delta": 9,
+              "expected_v_after": 10,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 10,
+              "actual_v_after": 0,
+              "expected_u_delta": 10,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 9,
+              "actual_v_after": 1,
+              "expected_u_delta": 9,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 9,
+              "actual_v_after": 2,
+              "expected_u_delta": 9,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 9,
+              "actual_v_after": 3,
+              "expected_u_delta": 9,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 9,
+              "actual_v_after": 4,
+              "expected_u_delta": 9,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 9,
+              "actual_v_after": 5,
+              "expected_u_delta": 9,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 9,
+              "actual_v_after": 6,
+              "expected_u_delta": 9,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 9,
+              "actual_v_after": 7,
+              "expected_u_delta": 9,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 9,
+              "actual_v_after": 8,
+              "expected_u_delta": 9,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 9,
+              "actual_v_after": 9,
+              "expected_u_delta": 9,
+              "expected_v_after": 9,
+              "start_v": 10
+            }
+          ],
+          "total_u_shift_mod_m": 1,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 2,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 2,
+              "expected_u_delta": 1,
+              "expected_v_after": 2,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 3,
+              "expected_u_delta": 0,
+              "expected_v_after": 3,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 5,
+              "expected_u_delta": 0,
+              "expected_v_after": 5,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 6,
+              "expected_u_delta": 0,
+              "expected_v_after": 6,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 7,
+              "expected_u_delta": 0,
+              "expected_v_after": 7,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 8,
+              "expected_u_delta": 0,
+              "expected_v_after": 8,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 9,
+              "expected_u_delta": 0,
+              "expected_v_after": 9,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 10,
+              "expected_u_delta": 0,
+              "expected_v_after": 10,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 0,
+              "expected_u_delta": 0,
+              "expected_v_after": 0,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 1,
+              "expected_u_delta": 1,
+              "expected_v_after": 1,
+              "start_v": 10
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        }
+      ],
+      "m": 11,
+      "ok": true
+    },
+    {
+      "A": 0,
+      "cycles": [
+        {
+          "cycle_index": 0,
+          "expected_total_u_shift_mod_m": 10,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 12,
+              "expected_u_delta": 0,
+              "expected_v_after": 12,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 0,
+              "expected_u_delta": 1,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 1,
+              "expected_u_delta": 2,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 2,
+              "expected_u_delta": 2,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 3,
+              "expected_u_delta": 2,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 4,
+              "expected_u_delta": 2,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 5,
+              "expected_u_delta": 2,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 6,
+              "expected_u_delta": 2,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 7,
+              "expected_u_delta": 2,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 8,
+              "expected_u_delta": 2,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 9,
+              "expected_u_delta": 2,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 10,
+              "expected_u_delta": 2,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 11,
+              "expected_u_delta": 2,
+              "expected_v_after": 11,
+              "start_v": 12
+            }
+          ],
+          "total_u_shift_mod_m": 10,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 1,
+          "expected_total_u_shift_mod_m": 1,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 11,
+              "actual_v_after": 12,
+              "expected_u_delta": 11,
+              "expected_v_after": 12,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 12,
+              "actual_v_after": 0,
+              "expected_u_delta": 12,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 11,
+              "actual_v_after": 1,
+              "expected_u_delta": 11,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 11,
+              "actual_v_after": 2,
+              "expected_u_delta": 11,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 11,
+              "actual_v_after": 3,
+              "expected_u_delta": 11,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 11,
+              "actual_v_after": 4,
+              "expected_u_delta": 11,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 11,
+              "actual_v_after": 5,
+              "expected_u_delta": 11,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 11,
+              "actual_v_after": 6,
+              "expected_u_delta": 11,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 11,
+              "actual_v_after": 7,
+              "expected_u_delta": 11,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 11,
+              "actual_v_after": 8,
+              "expected_u_delta": 11,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 11,
+              "actual_v_after": 9,
+              "expected_u_delta": 11,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 11,
+              "actual_v_after": 10,
+              "expected_u_delta": 11,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 11,
+              "actual_v_after": 11,
+              "expected_u_delta": 11,
+              "expected_v_after": 11,
+              "start_v": 12
+            }
+          ],
+          "total_u_shift_mod_m": 1,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 2,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 2,
+              "expected_u_delta": 1,
+              "expected_v_after": 2,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 3,
+              "expected_u_delta": 0,
+              "expected_v_after": 3,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 5,
+              "expected_u_delta": 0,
+              "expected_v_after": 5,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 6,
+              "expected_u_delta": 0,
+              "expected_v_after": 6,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 7,
+              "expected_u_delta": 0,
+              "expected_v_after": 7,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 8,
+              "expected_u_delta": 0,
+              "expected_v_after": 8,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 9,
+              "expected_u_delta": 0,
+              "expected_v_after": 9,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 10,
+              "expected_u_delta": 0,
+              "expected_v_after": 10,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 11,
+              "expected_u_delta": 0,
+              "expected_v_after": 11,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 12,
+              "expected_u_delta": 0,
+              "expected_v_after": 12,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 0,
+              "expected_u_delta": 0,
+              "expected_v_after": 0,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 1,
+              "expected_u_delta": 1,
+              "expected_v_after": 1,
+              "start_v": 12
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        }
+      ],
+      "m": 13,
+      "ok": true
+    },
+    {
+      "A": 5,
+      "cycles": [
+        {
+          "cycle_index": 0,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 14,
+              "expected_u_delta": 5,
+              "expected_v_after": 14,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 6,
+              "actual_v_after": 0,
+              "expected_u_delta": 6,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 1,
+              "expected_u_delta": 7,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 2,
+              "expected_u_delta": 7,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 3,
+              "expected_u_delta": 7,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 4,
+              "expected_u_delta": 7,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 5,
+              "expected_u_delta": 7,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 6,
+              "expected_u_delta": 7,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 7,
+              "expected_u_delta": 7,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 8,
+              "expected_u_delta": 7,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 9,
+              "expected_u_delta": 5,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 10,
+              "expected_u_delta": 5,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 11,
+              "expected_u_delta": 5,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 12,
+              "expected_u_delta": 5,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 13,
+              "expected_u_delta": 5,
+              "expected_v_after": 13,
+              "start_v": 14
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 1,
+          "expected_total_u_shift_mod_m": 11,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 8,
+              "actual_v_after": 14,
+              "expected_u_delta": 8,
+              "expected_v_after": 14,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 9,
+              "actual_v_after": 0,
+              "expected_u_delta": 9,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 8,
+              "actual_v_after": 1,
+              "expected_u_delta": 8,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 8,
+              "actual_v_after": 2,
+              "expected_u_delta": 8,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 8,
+              "actual_v_after": 3,
+              "expected_u_delta": 8,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 8,
+              "actual_v_after": 4,
+              "expected_u_delta": 8,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 8,
+              "actual_v_after": 5,
+              "expected_u_delta": 8,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 8,
+              "actual_v_after": 6,
+              "expected_u_delta": 8,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 8,
+              "actual_v_after": 7,
+              "expected_u_delta": 8,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 8,
+              "actual_v_after": 8,
+              "expected_u_delta": 8,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 10,
+              "actual_v_after": 9,
+              "expected_u_delta": 10,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 10,
+              "actual_v_after": 10,
+              "expected_u_delta": 10,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 10,
+              "actual_v_after": 11,
+              "expected_u_delta": 10,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 10,
+              "actual_v_after": 12,
+              "expected_u_delta": 10,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 10,
+              "actual_v_after": 13,
+              "expected_u_delta": 10,
+              "expected_v_after": 13,
+              "start_v": 14
+            }
+          ],
+          "total_u_shift_mod_m": 11,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 2,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 2,
+              "expected_u_delta": 1,
+              "expected_v_after": 2,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 3,
+              "expected_u_delta": 0,
+              "expected_v_after": 3,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 5,
+              "expected_u_delta": 0,
+              "expected_v_after": 5,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 6,
+              "expected_u_delta": 0,
+              "expected_v_after": 6,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 7,
+              "expected_u_delta": 0,
+              "expected_v_after": 7,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 8,
+              "expected_u_delta": 0,
+              "expected_v_after": 8,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 9,
+              "expected_u_delta": 0,
+              "expected_v_after": 9,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 10,
+              "expected_u_delta": 0,
+              "expected_v_after": 10,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 11,
+              "expected_u_delta": 0,
+              "expected_v_after": 11,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 12,
+              "expected_u_delta": 0,
+              "expected_v_after": 12,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 13,
+              "expected_u_delta": 0,
+              "expected_v_after": 13,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 14,
+              "expected_u_delta": 0,
+              "expected_v_after": 14,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 0,
+              "expected_u_delta": 0,
+              "expected_v_after": 0,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 1,
+              "expected_u_delta": 1,
+              "expected_v_after": 1,
+              "start_v": 14
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        }
+      ],
+      "m": 15,
+      "ok": true
+    },
+    {
+      "A": 0,
+      "cycles": [
+        {
+          "cycle_index": 0,
+          "expected_total_u_shift_mod_m": 14,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 16,
+              "expected_u_delta": 0,
+              "expected_v_after": 16,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 0,
+              "expected_u_delta": 1,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 1,
+              "expected_u_delta": 2,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 2,
+              "expected_u_delta": 2,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 3,
+              "expected_u_delta": 2,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 4,
+              "expected_u_delta": 2,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 5,
+              "expected_u_delta": 2,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 6,
+              "expected_u_delta": 2,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 7,
+              "expected_u_delta": 2,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 8,
+              "expected_u_delta": 2,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 9,
+              "expected_u_delta": 2,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 10,
+              "expected_u_delta": 2,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 11,
+              "expected_u_delta": 2,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 12,
+              "expected_u_delta": 2,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 13,
+              "expected_u_delta": 2,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 14,
+              "expected_u_delta": 2,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 15,
+              "expected_u_delta": 2,
+              "expected_v_after": 15,
+              "start_v": 16
+            }
+          ],
+          "total_u_shift_mod_m": 14,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 1,
+          "expected_total_u_shift_mod_m": 1,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 16,
+              "expected_u_delta": 15,
+              "expected_v_after": 16,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 16,
+              "actual_v_after": 0,
+              "expected_u_delta": 16,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 1,
+              "expected_u_delta": 15,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 2,
+              "expected_u_delta": 15,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 3,
+              "expected_u_delta": 15,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 4,
+              "expected_u_delta": 15,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 5,
+              "expected_u_delta": 15,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 6,
+              "expected_u_delta": 15,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 7,
+              "expected_u_delta": 15,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 8,
+              "expected_u_delta": 15,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 9,
+              "expected_u_delta": 15,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 10,
+              "expected_u_delta": 15,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 11,
+              "expected_u_delta": 15,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 12,
+              "expected_u_delta": 15,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 13,
+              "expected_u_delta": 15,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 14,
+              "expected_u_delta": 15,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 15,
+              "expected_u_delta": 15,
+              "expected_v_after": 15,
+              "start_v": 16
+            }
+          ],
+          "total_u_shift_mod_m": 1,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 2,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 2,
+              "expected_u_delta": 1,
+              "expected_v_after": 2,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 3,
+              "expected_u_delta": 0,
+              "expected_v_after": 3,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 5,
+              "expected_u_delta": 0,
+              "expected_v_after": 5,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 6,
+              "expected_u_delta": 0,
+              "expected_v_after": 6,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 7,
+              "expected_u_delta": 0,
+              "expected_v_after": 7,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 8,
+              "expected_u_delta": 0,
+              "expected_v_after": 8,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 9,
+              "expected_u_delta": 0,
+              "expected_v_after": 9,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 10,
+              "expected_u_delta": 0,
+              "expected_v_after": 10,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 11,
+              "expected_u_delta": 0,
+              "expected_v_after": 11,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 12,
+              "expected_u_delta": 0,
+              "expected_v_after": 12,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 13,
+              "expected_u_delta": 0,
+              "expected_v_after": 13,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 14,
+              "expected_u_delta": 0,
+              "expected_v_after": 14,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 15,
+              "expected_u_delta": 0,
+              "expected_v_after": 15,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 16,
+              "expected_u_delta": 0,
+              "expected_v_after": 16,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 0,
+              "expected_u_delta": 0,
+              "expected_v_after": 0,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 1,
+              "expected_u_delta": 1,
+              "expected_v_after": 1,
+              "start_v": 16
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        }
+      ],
+      "m": 17,
+      "ok": true
+    },
+    {
+      "A": 0,
+      "cycles": [
+        {
+          "cycle_index": 0,
+          "expected_total_u_shift_mod_m": 16,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 18,
+              "expected_u_delta": 0,
+              "expected_v_after": 18,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 0,
+              "expected_u_delta": 1,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 1,
+              "expected_u_delta": 2,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 2,
+              "expected_u_delta": 2,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 3,
+              "expected_u_delta": 2,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 4,
+              "expected_u_delta": 2,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 5,
+              "expected_u_delta": 2,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 6,
+              "expected_u_delta": 2,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 7,
+              "expected_u_delta": 2,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 8,
+              "expected_u_delta": 2,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 9,
+              "expected_u_delta": 2,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 10,
+              "expected_u_delta": 2,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 11,
+              "expected_u_delta": 2,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 12,
+              "expected_u_delta": 2,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 13,
+              "expected_u_delta": 2,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 14,
+              "expected_u_delta": 2,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 15,
+              "expected_u_delta": 2,
+              "expected_v_after": 15,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 16,
+              "expected_u_delta": 2,
+              "expected_v_after": 16,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 17,
+              "expected_u_delta": 2,
+              "expected_v_after": 17,
+              "start_v": 18
+            }
+          ],
+          "total_u_shift_mod_m": 16,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 1,
+          "expected_total_u_shift_mod_m": 1,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 18,
+              "expected_u_delta": 17,
+              "expected_v_after": 18,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 18,
+              "actual_v_after": 0,
+              "expected_u_delta": 18,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 1,
+              "expected_u_delta": 17,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 2,
+              "expected_u_delta": 17,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 3,
+              "expected_u_delta": 17,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 4,
+              "expected_u_delta": 17,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 5,
+              "expected_u_delta": 17,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 6,
+              "expected_u_delta": 17,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 7,
+              "expected_u_delta": 17,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 8,
+              "expected_u_delta": 17,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 9,
+              "expected_u_delta": 17,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 10,
+              "expected_u_delta": 17,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 11,
+              "expected_u_delta": 17,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 12,
+              "expected_u_delta": 17,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 13,
+              "expected_u_delta": 17,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 14,
+              "expected_u_delta": 17,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 15,
+              "expected_u_delta": 17,
+              "expected_v_after": 15,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 16,
+              "expected_u_delta": 17,
+              "expected_v_after": 16,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 17,
+              "actual_v_after": 17,
+              "expected_u_delta": 17,
+              "expected_v_after": 17,
+              "start_v": 18
+            }
+          ],
+          "total_u_shift_mod_m": 1,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 2,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 2,
+              "expected_u_delta": 1,
+              "expected_v_after": 2,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 3,
+              "expected_u_delta": 0,
+              "expected_v_after": 3,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 5,
+              "expected_u_delta": 0,
+              "expected_v_after": 5,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 6,
+              "expected_u_delta": 0,
+              "expected_v_after": 6,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 7,
+              "expected_u_delta": 0,
+              "expected_v_after": 7,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 8,
+              "expected_u_delta": 0,
+              "expected_v_after": 8,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 9,
+              "expected_u_delta": 0,
+              "expected_v_after": 9,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 10,
+              "expected_u_delta": 0,
+              "expected_v_after": 10,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 11,
+              "expected_u_delta": 0,
+              "expected_v_after": 11,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 12,
+              "expected_u_delta": 0,
+              "expected_v_after": 12,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 13,
+              "expected_u_delta": 0,
+              "expected_v_after": 13,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 14,
+              "expected_u_delta": 0,
+              "expected_v_after": 14,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 15,
+              "expected_u_delta": 0,
+              "expected_v_after": 15,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 16,
+              "expected_u_delta": 0,
+              "expected_v_after": 16,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 17,
+              "expected_u_delta": 0,
+              "expected_v_after": 17,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 18,
+              "expected_u_delta": 0,
+              "expected_v_after": 18,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 0,
+              "expected_u_delta": 0,
+              "expected_v_after": 0,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 1,
+              "expected_u_delta": 1,
+              "expected_v_after": 1,
+              "start_v": 18
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        }
+      ],
+      "m": 19,
+      "ok": true
+    },
+    {
+      "A": 5,
+      "cycles": [
+        {
+          "cycle_index": 0,
+          "expected_total_u_shift_mod_m": 8,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 20,
+              "expected_u_delta": 5,
+              "expected_v_after": 20,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 6,
+              "actual_v_after": 0,
+              "expected_u_delta": 6,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 1,
+              "expected_u_delta": 7,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 2,
+              "expected_u_delta": 7,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 3,
+              "expected_u_delta": 7,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 4,
+              "expected_u_delta": 7,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 5,
+              "expected_u_delta": 7,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 6,
+              "expected_u_delta": 7,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 7,
+              "expected_u_delta": 7,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 8,
+              "expected_u_delta": 7,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 9,
+              "expected_u_delta": 7,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 10,
+              "expected_u_delta": 7,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 11,
+              "expected_u_delta": 7,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 12,
+              "expected_u_delta": 7,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 13,
+              "expected_u_delta": 7,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 7,
+              "actual_v_after": 14,
+              "expected_u_delta": 7,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 15,
+              "expected_u_delta": 5,
+              "expected_v_after": 15,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 16,
+              "expected_u_delta": 5,
+              "expected_v_after": 16,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 17,
+              "expected_u_delta": 5,
+              "expected_v_after": 17,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 18,
+              "expected_u_delta": 5,
+              "expected_v_after": 18,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 5,
+              "actual_v_after": 19,
+              "expected_u_delta": 5,
+              "expected_v_after": 19,
+              "start_v": 20
+            }
+          ],
+          "total_u_shift_mod_m": 8,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 1,
+          "expected_total_u_shift_mod_m": 11,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 20,
+              "expected_u_delta": 14,
+              "expected_v_after": 20,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 15,
+              "actual_v_after": 0,
+              "expected_u_delta": 15,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 1,
+              "expected_u_delta": 14,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 2,
+              "expected_u_delta": 14,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 3,
+              "expected_u_delta": 14,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 4,
+              "expected_u_delta": 14,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 5,
+              "expected_u_delta": 14,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 6,
+              "expected_u_delta": 14,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 7,
+              "expected_u_delta": 14,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 8,
+              "expected_u_delta": 14,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 9,
+              "expected_u_delta": 14,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 10,
+              "expected_u_delta": 14,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 11,
+              "expected_u_delta": 14,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 12,
+              "expected_u_delta": 14,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 13,
+              "expected_u_delta": 14,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 14,
+              "actual_v_after": 14,
+              "expected_u_delta": 14,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 16,
+              "actual_v_after": 15,
+              "expected_u_delta": 16,
+              "expected_v_after": 15,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 16,
+              "actual_v_after": 16,
+              "expected_u_delta": 16,
+              "expected_v_after": 16,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 16,
+              "actual_v_after": 17,
+              "expected_u_delta": 16,
+              "expected_v_after": 17,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 16,
+              "actual_v_after": 18,
+              "expected_u_delta": 16,
+              "expected_v_after": 18,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 16,
+              "actual_v_after": 19,
+              "expected_u_delta": 16,
+              "expected_v_after": 19,
+              "start_v": 20
+            }
+          ],
+          "total_u_shift_mod_m": 11,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 2,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 2,
+              "expected_u_delta": 1,
+              "expected_v_after": 2,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 3,
+              "expected_u_delta": 0,
+              "expected_v_after": 3,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 5,
+              "expected_u_delta": 0,
+              "expected_v_after": 5,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 6,
+              "expected_u_delta": 0,
+              "expected_v_after": 6,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 7,
+              "expected_u_delta": 0,
+              "expected_v_after": 7,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 8,
+              "expected_u_delta": 0,
+              "expected_v_after": 8,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 9,
+              "expected_u_delta": 0,
+              "expected_v_after": 9,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 10,
+              "expected_u_delta": 0,
+              "expected_v_after": 10,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 11,
+              "expected_u_delta": 0,
+              "expected_v_after": 11,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 12,
+              "expected_u_delta": 0,
+              "expected_v_after": 12,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 13,
+              "expected_u_delta": 0,
+              "expected_v_after": 13,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 14,
+              "expected_u_delta": 0,
+              "expected_v_after": 14,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 15,
+              "expected_u_delta": 0,
+              "expected_v_after": 15,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 16,
+              "expected_u_delta": 0,
+              "expected_v_after": 16,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 17,
+              "expected_u_delta": 0,
+              "expected_v_after": 17,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 18,
+              "expected_u_delta": 0,
+              "expected_v_after": 18,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 19,
+              "expected_u_delta": 0,
+              "expected_v_after": 19,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 20,
+              "expected_u_delta": 0,
+              "expected_v_after": 20,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 0,
+              "expected_u_delta": 0,
+              "expected_v_after": 0,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 1,
+              "expected_u_delta": 1,
+              "expected_v_after": 1,
+              "start_v": 20
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        }
+      ],
+      "m": 21,
+      "ok": true
+    },
+    {
+      "A": 0,
+      "cycles": [
+        {
+          "cycle_index": 0,
+          "expected_total_u_shift_mod_m": 20,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 22,
+              "expected_u_delta": 0,
+              "expected_v_after": 22,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 0,
+              "expected_u_delta": 1,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 1,
+              "expected_u_delta": 2,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 2,
+              "expected_u_delta": 2,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 3,
+              "expected_u_delta": 2,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 4,
+              "expected_u_delta": 2,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 5,
+              "expected_u_delta": 2,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 6,
+              "expected_u_delta": 2,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 7,
+              "expected_u_delta": 2,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 8,
+              "expected_u_delta": 2,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 9,
+              "expected_u_delta": 2,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 10,
+              "expected_u_delta": 2,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 11,
+              "expected_u_delta": 2,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 12,
+              "expected_u_delta": 2,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 13,
+              "expected_u_delta": 2,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 14,
+              "expected_u_delta": 2,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 15,
+              "expected_u_delta": 2,
+              "expected_v_after": 15,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 16,
+              "expected_u_delta": 2,
+              "expected_v_after": 16,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 17,
+              "expected_u_delta": 2,
+              "expected_v_after": 17,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 18,
+              "expected_u_delta": 2,
+              "expected_v_after": 18,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 19,
+              "expected_u_delta": 2,
+              "expected_v_after": 19,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 20,
+              "expected_u_delta": 2,
+              "expected_v_after": 20,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 21,
+              "expected_u_delta": 2,
+              "expected_v_after": 21,
+              "start_v": 22
+            }
+          ],
+          "total_u_shift_mod_m": 20,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 1,
+          "expected_total_u_shift_mod_m": 1,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 22,
+              "expected_u_delta": 21,
+              "expected_v_after": 22,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 22,
+              "actual_v_after": 0,
+              "expected_u_delta": 22,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 1,
+              "expected_u_delta": 21,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 2,
+              "expected_u_delta": 21,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 3,
+              "expected_u_delta": 21,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 4,
+              "expected_u_delta": 21,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 5,
+              "expected_u_delta": 21,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 6,
+              "expected_u_delta": 21,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 7,
+              "expected_u_delta": 21,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 8,
+              "expected_u_delta": 21,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 9,
+              "expected_u_delta": 21,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 10,
+              "expected_u_delta": 21,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 11,
+              "expected_u_delta": 21,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 12,
+              "expected_u_delta": 21,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 13,
+              "expected_u_delta": 21,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 14,
+              "expected_u_delta": 21,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 15,
+              "expected_u_delta": 21,
+              "expected_v_after": 15,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 16,
+              "expected_u_delta": 21,
+              "expected_v_after": 16,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 17,
+              "expected_u_delta": 21,
+              "expected_v_after": 17,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 18,
+              "expected_u_delta": 21,
+              "expected_v_after": 18,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 19,
+              "expected_u_delta": 21,
+              "expected_v_after": 19,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 20,
+              "expected_u_delta": 21,
+              "expected_v_after": 20,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 21,
+              "actual_v_after": 21,
+              "expected_u_delta": 21,
+              "expected_v_after": 21,
+              "start_v": 22
+            }
+          ],
+          "total_u_shift_mod_m": 1,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 2,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 2,
+              "expected_u_delta": 1,
+              "expected_v_after": 2,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 3,
+              "expected_u_delta": 0,
+              "expected_v_after": 3,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 5,
+              "expected_u_delta": 0,
+              "expected_v_after": 5,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 6,
+              "expected_u_delta": 0,
+              "expected_v_after": 6,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 7,
+              "expected_u_delta": 0,
+              "expected_v_after": 7,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 8,
+              "expected_u_delta": 0,
+              "expected_v_after": 8,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 9,
+              "expected_u_delta": 0,
+              "expected_v_after": 9,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 10,
+              "expected_u_delta": 0,
+              "expected_v_after": 10,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 11,
+              "expected_u_delta": 0,
+              "expected_v_after": 11,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 12,
+              "expected_u_delta": 0,
+              "expected_v_after": 12,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 13,
+              "expected_u_delta": 0,
+              "expected_v_after": 13,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 14,
+              "expected_u_delta": 0,
+              "expected_v_after": 14,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 15,
+              "expected_u_delta": 0,
+              "expected_v_after": 15,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 16,
+              "expected_u_delta": 0,
+              "expected_v_after": 16,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 17,
+              "expected_u_delta": 0,
+              "expected_v_after": 17,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 18,
+              "expected_u_delta": 0,
+              "expected_v_after": 18,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 19,
+              "expected_u_delta": 0,
+              "expected_v_after": 19,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 20,
+              "expected_u_delta": 0,
+              "expected_v_after": 20,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 21,
+              "expected_u_delta": 0,
+              "expected_v_after": 21,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 22,
+              "expected_u_delta": 0,
+              "expected_v_after": 22,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 0,
+              "expected_u_delta": 0,
+              "expected_v_after": 0,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 1,
+              "expected_u_delta": 1,
+              "expected_v_after": 1,
+              "start_v": 22
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        }
+      ],
+      "m": 23,
+      "ok": true
+    },
+    {
+      "A": 0,
+      "cycles": [
+        {
+          "cycle_index": 0,
+          "expected_total_u_shift_mod_m": 22,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 24,
+              "expected_u_delta": 0,
+              "expected_v_after": 24,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 0,
+              "expected_u_delta": 1,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 1,
+              "expected_u_delta": 2,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 2,
+              "expected_u_delta": 2,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 3,
+              "expected_u_delta": 2,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 4,
+              "expected_u_delta": 2,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 5,
+              "expected_u_delta": 2,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 6,
+              "expected_u_delta": 2,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 7,
+              "expected_u_delta": 2,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 8,
+              "expected_u_delta": 2,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 9,
+              "expected_u_delta": 2,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 10,
+              "expected_u_delta": 2,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 11,
+              "expected_u_delta": 2,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 12,
+              "expected_u_delta": 2,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 13,
+              "expected_u_delta": 2,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 14,
+              "expected_u_delta": 2,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 15,
+              "expected_u_delta": 2,
+              "expected_v_after": 15,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 16,
+              "expected_u_delta": 2,
+              "expected_v_after": 16,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 17,
+              "expected_u_delta": 2,
+              "expected_v_after": 17,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 18,
+              "expected_u_delta": 2,
+              "expected_v_after": 18,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 19,
+              "expected_u_delta": 2,
+              "expected_v_after": 19,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 20,
+              "expected_u_delta": 2,
+              "expected_v_after": 20,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 21,
+              "expected_u_delta": 2,
+              "expected_v_after": 21,
+              "start_v": 22
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 22,
+              "expected_u_delta": 2,
+              "expected_v_after": 22,
+              "start_v": 23
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 23,
+              "expected_u_delta": 2,
+              "expected_v_after": 23,
+              "start_v": 24
+            }
+          ],
+          "total_u_shift_mod_m": 22,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 1,
+          "expected_total_u_shift_mod_m": 1,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 24,
+              "expected_u_delta": 23,
+              "expected_v_after": 24,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 24,
+              "actual_v_after": 0,
+              "expected_u_delta": 24,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 1,
+              "expected_u_delta": 23,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 2,
+              "expected_u_delta": 23,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 3,
+              "expected_u_delta": 23,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 4,
+              "expected_u_delta": 23,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 5,
+              "expected_u_delta": 23,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 6,
+              "expected_u_delta": 23,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 7,
+              "expected_u_delta": 23,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 8,
+              "expected_u_delta": 23,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 9,
+              "expected_u_delta": 23,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 10,
+              "expected_u_delta": 23,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 11,
+              "expected_u_delta": 23,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 12,
+              "expected_u_delta": 23,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 13,
+              "expected_u_delta": 23,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 14,
+              "expected_u_delta": 23,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 15,
+              "expected_u_delta": 23,
+              "expected_v_after": 15,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 16,
+              "expected_u_delta": 23,
+              "expected_v_after": 16,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 17,
+              "expected_u_delta": 23,
+              "expected_v_after": 17,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 18,
+              "expected_u_delta": 23,
+              "expected_v_after": 18,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 19,
+              "expected_u_delta": 23,
+              "expected_v_after": 19,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 20,
+              "expected_u_delta": 23,
+              "expected_v_after": 20,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 21,
+              "expected_u_delta": 23,
+              "expected_v_after": 21,
+              "start_v": 22
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 22,
+              "expected_u_delta": 23,
+              "expected_v_after": 22,
+              "start_v": 23
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 23,
+              "expected_u_delta": 23,
+              "expected_v_after": 23,
+              "start_v": 24
+            }
+          ],
+          "total_u_shift_mod_m": 1,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 2,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 2,
+              "expected_u_delta": 1,
+              "expected_v_after": 2,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 3,
+              "expected_u_delta": 0,
+              "expected_v_after": 3,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 5,
+              "expected_u_delta": 0,
+              "expected_v_after": 5,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 6,
+              "expected_u_delta": 0,
+              "expected_v_after": 6,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 7,
+              "expected_u_delta": 0,
+              "expected_v_after": 7,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 8,
+              "expected_u_delta": 0,
+              "expected_v_after": 8,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 9,
+              "expected_u_delta": 0,
+              "expected_v_after": 9,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 10,
+              "expected_u_delta": 0,
+              "expected_v_after": 10,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 11,
+              "expected_u_delta": 0,
+              "expected_v_after": 11,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 12,
+              "expected_u_delta": 0,
+              "expected_v_after": 12,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 13,
+              "expected_u_delta": 0,
+              "expected_v_after": 13,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 14,
+              "expected_u_delta": 0,
+              "expected_v_after": 14,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 15,
+              "expected_u_delta": 0,
+              "expected_v_after": 15,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 16,
+              "expected_u_delta": 0,
+              "expected_v_after": 16,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 17,
+              "expected_u_delta": 0,
+              "expected_v_after": 17,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 18,
+              "expected_u_delta": 0,
+              "expected_v_after": 18,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 19,
+              "expected_u_delta": 0,
+              "expected_v_after": 19,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 20,
+              "expected_u_delta": 0,
+              "expected_v_after": 20,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 21,
+              "expected_u_delta": 0,
+              "expected_v_after": 21,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 22,
+              "expected_u_delta": 0,
+              "expected_v_after": 22,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 23,
+              "expected_u_delta": 0,
+              "expected_v_after": 23,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 24,
+              "expected_u_delta": 0,
+              "expected_v_after": 24,
+              "start_v": 22
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 0,
+              "expected_u_delta": 0,
+              "expected_v_after": 0,
+              "start_v": 23
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 1,
+              "expected_u_delta": 1,
+              "expected_v_after": 1,
+              "start_v": 24
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        }
+      ],
+      "m": 25,
+      "ok": true
+    },
+    {
+      "A": 2,
+      "cycles": [
+        {
+          "cycle_index": 0,
+          "expected_total_u_shift_mod_m": 20,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 26,
+              "expected_u_delta": 2,
+              "expected_v_after": 26,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 3,
+              "actual_v_after": 0,
+              "expected_u_delta": 3,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 1,
+              "expected_u_delta": 4,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 2,
+              "expected_u_delta": 4,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 3,
+              "expected_u_delta": 4,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 4,
+              "expected_u_delta": 4,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 5,
+              "expected_u_delta": 4,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 6,
+              "expected_u_delta": 4,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 7,
+              "expected_u_delta": 4,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 8,
+              "expected_u_delta": 4,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 9,
+              "expected_u_delta": 4,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 10,
+              "expected_u_delta": 4,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 11,
+              "expected_u_delta": 4,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 12,
+              "expected_u_delta": 4,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 13,
+              "expected_u_delta": 4,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 14,
+              "expected_u_delta": 4,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 15,
+              "expected_u_delta": 4,
+              "expected_v_after": 15,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 16,
+              "expected_u_delta": 4,
+              "expected_v_after": 16,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 17,
+              "expected_u_delta": 4,
+              "expected_v_after": 17,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 18,
+              "expected_u_delta": 4,
+              "expected_v_after": 18,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 19,
+              "expected_u_delta": 4,
+              "expected_v_after": 19,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 20,
+              "expected_u_delta": 4,
+              "expected_v_after": 20,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 21,
+              "expected_u_delta": 4,
+              "expected_v_after": 21,
+              "start_v": 22
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 22,
+              "expected_u_delta": 4,
+              "expected_v_after": 22,
+              "start_v": 23
+            },
+            {
+              "actual_u_delta": 4,
+              "actual_v_after": 23,
+              "expected_u_delta": 4,
+              "expected_v_after": 23,
+              "start_v": 24
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 24,
+              "expected_u_delta": 2,
+              "expected_v_after": 24,
+              "start_v": 25
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 25,
+              "expected_u_delta": 2,
+              "expected_v_after": 25,
+              "start_v": 26
+            }
+          ],
+          "total_u_shift_mod_m": 20,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 1,
+          "expected_total_u_shift_mod_m": 5,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 26,
+              "expected_u_delta": 23,
+              "expected_v_after": 26,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 24,
+              "actual_v_after": 0,
+              "expected_u_delta": 24,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 1,
+              "expected_u_delta": 23,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 2,
+              "expected_u_delta": 23,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 3,
+              "expected_u_delta": 23,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 4,
+              "expected_u_delta": 23,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 5,
+              "expected_u_delta": 23,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 6,
+              "expected_u_delta": 23,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 7,
+              "expected_u_delta": 23,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 8,
+              "expected_u_delta": 23,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 9,
+              "expected_u_delta": 23,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 10,
+              "expected_u_delta": 23,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 11,
+              "expected_u_delta": 23,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 12,
+              "expected_u_delta": 23,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 13,
+              "expected_u_delta": 23,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 14,
+              "expected_u_delta": 23,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 15,
+              "expected_u_delta": 23,
+              "expected_v_after": 15,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 16,
+              "expected_u_delta": 23,
+              "expected_v_after": 16,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 17,
+              "expected_u_delta": 23,
+              "expected_v_after": 17,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 18,
+              "expected_u_delta": 23,
+              "expected_v_after": 18,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 19,
+              "expected_u_delta": 23,
+              "expected_v_after": 19,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 20,
+              "expected_u_delta": 23,
+              "expected_v_after": 20,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 21,
+              "expected_u_delta": 23,
+              "expected_v_after": 21,
+              "start_v": 22
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 22,
+              "expected_u_delta": 23,
+              "expected_v_after": 22,
+              "start_v": 23
+            },
+            {
+              "actual_u_delta": 23,
+              "actual_v_after": 23,
+              "expected_u_delta": 23,
+              "expected_v_after": 23,
+              "start_v": 24
+            },
+            {
+              "actual_u_delta": 25,
+              "actual_v_after": 24,
+              "expected_u_delta": 25,
+              "expected_v_after": 24,
+              "start_v": 25
+            },
+            {
+              "actual_u_delta": 25,
+              "actual_v_after": 25,
+              "expected_u_delta": 25,
+              "expected_v_after": 25,
+              "start_v": 26
+            }
+          ],
+          "total_u_shift_mod_m": 5,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 2,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 2,
+              "expected_u_delta": 1,
+              "expected_v_after": 2,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 3,
+              "expected_u_delta": 0,
+              "expected_v_after": 3,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 5,
+              "expected_u_delta": 0,
+              "expected_v_after": 5,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 6,
+              "expected_u_delta": 0,
+              "expected_v_after": 6,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 7,
+              "expected_u_delta": 0,
+              "expected_v_after": 7,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 8,
+              "expected_u_delta": 0,
+              "expected_v_after": 8,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 9,
+              "expected_u_delta": 0,
+              "expected_v_after": 9,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 10,
+              "expected_u_delta": 0,
+              "expected_v_after": 10,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 11,
+              "expected_u_delta": 0,
+              "expected_v_after": 11,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 12,
+              "expected_u_delta": 0,
+              "expected_v_after": 12,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 13,
+              "expected_u_delta": 0,
+              "expected_v_after": 13,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 14,
+              "expected_u_delta": 0,
+              "expected_v_after": 14,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 15,
+              "expected_u_delta": 0,
+              "expected_v_after": 15,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 16,
+              "expected_u_delta": 0,
+              "expected_v_after": 16,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 17,
+              "expected_u_delta": 0,
+              "expected_v_after": 17,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 18,
+              "expected_u_delta": 0,
+              "expected_v_after": 18,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 19,
+              "expected_u_delta": 0,
+              "expected_v_after": 19,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 20,
+              "expected_u_delta": 0,
+              "expected_v_after": 20,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 21,
+              "expected_u_delta": 0,
+              "expected_v_after": 21,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 22,
+              "expected_u_delta": 0,
+              "expected_v_after": 22,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 23,
+              "expected_u_delta": 0,
+              "expected_v_after": 23,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 24,
+              "expected_u_delta": 0,
+              "expected_v_after": 24,
+              "start_v": 22
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 25,
+              "expected_u_delta": 0,
+              "expected_v_after": 25,
+              "start_v": 23
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 26,
+              "expected_u_delta": 0,
+              "expected_v_after": 26,
+              "start_v": 24
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 0,
+              "expected_u_delta": 0,
+              "expected_v_after": 0,
+              "start_v": 25
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 1,
+              "expected_u_delta": 1,
+              "expected_v_after": 1,
+              "start_v": 26
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        }
+      ],
+      "m": 27,
+      "ok": true
+    },
+    {
+      "A": 0,
+      "cycles": [
+        {
+          "cycle_index": 0,
+          "expected_total_u_shift_mod_m": 26,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 28,
+              "expected_u_delta": 0,
+              "expected_v_after": 28,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 0,
+              "expected_u_delta": 1,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 1,
+              "expected_u_delta": 2,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 2,
+              "expected_u_delta": 2,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 3,
+              "expected_u_delta": 2,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 4,
+              "expected_u_delta": 2,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 5,
+              "expected_u_delta": 2,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 6,
+              "expected_u_delta": 2,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 7,
+              "expected_u_delta": 2,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 8,
+              "expected_u_delta": 2,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 9,
+              "expected_u_delta": 2,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 10,
+              "expected_u_delta": 2,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 11,
+              "expected_u_delta": 2,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 12,
+              "expected_u_delta": 2,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 13,
+              "expected_u_delta": 2,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 14,
+              "expected_u_delta": 2,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 15,
+              "expected_u_delta": 2,
+              "expected_v_after": 15,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 16,
+              "expected_u_delta": 2,
+              "expected_v_after": 16,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 17,
+              "expected_u_delta": 2,
+              "expected_v_after": 17,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 18,
+              "expected_u_delta": 2,
+              "expected_v_after": 18,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 19,
+              "expected_u_delta": 2,
+              "expected_v_after": 19,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 20,
+              "expected_u_delta": 2,
+              "expected_v_after": 20,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 21,
+              "expected_u_delta": 2,
+              "expected_v_after": 21,
+              "start_v": 22
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 22,
+              "expected_u_delta": 2,
+              "expected_v_after": 22,
+              "start_v": 23
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 23,
+              "expected_u_delta": 2,
+              "expected_v_after": 23,
+              "start_v": 24
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 24,
+              "expected_u_delta": 2,
+              "expected_v_after": 24,
+              "start_v": 25
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 25,
+              "expected_u_delta": 2,
+              "expected_v_after": 25,
+              "start_v": 26
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 26,
+              "expected_u_delta": 2,
+              "expected_v_after": 26,
+              "start_v": 27
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 27,
+              "expected_u_delta": 2,
+              "expected_v_after": 27,
+              "start_v": 28
+            }
+          ],
+          "total_u_shift_mod_m": 26,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 1,
+          "expected_total_u_shift_mod_m": 1,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 28,
+              "expected_u_delta": 27,
+              "expected_v_after": 28,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 28,
+              "actual_v_after": 0,
+              "expected_u_delta": 28,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 1,
+              "expected_u_delta": 27,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 2,
+              "expected_u_delta": 27,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 3,
+              "expected_u_delta": 27,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 4,
+              "expected_u_delta": 27,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 5,
+              "expected_u_delta": 27,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 6,
+              "expected_u_delta": 27,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 7,
+              "expected_u_delta": 27,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 8,
+              "expected_u_delta": 27,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 9,
+              "expected_u_delta": 27,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 10,
+              "expected_u_delta": 27,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 11,
+              "expected_u_delta": 27,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 12,
+              "expected_u_delta": 27,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 13,
+              "expected_u_delta": 27,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 14,
+              "expected_u_delta": 27,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 15,
+              "expected_u_delta": 27,
+              "expected_v_after": 15,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 16,
+              "expected_u_delta": 27,
+              "expected_v_after": 16,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 17,
+              "expected_u_delta": 27,
+              "expected_v_after": 17,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 18,
+              "expected_u_delta": 27,
+              "expected_v_after": 18,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 19,
+              "expected_u_delta": 27,
+              "expected_v_after": 19,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 20,
+              "expected_u_delta": 27,
+              "expected_v_after": 20,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 21,
+              "expected_u_delta": 27,
+              "expected_v_after": 21,
+              "start_v": 22
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 22,
+              "expected_u_delta": 27,
+              "expected_v_after": 22,
+              "start_v": 23
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 23,
+              "expected_u_delta": 27,
+              "expected_v_after": 23,
+              "start_v": 24
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 24,
+              "expected_u_delta": 27,
+              "expected_v_after": 24,
+              "start_v": 25
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 25,
+              "expected_u_delta": 27,
+              "expected_v_after": 25,
+              "start_v": 26
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 26,
+              "expected_u_delta": 27,
+              "expected_v_after": 26,
+              "start_v": 27
+            },
+            {
+              "actual_u_delta": 27,
+              "actual_v_after": 27,
+              "expected_u_delta": 27,
+              "expected_v_after": 27,
+              "start_v": 28
+            }
+          ],
+          "total_u_shift_mod_m": 1,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 2,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 2,
+              "expected_u_delta": 1,
+              "expected_v_after": 2,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 3,
+              "expected_u_delta": 0,
+              "expected_v_after": 3,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 5,
+              "expected_u_delta": 0,
+              "expected_v_after": 5,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 6,
+              "expected_u_delta": 0,
+              "expected_v_after": 6,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 7,
+              "expected_u_delta": 0,
+              "expected_v_after": 7,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 8,
+              "expected_u_delta": 0,
+              "expected_v_after": 8,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 9,
+              "expected_u_delta": 0,
+              "expected_v_after": 9,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 10,
+              "expected_u_delta": 0,
+              "expected_v_after": 10,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 11,
+              "expected_u_delta": 0,
+              "expected_v_after": 11,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 12,
+              "expected_u_delta": 0,
+              "expected_v_after": 12,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 13,
+              "expected_u_delta": 0,
+              "expected_v_after": 13,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 14,
+              "expected_u_delta": 0,
+              "expected_v_after": 14,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 15,
+              "expected_u_delta": 0,
+              "expected_v_after": 15,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 16,
+              "expected_u_delta": 0,
+              "expected_v_after": 16,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 17,
+              "expected_u_delta": 0,
+              "expected_v_after": 17,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 18,
+              "expected_u_delta": 0,
+              "expected_v_after": 18,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 19,
+              "expected_u_delta": 0,
+              "expected_v_after": 19,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 20,
+              "expected_u_delta": 0,
+              "expected_v_after": 20,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 21,
+              "expected_u_delta": 0,
+              "expected_v_after": 21,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 22,
+              "expected_u_delta": 0,
+              "expected_v_after": 22,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 23,
+              "expected_u_delta": 0,
+              "expected_v_after": 23,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 24,
+              "expected_u_delta": 0,
+              "expected_v_after": 24,
+              "start_v": 22
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 25,
+              "expected_u_delta": 0,
+              "expected_v_after": 25,
+              "start_v": 23
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 26,
+              "expected_u_delta": 0,
+              "expected_v_after": 26,
+              "start_v": 24
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 27,
+              "expected_u_delta": 0,
+              "expected_v_after": 27,
+              "start_v": 25
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 28,
+              "expected_u_delta": 0,
+              "expected_v_after": 28,
+              "start_v": 26
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 0,
+              "expected_u_delta": 0,
+              "expected_v_after": 0,
+              "start_v": 27
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 1,
+              "expected_u_delta": 1,
+              "expected_v_after": 1,
+              "start_v": 28
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        }
+      ],
+      "m": 29,
+      "ok": true
+    },
+    {
+      "A": 0,
+      "cycles": [
+        {
+          "cycle_index": 0,
+          "expected_total_u_shift_mod_m": 28,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 30,
+              "expected_u_delta": 0,
+              "expected_v_after": 30,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 0,
+              "expected_u_delta": 1,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 1,
+              "expected_u_delta": 2,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 2,
+              "expected_u_delta": 2,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 3,
+              "expected_u_delta": 2,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 4,
+              "expected_u_delta": 2,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 5,
+              "expected_u_delta": 2,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 6,
+              "expected_u_delta": 2,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 7,
+              "expected_u_delta": 2,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 8,
+              "expected_u_delta": 2,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 9,
+              "expected_u_delta": 2,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 10,
+              "expected_u_delta": 2,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 11,
+              "expected_u_delta": 2,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 12,
+              "expected_u_delta": 2,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 13,
+              "expected_u_delta": 2,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 14,
+              "expected_u_delta": 2,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 15,
+              "expected_u_delta": 2,
+              "expected_v_after": 15,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 16,
+              "expected_u_delta": 2,
+              "expected_v_after": 16,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 17,
+              "expected_u_delta": 2,
+              "expected_v_after": 17,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 18,
+              "expected_u_delta": 2,
+              "expected_v_after": 18,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 19,
+              "expected_u_delta": 2,
+              "expected_v_after": 19,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 20,
+              "expected_u_delta": 2,
+              "expected_v_after": 20,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 21,
+              "expected_u_delta": 2,
+              "expected_v_after": 21,
+              "start_v": 22
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 22,
+              "expected_u_delta": 2,
+              "expected_v_after": 22,
+              "start_v": 23
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 23,
+              "expected_u_delta": 2,
+              "expected_v_after": 23,
+              "start_v": 24
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 24,
+              "expected_u_delta": 2,
+              "expected_v_after": 24,
+              "start_v": 25
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 25,
+              "expected_u_delta": 2,
+              "expected_v_after": 25,
+              "start_v": 26
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 26,
+              "expected_u_delta": 2,
+              "expected_v_after": 26,
+              "start_v": 27
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 27,
+              "expected_u_delta": 2,
+              "expected_v_after": 27,
+              "start_v": 28
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 28,
+              "expected_u_delta": 2,
+              "expected_v_after": 28,
+              "start_v": 29
+            },
+            {
+              "actual_u_delta": 2,
+              "actual_v_after": 29,
+              "expected_u_delta": 2,
+              "expected_v_after": 29,
+              "start_v": 30
+            }
+          ],
+          "total_u_shift_mod_m": 28,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 1,
+          "expected_total_u_shift_mod_m": 1,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 30,
+              "expected_u_delta": 29,
+              "expected_v_after": 30,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 30,
+              "actual_v_after": 0,
+              "expected_u_delta": 30,
+              "expected_v_after": 0,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 1,
+              "expected_u_delta": 29,
+              "expected_v_after": 1,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 2,
+              "expected_u_delta": 29,
+              "expected_v_after": 2,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 3,
+              "expected_u_delta": 29,
+              "expected_v_after": 3,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 4,
+              "expected_u_delta": 29,
+              "expected_v_after": 4,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 5,
+              "expected_u_delta": 29,
+              "expected_v_after": 5,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 6,
+              "expected_u_delta": 29,
+              "expected_v_after": 6,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 7,
+              "expected_u_delta": 29,
+              "expected_v_after": 7,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 8,
+              "expected_u_delta": 29,
+              "expected_v_after": 8,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 9,
+              "expected_u_delta": 29,
+              "expected_v_after": 9,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 10,
+              "expected_u_delta": 29,
+              "expected_v_after": 10,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 11,
+              "expected_u_delta": 29,
+              "expected_v_after": 11,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 12,
+              "expected_u_delta": 29,
+              "expected_v_after": 12,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 13,
+              "expected_u_delta": 29,
+              "expected_v_after": 13,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 14,
+              "expected_u_delta": 29,
+              "expected_v_after": 14,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 15,
+              "expected_u_delta": 29,
+              "expected_v_after": 15,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 16,
+              "expected_u_delta": 29,
+              "expected_v_after": 16,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 17,
+              "expected_u_delta": 29,
+              "expected_v_after": 17,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 18,
+              "expected_u_delta": 29,
+              "expected_v_after": 18,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 19,
+              "expected_u_delta": 29,
+              "expected_v_after": 19,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 20,
+              "expected_u_delta": 29,
+              "expected_v_after": 20,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 21,
+              "expected_u_delta": 29,
+              "expected_v_after": 21,
+              "start_v": 22
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 22,
+              "expected_u_delta": 29,
+              "expected_v_after": 22,
+              "start_v": 23
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 23,
+              "expected_u_delta": 29,
+              "expected_v_after": 23,
+              "start_v": 24
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 24,
+              "expected_u_delta": 29,
+              "expected_v_after": 24,
+              "start_v": 25
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 25,
+              "expected_u_delta": 29,
+              "expected_v_after": 25,
+              "start_v": 26
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 26,
+              "expected_u_delta": 29,
+              "expected_v_after": 26,
+              "start_v": 27
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 27,
+              "expected_u_delta": 29,
+              "expected_v_after": 27,
+              "start_v": 28
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 28,
+              "expected_u_delta": 29,
+              "expected_v_after": 28,
+              "start_v": 29
+            },
+            {
+              "actual_u_delta": 29,
+              "actual_v_after": 29,
+              "expected_u_delta": 29,
+              "expected_v_after": 29,
+              "start_v": 30
+            }
+          ],
+          "total_u_shift_mod_m": 1,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        },
+        {
+          "cycle_index": 2,
+          "expected_total_u_shift_mod_m": 2,
+          "ok": true,
+          "rows": [
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 2,
+              "expected_u_delta": 1,
+              "expected_v_after": 2,
+              "start_v": 0
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 3,
+              "expected_u_delta": 0,
+              "expected_v_after": 3,
+              "start_v": 1
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 4,
+              "expected_u_delta": 0,
+              "expected_v_after": 4,
+              "start_v": 2
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 5,
+              "expected_u_delta": 0,
+              "expected_v_after": 5,
+              "start_v": 3
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 6,
+              "expected_u_delta": 0,
+              "expected_v_after": 6,
+              "start_v": 4
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 7,
+              "expected_u_delta": 0,
+              "expected_v_after": 7,
+              "start_v": 5
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 8,
+              "expected_u_delta": 0,
+              "expected_v_after": 8,
+              "start_v": 6
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 9,
+              "expected_u_delta": 0,
+              "expected_v_after": 9,
+              "start_v": 7
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 10,
+              "expected_u_delta": 0,
+              "expected_v_after": 10,
+              "start_v": 8
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 11,
+              "expected_u_delta": 0,
+              "expected_v_after": 11,
+              "start_v": 9
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 12,
+              "expected_u_delta": 0,
+              "expected_v_after": 12,
+              "start_v": 10
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 13,
+              "expected_u_delta": 0,
+              "expected_v_after": 13,
+              "start_v": 11
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 14,
+              "expected_u_delta": 0,
+              "expected_v_after": 14,
+              "start_v": 12
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 15,
+              "expected_u_delta": 0,
+              "expected_v_after": 15,
+              "start_v": 13
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 16,
+              "expected_u_delta": 0,
+              "expected_v_after": 16,
+              "start_v": 14
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 17,
+              "expected_u_delta": 0,
+              "expected_v_after": 17,
+              "start_v": 15
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 18,
+              "expected_u_delta": 0,
+              "expected_v_after": 18,
+              "start_v": 16
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 19,
+              "expected_u_delta": 0,
+              "expected_v_after": 19,
+              "start_v": 17
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 20,
+              "expected_u_delta": 0,
+              "expected_v_after": 20,
+              "start_v": 18
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 21,
+              "expected_u_delta": 0,
+              "expected_v_after": 21,
+              "start_v": 19
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 22,
+              "expected_u_delta": 0,
+              "expected_v_after": 22,
+              "start_v": 20
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 23,
+              "expected_u_delta": 0,
+              "expected_v_after": 23,
+              "start_v": 21
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 24,
+              "expected_u_delta": 0,
+              "expected_v_after": 24,
+              "start_v": 22
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 25,
+              "expected_u_delta": 0,
+              "expected_v_after": 25,
+              "start_v": 23
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 26,
+              "expected_u_delta": 0,
+              "expected_v_after": 26,
+              "start_v": 24
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 27,
+              "expected_u_delta": 0,
+              "expected_v_after": 27,
+              "start_v": 25
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 28,
+              "expected_u_delta": 0,
+              "expected_v_after": 28,
+              "start_v": 26
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 29,
+              "expected_u_delta": 0,
+              "expected_v_after": 29,
+              "start_v": 27
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 30,
+              "expected_u_delta": 0,
+              "expected_v_after": 30,
+              "start_v": 28
+            },
+            {
+              "actual_u_delta": 0,
+              "actual_v_after": 0,
+              "expected_u_delta": 0,
+              "expected_v_after": 0,
+              "start_v": 29
+            },
+            {
+              "actual_u_delta": 1,
+              "actual_v_after": 1,
+              "expected_u_delta": 1,
+              "expected_v_after": 1,
+              "start_v": 30
+            }
+          ],
+          "total_u_shift_mod_m": 2,
+          "u_deltas_ok": true,
+          "v_deltas_ok": true
+        }
+      ],
+      "m": 31,
+      "ok": true
+    }
+  ]
+}
