@@ -14,6 +14,10 @@ logging, restart-safe memory, and machine-readable evidence. The goal was to rep
 results while testing whether scaffolding disciplines improve reliability and reproducibility over lightweight
 coaching.
 
+For a comparison of the baseline against three strict-cleanroom runs (GPT-5.2, GPT-5.3-Codex, and
+Claude Opus 4.6 — each working without any reference to the paper), see
+**[COMPARISON.md](COMPARISON.md)**.
+
 **What we found:**
 - The harness eliminated context loss and documentation drift — every experiment has exact commands and
   reproducible artifacts.
