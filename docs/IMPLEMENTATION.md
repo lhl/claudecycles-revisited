@@ -44,6 +44,7 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 - [ ] P3-03: Maintain failure catalog with reasons and rejected families
 - [x] P4-00: Add README update section for extensions beyond the note
 - [ ] P4-01: Produce final replication-and-extension report (what holds, what is open, next bets)
+- [x] P4-02: Audit `COMPARISON.md` against archived session logs and branch artifacts
 
 ## Deferrals
 
@@ -80,3 +81,4 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 - `python -m claudescycles.even_cpsat --m 6 --out-dir artifacts/even_m6/cpsat_seed0_t120_w8 --time-limit-sec 120 --seed 0 --num-workers 8` -> HIT; verifier OK (`artifacts/even_m6/cpsat_seed0_t120_w8/verify.json`)
 - `python -m claudescycles.even_cpsat --m 8 --out-dir artifacts/even_m8/cpsat_seed0_t300_w8 --time-limit-sec 300 --seed 0 --num-workers 8` -> HIT; verifier OK (`artifacts/even_m8/cpsat_seed0_t300_w8/verify.json`)
 - `python -m claudescycles.knuth_m3_symmetry` -> wrote symmetry counts (`artifacts/knuth_m3/symmetry_counts.json`)
+- `apply_patch` to update `COMPARISON.md` (session-metric + artifact-count audit) -> success

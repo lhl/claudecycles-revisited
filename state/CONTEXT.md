@@ -17,6 +17,7 @@ Replicate and extend `claude-cycles.pdf` results with reproducible scripts.
 - Review writeup exists: `README.md` (comparison vs Knuth note; formerly `REVIEW.md`).
 - Followup tracker exists: `PROBLEM-2-followup.md` (formerly `FOLLOWUP.md`).
 - CP-SAT even-`m` solver exists: `python -m claudescycles.even_cpsat --m <m> --out-dir <dir>` (uses OR-Tools `AddCircuit`).
+- `COMPARISON.md` summarizes baseline vs cleanroom branches; session metrics were re-audited against session logs and the Opus literature-proof section is explicitly treated as unverified.
 
 ## Latest Validated Evidence
 - Verifier rejects an intentionally invalid decomposition for `m=3` (`artifacts/invalid_all0_m3.json`).
