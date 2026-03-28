@@ -3,6 +3,11 @@
 This document compares five runs of the Claude's Cycles replication/extension experiment across
 different models, reasoning levels, and isolation conditions.
 
+Historical note (March 29, 2026): Knuth's later 16 Mar 2026 revision cites additional follow-on work
+outside these five runs, including Ho Boon Suan's GPT-5.4 Pro even-case proof, Kim Morrison's Lean
+formalization of the odd case, and Keston Aquino-Michaels's multi-agent GPT+Claude constructions. This
+document remains a comparison of the repo-local baseline and cleanroom runs only.
+
 ## Experiment Overview
 
 **Problem**: Decompose all arcs of the directed graph `G_m` (vertices `Z_m^3`, three outgoing arcs

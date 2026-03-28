@@ -7,7 +7,7 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 ## Baseline
 
 - Primary source: `claude-cycles.pdf`
-- Current status: odd-`m` construction + proof replicated; `m=3` counting/exact-cover parity achieved; even-`m` existence certificates found for `m=4,6,8` (general even-`m` construction remains open); independent cross-check pending (P2-03)
+- Current status: odd-`m` construction + proof replicated; `m=3` counting/exact-cover parity achieved; even-`m` existence certificates found for `m=4,6,8` (general even-`m` construction remains open in our own runs); versioned 2026-03-02 and 2026-03-16 source drafts archived with a dated README/COMPARISON addendum; independent cross-check pending (P2-03)
 - Evidence policy: every completed item must cite exact command(s) and outcomes
 - Problem control files: `PROBLEM.md` (replication), `PROBLEM-3-extension.md` (extension)
 
@@ -45,6 +45,7 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 - [x] P4-00: Add README update section for extensions beyond the note
 - [ ] P4-01: Produce final replication-and-extension report (what holds, what is open, next bets)
 - [x] P4-02: Audit `COMPARISON.md` against archived session logs and branch artifacts
+- [x] P4-03: Archive the 2026-03-16 paper revision and add a dated README/COMPARISON note
 
 ## Deferrals
 
@@ -83,3 +84,9 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 - `python -m claudescycles.knuth_m3_symmetry` -> wrote symmetry counts (`artifacts/knuth_m3/symmetry_counts.json`)
 - `apply_patch` to update `COMPARISON.md` (session-metric + artifact-count audit) -> success
 - `git show cleanroom-5.4:session-analysis/README.md`; `git show cleanroom-5.4:session-analysis/analyze_sessions.py > /tmp/analyze_sessions_54.py`; `git show cleanroom-5.4:session-analysis/codex-sessions/rollout-2026-03-06T04-17-49-019cbf6f-5309-7432-abd8-417875f27e40.jsonl > /tmp/cleanroom54.jsonl`; `python3 /tmp/analyze_sessions_54.py /tmp/cleanroom54.jsonl --json`; `git show cleanroom-5.4:README.md`; `git show cleanroom-5.4:proofs/partial_theorem.md`; `git ls-tree -r --name-only cleanroom-5.4`; `apply_patch` to update `COMPARISON.md` -> success (added cleanroom-5.4 metrics/results and explicit 5.2/5.3/5.4/Opus labeling)
+- `curl -L -sS https://www-cs-faculty.stanford.edu/~knuth/papers/claude-cycles.pdf -o /tmp/claude-cycles-2026-03-16.pdf`; `curl -I -L --max-time 20 https://www-cs-faculty.stanford.edu/~knuth/papers/claude-cycles.pdf`; `pdfinfo /tmp/claude-cycles-2026-03-16.pdf`; `diff -u references/claude-cycles.txt /tmp/claude-cycles-2026-03-16.txt` -> confirmed new 6-page `16 Mar 2026` draft and isolated the added postscript material
+- `curl -I -L --max-time 20 https://github.com/kim-em/KnuthClaudeLean/`; `curl -L -sS --max-time 20 https://raw.githubusercontent.com/kim-em/KnuthClaudeLean/master/README.md`; `curl -I -L --max-time 20 https://github.com/no-way-labs/residue`; `curl -L -sS --max-time 20 https://raw.githubusercontent.com/no-way-labs/residue/main/README.md`; `curl -L -sS --max-time 20 https://raw.githubusercontent.com/no-way-labs/residue/main/paper/completing_claudes_cycles.tex` -> corroborated live Lean + multi-agent repo links cited by the revised paper
+- `curl -I -L --max-time 20 https://cs.stanford.edu/~knuth/even%20solution.py`; `curl -I -L --max-time 20 https://cs.stanford.edu/~knuth/even%20closed%20form.c`; `curl -I -L --max-time 20 https://cs.stanford.edu/~knuth/alternative%20hamiltonian%20decomposition.pdf`; `curl -I -L --max-time 20 https://cs.stanford.edu/~knuth/even%20closed%20form%20proof%20final.pdf` -> all returned `404` on 2026-03-29
+- `mkdir -p references/papers`; `cp claude-cycles.pdf references/papers/claude-cycles-2026-03-02.pdf`; `cp references/claude-cycles.txt references/papers/claude-cycles-2026-03-02.txt`; `cp references/claude-cycles.raw.txt references/papers/claude-cycles-2026-03-02.raw.txt`; `cp references/claude-cycles.md references/papers/claude-cycles-2026-03-02.md`; `cp /tmp/claude-cycles-2026-03-16.pdf references/papers/claude-cycles-2026-03-16.pdf`; `pdftotext -layout references/papers/claude-cycles-2026-03-16.pdf references/papers/claude-cycles-2026-03-16.txt`; `pdftotext -raw references/papers/claude-cycles-2026-03-16.pdf references/papers/claude-cycles-2026-03-16.raw.txt`; `shasum -a 256 references/papers/claude-cycles-2026-03-02.pdf references/papers/claude-cycles-2026-03-16.pdf` -> archived both paper versions with checksums
+- `python -m claudescycles.knuth_m3 --out-dir /tmp/knuth_m3_20260329` -> reproduced `{11502,1012,996,4554,760}` against the revised paper
+- `apply_patch` to update `README.md`, `COMPARISON.md`, `docs/IMPLEMENTATION.md`, `WORKLOG.md`, `state/CONTEXT.md`; `apply_patch` to add `references/papers/README.md` -> success

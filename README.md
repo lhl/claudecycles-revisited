@@ -14,8 +14,8 @@ logging, restart-safe memory, and machine-readable evidence. The goal was to rep
 results while testing whether scaffolding disciplines improve reliability and reproducibility over lightweight
 coaching.
 
-For a comparison of the baseline against three strict-cleanroom runs (GPT-5.2, GPT-5.3-Codex, and
-Claude Opus 4.6 — each working without any reference to the paper), see
+For a comparison of the baseline against four strict-cleanroom runs (GPT-5.2, GPT-5.3-Codex, GPT-5.4,
+and Claude Opus 4.6 — each working without any reference to the paper), see
 **[COMPARISON.md](COMPARISON.md)**.
 
 **What we found:**
@@ -23,16 +23,59 @@ Claude Opus 4.6 — each working without any reference to the paper), see
   reproducible artifacts.
 - It did *not* produce independent discovery: the model accessed the reference paper after ~30 minutes of
   independent work (see [Methodology](#methodology-clean-room-reimplementation) for the full timeline).
-- As an extension, CP-SAT found verified even-`m` decompositions for `m=4,6,8` — the paper's main open
-  problem — though a general even-`m` construction remains elusive.
+- As an extension, CP-SAT found verified even-`m` decompositions for `m=4,6,8` while the 02 Mar 2026 draft
+  still left the general even-`m` case open; within our own runs, however, a general even-`m` construction
+  remained elusive.
+
+## Addendum (2026-03-29): Knuth's 2026-03-16 Revision
+
+On March 29, 2026 we fetched the current Stanford PDF and archived both source snapshots under
+`references/papers/`:
+
+- `references/papers/claude-cycles-2026-03-02.pdf`: the 5-page revision this repo originally reviewed.
+- `references/papers/claude-cycles-2026-03-16.pdf`: the current 6-page revision fetched from Stanford.
+
+For review continuity, the repo-root `claude-cycles.pdf` and `references/claude-cycles*` files remain pegged
+to the 02 Mar 2026 snapshot used in the detailed comparison below. See `references/papers/README.md` for the
+version table, checksums, and provenance notes.
+
+What changed in the 16 Mar 2026 draft:
+
+- The core odd-case counting claims are unchanged. We re-ran
+  `python -m claudescycles.knuth_m3 --out-dir /tmp/knuth_m3_20260329` on March 29, 2026 and again obtained
+  `11502`, `1012`, `996`, `4554`, and `760`, matching both our archived artifacts and the revised paper.
+- Knuth appended new postscripts covering:
+  - Filip Stappers + Claude Opus 4.6 even-case search with OR-Tools CP-SAT.
+  - Ho Boon Suan's GPT-5.3-Codex even-`m` construction and a later GPT-5.4 Pro proof for even `m >= 8`.
+  - Kim Morrison's Lean formalization of Knuth's odd-case proof.
+  - Exocija's simpler odd-`m` construction.
+  - Keston Aquino-Michaels's GPT+Claude multi-agent constructions and process paper.
+- We directly corroborated the live public GitHub artifacts Knuth now cites:
+  - `kim-em/KnuthClaudeLean` exists and describes a Lean 4 formalization of Knuth's odd-case result.
+  - `no-way-labs/residue` exists and claims constructions for all `m > 2`, with a GPT+Claude multi-agent
+    workflow, logs, code, and paper source checked in.
+- We could not fully corroborate every new side link directly:
+  - Stanford-hosted links `[4]`, `[5]`, `[7]`, and `[8]` in the revised paper returned `404` when checked on
+    March 29, 2026.
+  - The public ChatGPT share `[9]` is reachable, but our current fetch tooling could not extract the full
+    conversation contents cleanly.
+
+Compared with **[COMPARISON.md](COMPARISON.md)**, the new draft does not change the historical record of our
+five local runs; it does change the external landscape around them. Our `cleanroom-5.4` branch still matters
+as an independent odd-case discovery, but by March 16, 2026 the broader ecosystem already included Ho's
+external even-case proof and Aquino-Michaels's multi-agent odd/even construction pipeline. One interesting
+nuance: the `residue` repo presents its own even construction as computationally verified rather than
+symbolically proved, which is consistent with Knuth's revised summary because the claimed GPT-5.4 Pro proof
+is for Ho's separate even construction, not necessarily for Keston's simpler one.
 
 ---
 
 ## Review: Comparison against Knuth's "Claude's Cycles"
 
-This section reviews the repository against the reference note **"Claude's Cycles"** by **Donald E. Knuth**
-(dated 28 Feb 2026; revised 02 Mar 2026), stored locally as `claude-cycles.pdf` (5 pages). For
-grep/LLM-friendly access we also store `pdftotext` extractions in:
+This section reviews the repository against the archived **02 Mar 2026** snapshot of **"Claude's Cycles"**
+by **Donald E. Knuth**, stored locally as `claude-cycles.pdf` (5 pages). A later **16 Mar 2026** revision is
+archived separately under `references/papers/`; see the addendum above for those postscript-era updates. For
+grep/LLM-friendly access we also store `pdftotext` extractions for the 02 Mar 2026 snapshot in:
 
 - `references/claude-cycles.txt` (`pdftotext -layout`)
 - `references/claude-cycles.md` (`pdftotext -layout`, page-by-page, with known extraction errors corrected)
@@ -43,8 +86,8 @@ are flattened, minus signs occasionally rendered as plus signs, special characte
 the s̄-mapping overline notation is lost). The `references/claude-cycles.md` file has inline corrections for
 the most impactful errors; see its errata header for details.
 
-Scope: compare **process**, **technical approach**, and **conclusions**; identify what we have replicated,
-what we have not yet replicated, and where our writeups may still need tightening.
+Scope: compare **process**, **technical approach**, and **conclusions** for the 02 Mar 2026 snapshot; identify
+what we have replicated, what we have not yet replicated, and where our writeups may still need tightening.
 
 ## Executive Summary
 
@@ -88,7 +131,7 @@ what we have not yet replicated, and where our writeups may still need tightenin
   `artifacts/even_m4/`, `artifacts/even_m6/`, `artifacts/even_m8/`). The general even-`m` case remains open as a
   construction/pattern problem.
 
-## Update (extensions beyond the note)
+## Update (extensions beyond the 02 Mar 2026 note)
 
 After reaching paper parity (odd-`m` construction/proofs and `m=3` counting/exact-cover), we extended the repo in
 two directions that go beyond what is explicitly *available* in the note as a reproducible artifact:
