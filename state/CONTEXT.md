@@ -1,9 +1,12 @@
 # CONTEXT CAPSULE
 
 ## Objective
-Replicate and extend `claude-cycles.pdf` results with reproducible scripts, while keeping repo documentation aligned with later source-paper revisions.
+Preserve the completed GPT-5.6 Sol methodology review and use its controlled protocol for any future model/scheduler rerun, while continuing to distinguish finite certificates, universal proofs, and external proof claims.
 
 ## Current Best Known
+- `REVIEW-5.6-Sol.md` is complete (553 lines/5,653 words). It reviews the original harness and comparison confounds, separates official GPT-5.6 capabilities from unverified theorem claims, incorporates Residue and current autoloops, labels external case-study status, and proposes a controlled four-cell rerun plus a ready-to-use task prompt and source index.
+- P4-04 local audit is complete: the repo has enough evidence to reconstruct prompts, session timing, tool calls, model labels, branch outputs, and the baseline paper-access leak. Existing cross-model results are valuable case studies but not a controlled model benchmark because run conditions differed.
+- P4-04 external audit is complete: current OpenAI guidance supports lean outcome-first prompts plus explicit completion/evidence bars, `max` reasoning, Programmatic Tool Calling, and multi-agent execution. The CDC, Erdős, Reddit, and 36Kr examples vary sharply in verification status and must be labeled accordingly. `lhl/pi-multiloop` supplies durable verifier-gated loop mechanics; `no-way-labs/residue` supplies the most directly comparable prompt/process record (strategy register, structured failures, periodic synthesis, and cross-agent artifact/tool transfer). The residue fast verifier passed `m=3..30` locally, but its even all-`m` symbolic proof remains open by its own paper.
 - AGENTS/process scaffolding created.
 - Starter punchlist and worklog initialized.
 - Problem split created:
@@ -24,6 +27,7 @@ Replicate and extend `claude-cycles.pdf` results with reproducible scripts, whil
 - `README.md` now has a dated 2026-03-29 addendum that separates the original March 2 review from the March 16 ecosystem update; `COMPARISON.md` now explicitly frames itself as historical repo-local comparison only.
 
 ## Latest Validated Evidence
+- `REVIEW-5.6-Sol.md` passes `cmark` and Pandoc GFM parsing, all 10 local links resolve, and 38/39 external links returned 2xx; the sole link-check exception is the official GPT-5.6 launch page (`403` to the bot-style checker), whose contents were fetched successfully during the source audit. Repo verifier/counting checks and Residue `m=3..30` were rerun successfully.
 - Verifier rejects an intentionally invalid decomposition for `m=3` (`artifacts/invalid_all0_m3.json`).
 - CSP search finds a valid decomposition for `m=3` (`artifacts/csp_m3.json`), verified `OK` (`artifacts/verify_csp_m3.json`).
 - PDF extraction reveals a piecewise rule that reportedly works for odd `m` (tested through `m=101`) and provides a proof outline.
@@ -45,5 +49,5 @@ Replicate and extend `claude-cycles.pdf` results with reproducible scripts, whil
 - If the Stanford side links `[4]`, `[5]`, `[7]`, `[8]` go live, archive them locally and compare Ho's/Keston's constructions against our even-`m` artifacts more directly.
 
 ## Next Actions
-1. P2-03: build an independent code path for the `m=3` counting/exact-cover claims.
-2. If/when the Stanford side artifacts resolve, archive them and compare their constructions/proofs against `COMPARISON.md` and our local even-`m` artifacts.
+1. If launching the proposed rerun, first freeze a problem-only image and preregister the model, scheduler, parallelism, budgets, replicates, hidden verifier, and blinded review protocol.
+2. Otherwise resume P2-03 (independent `m=3` counting cross-check) or the open P3 even-`m` hypothesis/failure catalog.

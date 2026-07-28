@@ -13,6 +13,13 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 
 ## Pre-Analysis (Update Before Each Major Item)
 
+### P4-04: GPT-5.6 Sol methodology review (2026-07-28)
+
+- Scope: Produce `REVIEW-5.6-Sol.md`, an evidence-backed review of the repo's experimental methodology and a concrete redesign for a GPT-5.6 Sol rerun, including direct links to full prompts, model/prompting guidance, verifier-driven autoloops, and relevant external case studies.
+- Risks: Conflating repo-local evidence with external anecdotes; repeating unverified capability claims; hindsight comparisons across runs with different prompts, tools, budgets, and stopping rules; losing the original clean-room boundary in a more capable autonomous loop.
+- Validation plan: Audit claims against checked-in prompts/session logs/artifacts; fetch and preserve source metadata for supplied links; prefer primary/official sources; run repository link/path checks and a claim/citation pass; review the final diff and working tree.
+- Expected artifact: `REVIEW-5.6-Sol.md` plus synchronized `WORKLOG.md`, this punchlist, and `state/CONTEXT.md`.
+
 - Scope: Implement a deterministic verifier for proposed decompositions of `G_m` into 3 directed Hamiltonian cycles.
 - Risks: Off-by-one / vertex indexing bugs; verifier that is too permissive (false positives) or too slow for broad `m` ranges.
 - Validation plan: Run verifier on (a) deliberately-invalid toy inputs (must fail with clear reason) and (b) any discovered constructions for small `m` (must pass); record commands+outcomes in `WORKLOG.md`.
@@ -46,6 +53,11 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 - [ ] P4-01: Produce final replication-and-extension report (what holds, what is open, next bets)
 - [x] P4-02: Audit `COMPARISON.md` against archived session logs and branch artifacts
 - [x] P4-03: Archive the 2026-03-16 paper revision and add a dated README/COMPARISON note
+- [x] P4-04: Review methodology and specify a GPT-5.6 Sol rerun (`REVIEW-5.6-Sol.md`)
+  - [x] Audit repo-local prompts, sessions, branch artifacts, and comparison confounds
+  - [x] Corroborate external capability/prompt/autoloop sources, including `no-way-labs/residue`
+  - [x] Draft the review, controlled rerun protocol, and full-prompt/source index
+  - [x] Validate local paths, external URLs, structure, and claim-status language
 
 ## Deferrals
 
@@ -53,6 +65,12 @@ Replicate and extend the decomposition results from `claude-cycles.pdf` with rep
 |---|---|---|---|---|
 
 ## Validation Log (Commands + Outcomes)
+
+- `git status -sb`; repo/memory/prompt/branch audit; `python3 session-analysis/analyze_claudescycles.py --json` -> P4-04 local provenance confirmed; comparison confounds identified (tooling, interaction, budget, stopping-rule, and output-scope differences)
+- official GPT-5.6/Codex guidance + supplied case-study prompt audit + `lhl/devstack`/`pi-multiloop` review + `no-way-labs/residue` prompt/log audit; `(cd /tmp/residue/constructions && python3 verify.py --max-m 30 --fast)` -> external methodology sources corroborated and status-labeled; residue released construction passes 28/28 values `m=3..30` under its fast round-map verifier
+- Node decode of the DGG ChatGPT share + source synthesis + `apply_patch` to add `REVIEW-5.6-Sol.md`; `wc -l -w -c REVIEW-5.6-Sol.md`; `rg -n '^#{1,4} ' REVIEW-5.6-Sol.md`; `git diff --check` -> four user prompts and 94 tool messages recovered from the DGG path; 550-line/5,571-word review drafted with evidence ladder, controlled rerun, full prompt, and source index; initial whitespace check clean
+- Node local/external link checks; `cmark --validate-utf8 REVIEW-5.6-Sol.md`; `pandoc --from=gfm --to=html REVIEW-5.6-Sol.md -o /dev/null`; claim-language `rg`; `git diff --check`; repo verifier + `knuth_m3` reruns + Residue `m=3..30` fast verifier -> both Markdown parsers passed; 10/10 local paths exist; 38/39 external URLs returned 2xx (official OpenAI launch page returned bot-facing 403 but was fetched successfully during source audit); local math claims reproduced; Residue status correctly labeled Level 2 because the released verifier was reused
+- explicit staging of `REVIEW-5.6-Sol.md`, `WORKLOG.md`, `docs/IMPLEMENTATION.md`, and `state/CONTEXT.md`; `git diff --staged --name-only`; `git diff --staged --stat`; `git diff --staged --check`; complete and chunked staged-diff review -> only in-scope files staged; Level 0 added to the result ladder; controlled multi-agent cell fixed to hold GPT-5.6 Sol `max` constant and leave product `ultra` as a separate operational comparison
 
 - `apply_patch` to create `AGENTS.md` -> success
 - `mkdir -p docs state artifacts` -> success
